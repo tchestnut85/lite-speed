@@ -2,6 +2,7 @@
   --primaryColor: #5498ac;
   --secondaryColor: #204ea3;
   --darkColor: black;
+  --lightColor: white;
   /* --thirdColor: rgb(143, 69, 143);  */
   /* --fontColor: whitesmoke; */
 }
@@ -64,29 +65,35 @@ header {
   margin: auto;
   background-color: var(--primaryColor); 
 }
+
 .nav-wrap {
   display: flex;
   justify-content: space-between;
   color: var(--secondaryColor);
 }
+
 .navbar {
   padding: 1% 0;
   display: flex;
   justify-content: space-around;
   top: 0;
 }
+
+.nav-title {
+  text-decoration: none;
+  color: var(--lightColor);
+}
+
 .list-item {
   text-decoration: none;
-  justify-content: space-between;
+  padding: 5px;
   list-style: none;
-  color: var(--secondaryColor);
+  color: var(--lightColor);
+  background-color: var(--secondaryColor);
 }
-.list-hover {
-  transition: color .5s ease-in-out, background-color .5s ease-in-out;
-}
-.list-hover:hover {
-  color: var(--darkColor);
-  background-color: var(--primaryColor);
+
+.list-item:hover {
+  font-weight: 600;
 }
 
 /* FOOTER STYLES */

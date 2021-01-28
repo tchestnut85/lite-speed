@@ -9,8 +9,8 @@ function Header() {
     return (
         <header>
             <div className='nav-wrap'>
-                <Link>
-                    <h1 className='list-item'>Warp <i>Speed</i></h1>
+                <Link to="/" className="nav-title">
+                <h1>Warp <i>Speed</i></h1>
                 </Link>
             <nav className='navbar'>
                 {Auth.loggedIn() ? (
@@ -21,8 +21,8 @@ function Header() {
                     </>
                 ) : (
                         <>
-                            <Link to='/login' className='list-item'>Login</Link>
-                            <Link to='/signup' className='list-item'>Signup</Link>
+                        <Link to='/login' className='list-item'>Login</Link>
+                        <Link to='/signup' className='list-item'>Signup</Link>
                         </>
                     )}
                 </nav>
