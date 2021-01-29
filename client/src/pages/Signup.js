@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Auth from '../utils/auth';
 import { CREATE_USER } from '../utils/mutations';
 import { useMutation } from '@apollo/react-hooks';
+import { Link } from 'react-router-dom';
 
 function Signup(props) {
     const [formState, setFormState] = useState({ firstName: '', lastName: '', email: '', password: '' });
@@ -36,6 +37,9 @@ function Signup(props) {
 
     return (
         <div>
+            <Link to="/login">
+                ← Go to Login
+            </Link>
             <form id='signup-form' onSubmit={handleFormSubmit}>
                 <div className="">
                     <label htmlFor="firstName" className='input-text'>First Name:</label>
