@@ -135,8 +135,47 @@ footer {
   position: fixed;
   background-size: cover;
   /* background-position: 50% 50%; */
-  background-image: url('../src/assets/image.png');
+  background-image: url('../src/assets/cover1.jpg');
 }
+
+.landing-nav {
+  display: flex;
+  justify-content: space-between;
+  color: var(--secondaryColor);
+}
+
+.landing-navbar {
+  display: flex;
+  justify-content: space-around;
+}
+
+.landing-nav-title {
+  margin: 20px;
+  text-decoration: none;
+  color: var(--lightColor);
+}
+
+.landing-list-item {
+  margin: 20px;
+  text-decoration: none;
+  padding: 15px;
+  list-style: none;
+  color: var(--lightColor);
+  /* background-color: var(--secondaryColor); */
+  border: none;
+}
+
+.landing-list-item:hover {
+  font-weight: 800;
+}
+
+.hero-text {
+  color: var(--lightColor);
+  margin: 55px;
+  text-align: center;
+  font-size: 35px;
+}
+
 
 /* HOMEPAGE STYLES */
 .home-container {
