@@ -3,6 +3,7 @@ import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
 import Auth from './utils/auth';
+import Dashboard from './pages/Dashboard';
 // import Chat from './components/Chat';
 // import Course from './pages/Course';
 import Footer from './components/Footer';
@@ -37,10 +38,10 @@ function App() {
               <Header />
               <div className="container">
                 <Switch>
-                  {/* <Route exact path="/" component={Home} />
+                  <Route exact path="/" component={Dashboard} />
                   {/* <Route exact path="/profile" component={Profile} />
-              <Route exact path='/course' component={Course} /> */}
-                  {/* <Route component={NotFound} /> */}
+                  <Route exact path='/course' component={Course} />
+                  <Route component={NotFound} /> */}
                 </Switch>
                 {/* <Chat /> */}
               </div>

@@ -43,19 +43,19 @@ function Signup(props) {
             <form id='signup-form' onSubmit={handleFormSubmit}>
                 <div className="">
                     <label htmlFor="firstName" className='input-text'>First Name:</label>
-                    <input placeholder='Your Name' className='' id="firstName" name='firstName' type='firstName' onChange={handleChange} />
+                    <input placeholder='Your Name' className='' id="firstName" name='firstName' type='firstName' onBlur={handleChange} />
                 </div>
                 <div className="">
                     <label htmlFor="lastName" className='input-text'>Last Name:</label>
-                    <input placeholder='Your Last Name' className='' id="lastName" name='lastName' type='lastName' onChange={handleChange} />
+                    <input placeholder='Your Last Name' className='' id="lastName" name='lastName' type='lastName' onBlur={handleChange} />
                 </div>
                 <div className="">
                     <label htmlFor="email" className='input-text'>Email:</label>
-                    <input placeholder='Your Email' className='' id="email" name='email' type='email' onChange={handleChange} />
+                    <input placeholder='Your Email' className='' id="email" name='email' type='email' onBlur={handleChange} />
                 </div>
                 <div className="">
                     <label htmlFor="password" className='input-text'>Password:</label>
-                    <input type="password" placeholder='******' className='' id="password" name='password' onChange={handleChange} />
+                    <input type="password" placeholder='******' className='' id="password" name='password' onBlur={handleChange} />
                 </div>
                 <div className="col">
                     <button type='submit' className="">Signup!</button>
