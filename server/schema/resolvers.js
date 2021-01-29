@@ -9,6 +9,10 @@ const resolvers = {
       return await Topic.find();
     },
 
+    users: async () => {
+      return User.find().select('-__v -password');
+    },
+
     user: async (parent, args, context) => {
       if (context.user) {
         const user = await User.findById(context.user._id).populate({
@@ -25,7 +29,7 @@ const resolvers = {
   },
 
   Mutation: {
-    addUser: async (parent, args) => {
+    createUser: async (parent, args) => {
       const user = await User.create(args);
       const token = signToken(user);
 
