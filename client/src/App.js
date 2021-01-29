@@ -7,7 +7,7 @@ import Auth from './utils/auth';
 // import Course from './pages/Course';
 import Footer from './components/Footer';
 import Header from './components/Header';
-// import Login from './pages/Login';
+import Login from './pages/Login';
 import LandingPage from './pages/LandingPage';
 // import NotFound from './pages/NotFound';
 // import Profile from './pages/Profile';
@@ -48,7 +48,7 @@ function App() {
             </>
           ) : (
               <>
-                {/* <Route exact path="/login" component={Login} /> */}
+                <Route exact path="/login" component={Login} />
                 <Route exact path="/" component={LandingPage} />
                 <Route exact path="/signup" component={Signup} />
               </>
