@@ -132,10 +132,21 @@ footer {
   height: 100vh;
   width: 100vw;
   float: left;
-  position: fixed;
+  position: relative;
   background-size: cover;
-  /* background-position: 50% 50%; */
   background-image: url('../src/assets/cover1.jpg');
+}
+
+.overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, .65);
+  display: flex;
+
+  flex-direction: column;
 }
 
 .landing-nav {
@@ -158,7 +169,7 @@ footer {
 .landing-list-item {
   margin: 20px;
   text-decoration: none;
-  padding: 15px;
+  padding: 10px;
   list-style: none;
   color: var(--lightColor);
   /* background-color: var(--secondaryColor); */
@@ -173,9 +184,16 @@ footer {
   color: var(--lightColor);
   margin: 55px;
   text-align: center;
-  font-size: 35px;
+  font-size: 55px;
+  font-weight: bold;
 }
 
+.hero-subtext {
+  color: var(--lightColor);
+  margin: 55px;
+  text-align: center;
+  font-size: 35px;
+}
 
 /* HOMEPAGE STYLES */
 .home-container {
