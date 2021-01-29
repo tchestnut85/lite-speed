@@ -2,7 +2,6 @@ import Auth from '../../utils/auth';
 import { Link } from 'react-router-dom';
 import React from 'react';
 
-
 function Header() {
 
     const logout = event => {
@@ -21,7 +20,7 @@ function Header() {
                         <>
                             <Link to='/courses' className='list-item'>Courses</Link>
                             <Link to='/profile' className='list-item'>Profile</Link>
-                            <Link to='/logout' className='list-item' onClick={logout}>logout</Link>
+                            <Link to='/logout' className='list-item' onClick={logout}>Logout</Link>
                         </>
                     }
                 </nav>

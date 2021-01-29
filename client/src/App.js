@@ -7,8 +7,8 @@ import Auth from './utils/auth';
 // import Course from './pages/Course';
 import Footer from './components/Footer';
 import Header from './components/Header';
-import Login from './pages/Login';
 import LandingPage from './pages/LandingPage';
+import Login from './pages/Login';
 // import NotFound from './pages/NotFound';
 // import Profile from './pages/Profile';
 import React from 'react';
@@ -39,7 +39,7 @@ function App() {
                 <Switch>
                   {/* <Route exact path="/" component={Home} />
                   {/* <Route exact path="/profile" component={Profile} />
-              <Route exact path='/course' component={Course} /> */}
+                  <Route exact path='/course' component={Course} /> */}
                   {/* <Route component={NotFound} /> */}
                 </Switch>
                 {/* <Chat /> */}

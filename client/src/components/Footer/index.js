@@ -11,9 +11,6 @@ function Footer() {
                         Expand your skill set and knowledge base at the speed of light
                     </p>
                 </div>
-                <div className="signup-form">
-                        Sign up for updates
-                </div>
             </div>
         </footer>
     )

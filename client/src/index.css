@@ -104,7 +104,6 @@ header {
   padding: 15px;
   list-style: none;
   color: var(--lightColor);
-  /* background-color: var(--secondaryColor); */
   border: none;
 }
 
@@ -171,7 +170,6 @@ footer {
   padding: 10px;
   list-style: none;
   color: var(--lightColor);
-  /* background-color: var(--secondaryColor); */
   border: none;
 }
 
@@ -194,42 +192,59 @@ footer {
   font-size: 35px;
 }
 
-/* HOMEPAGE STYLES */
-.home-container {
-  padding: 35px;
-  margin: auto;
-  text-align: center;
-}
-
-.home-cta-btn {
-  background-color: var(--secondaryColor);
-  border: none;
-  border-radius: 15px;
-  margin-top: 10px;
-  padding: 15px 20px;
-  cursor: pointer;
-}
-
-.home-cta-btn a {
-  color: white;
-  text-decoration: none;
-}
-
-.cta-text {
-  color: var(--lightColor);
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
-.home-icons {
-  padding-top: 50px;
-  display: inline-block;
-}
-
-.link-home img {
-  width: 15%;
-}
-
 /* LOGIN/SIGNUP STYLES */
+.login-title, .signup-title {
+  padding-top: 20px;
+}
+
+label {
+  font-weight: bold;
+}
+
+.login-image {
+  height: 100vh;
+  width: 100vw;
+  float: left;
+  position: relative;
+  background-size: cover;
+  background-image: url('../src/assets/cover2.jpg');
+}
+
+.login-overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, .65);
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-image {
+  height: 100vh;
+  width: 100vw;
+  float: left;
+  position: relative;
+  background-size: cover;
+  background-image: url('../src/assets/cover3.jpg');
+}
+
+.signup-overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, .65);
+  display: flex;
+  flex-direction: column;
+}
+
+.container, .signup-back, .login-back {
+  color: var(--lightColor);
+}
+
 form {
   width: 40%;
 }
@@ -238,7 +253,6 @@ input {
   font-size: 1rem;
   padding: 0.25rem;
   border: 1px solid var(--darkColor);
-  /* outline: none; */
   border-radius: 3px;
   transition: box-shadow 0.2s;
 }
@@ -256,7 +270,11 @@ button {
   outline: none;
   cursor: pointer;
   margin: 0 1px;
-  background-color: var(--secondaryColor);
-  color: var(--lightColor);
+  background-color: var(--lightColor);
+  color: var(--darkColor);
+}
+
+button:hover {
+  background-color: var(--primaryColor);
 }
 
