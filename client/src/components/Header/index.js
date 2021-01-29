@@ -9,22 +9,22 @@ function Header() {
     return (
         <header>
             <div className='nav-wrap'>
-                <Link>
+                <Link to='/' className='nav-title'>
                     <h1 className='list-item'>Warp <i>Speed</i></h1>
                 </Link>
-            <nav className='navbar'>
-                {Auth.loggedIn() ? (
-                    <>
-                        <Link to='/course' className='list-item'>Courses</Link>
-                        <Link to='/profile' className='list-item'>Profile</Link>
-                        <a href='/' onClick={logout} className='list-item'>Logout</a>
-                    </>
-                ) : (
+                <nav className='navbar'>
+                    {Auth.loggedIn() ? (
                         <>
-                            <Link to='/login' className='list-item'>Login</Link>
-                            <Link to='/signup' className='list-item'>Signup</Link>
+                            <Link to='/course' className='list-item'>Courses</Link>
+                            <Link to='/profile' className='list-item'>Profile</Link>
+                            <a href='/' onClick={logout} className='list-item'>Logout</a>
                         </>
-                    )}
+                    ) : (
+                            <>
+                                <Link to='/login' className='list-item'>Login</Link>
+                                <Link to='/signup' className='list-item'>Signup</Link>
+                            </>
+                        )}
                 </nav>
             </div>
         </header>

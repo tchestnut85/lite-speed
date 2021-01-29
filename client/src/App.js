@@ -11,8 +11,7 @@ import Header from './components/Header';
 // import NotFound from './pages/NotFound';
 // import Profile from './pages/Profile';
 import React from 'react';
-
-// import Signup from './pages/Signup';
+import Signup from './pages/Signup';
 
 const client = new ApolloClient({
   request: operation => {
@@ -33,14 +32,14 @@ function App() {
         <div className="flex-column justify-flex-start min-100-vh">
           <Header />
           <div className="container">
-            {/* <Switch>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/login" component={Login} />
+            <Switch>
+              {/* <Route exact path="/" component={Home} />
+              <Route exact path="/login" component={Login} /> */}
               <Route exact path="/signup" component={Signup} />
-              <Route exact path="/profile" component={Profile} />
-              <Route exact path='/course' component={Course} />
-              <Route component={NotFound} />
-            </Switch> */}
+              {/* <Route exact path="/profile" component={Profile} />
+              <Route exact path='/course' component={Course} /> */}
+              {/* <Route component={NotFound} /> */}
+            </Switch>
             {/* <Chat /> */}
           </div>
           <Footer />
