@@ -8,6 +8,7 @@ import Chatbot from './components/Chatbot';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import LandingPage from './pages/LandingPage';
+import Lesson from './pages/Lesson';
 import Login from './pages/Login';
 import NotFound from './pages/NotFound';
 // import Profile from './pages/Profile';
@@ -39,6 +40,7 @@ function App() {
                 <Switch>
                   {/* <Route exact path="/profile" component={Profile} />
                   <Route exact path='/course' component={Course} /> */}
+                  <Route exact path='/courses/:id' component={Lesson} />
                   <Route component={NotFound} />
                 </Switch>
               </div>

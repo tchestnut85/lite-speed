@@ -1,12 +1,26 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Topic } = require('../models');
+const { User, Courses, Lesson } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
 
-    topics: async () => {
-      return await Topic.find();
+    courses: async () => {
+      return await Courses.find();
+    },
+
+    lessons: async (parent, { courseName }) => {
+      const params = {};
+
+      if (courseName) {
+        params.courseName = courseName;
+      }
+
+      return await Lesson.find(params).populate('courseName');
+    },
+
+    lesson: async (parent, { lessonId }, context) => {
+      return await Lesson.findById(lessonId).populate('courseName');
     },
 
     users: async () => {

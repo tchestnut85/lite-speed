@@ -286,3 +286,8 @@ button:hover {
   position: fixed;
   background-size: cover;
 }
+
+/* LESSON STYLES */
+.lesson {
+  color: var(--secondaryColor)
+}

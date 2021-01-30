@@ -10,3 +10,28 @@ export const QUERY_USER = gql`
         }
     }
 `;
+
+export const QUERY_LESSONS = gql`
+    query lessons {
+            _id
+            courseName
+            intro
+            content
+            image
+            price
+    }
+`;
+
+export const QUERY_LESSON = gql`
+    query lesson($id: ID!) {
+        lesson(_id: $id) {
+            _id
+            name
+            courseName
+            intro
+            content
+            image
+            price
+        }
+    }
+`;
