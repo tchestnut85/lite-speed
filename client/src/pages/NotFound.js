@@ -1,5 +1,5 @@
-import Footer from '../components/Footer';
-import Header from '../components/Header';
+// import Footer from '../components/Footer';
+// import Header from '../components/Header';
 import React from "react";
 // import error from '../assets/404.jpg';
 import error2 from '../assets/404-2.jpg';
@@ -7,7 +7,7 @@ import error2 from '../assets/404-2.jpg';
 const NotFound = () => {
   return (
     <div>
-      <Header></Header>
+      {/* <Header /> */}
         <h1>
           {/* <img 
             src={error}
@@ -20,7 +20,7 @@ const NotFound = () => {
             className="error-img"
           />
         </h1>
-        <Footer></Footer>
+        {/* <Footer /> */}
     </div>
   );
 };
