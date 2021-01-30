@@ -25,16 +25,18 @@ function Lesson() {
 
     return (
         <section className='lesson'>
-            <h2>Current Course: {lesson.name}</h2>
+            <h2>Current Course: {lesson.courseName.title}</h2>
             <div>
-                <span>Intro to Astronomy:</span>
+                <span>Intro to {lesson.courseName.title}:</span>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit harum officia perspiciatis aut repellendus magnam unde aliquam, nihil explicabo ex, earum possimus libero sunt vero? Quisquam dolor saepe voluptatem rem!
+                    {lesson.intro}
                 </p>
-                <h3>Astronomy 101:</h3>
-                <article>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos recusandae et repellendus repudiandae quaerat. Consequatur rem autem inventore earum, libero atque, numquam distinctio sit quisquam mollitia, vitae quaerat magni dolor?</article>
+                <h3>{lesson.courseName.title} 101:</h3>
+                <article>
+                    {lesson.content}
+                </article>
+                <img alt={lesson.courseName.title} src={lesson.image} className='lesson-img'></img>
             </div>
-
         </section>
     );
 }

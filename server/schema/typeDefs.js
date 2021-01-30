@@ -12,6 +12,7 @@ const typeDefs = gql`
     intro: String
     content: String
     image: String
+    price: Float
   }
 
   type User {

@@ -24,10 +24,10 @@ export const QUERY_LESSONS = gql`
 
 export const QUERY_LESSON = gql`
     query lesson($id: ID!) {
-        lesson(_id: $id) {
-            _id
-            name
-            courseName
+        lesson(lessonId: $id) {
+            courseName {
+                title
+            }
             intro
             content
             image

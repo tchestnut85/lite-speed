@@ -44,7 +44,6 @@ function App() {
                   <Route component={NotFound} />
                 </Switch>
               </div>
-              <Footer />
             </>
           ) : (
               <>
@@ -54,6 +53,7 @@ function App() {
                 <Route component={NotFound} />
               </>
             )}
+          <Footer />
           <Chatbot />
         </div>
       </Router>

@@ -8,10 +8,6 @@ const lessonSchema = new Schema({
         ref: 'Courses',
         required: true
     },
-    name: {
-        type: String,
-        required: true
-    },
     intro: {
         type: String,
         required: true
