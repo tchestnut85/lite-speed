@@ -7,20 +7,79 @@ function Chat() {
 
     const steps = [
         {
-            id: '1',
-            message: 'What is your name?',
-            trigger: '2',
+            id: 'namePrompt',
+            message: 'Hello! What\'s your name?',
+            trigger: 'name',
         },
         {
-            id: '2',
+            id: 'name',
             user: true,
-            trigger: '3',
+            trigger: 'help',
         },
         {
-            id: '3',
-            message: 'Hi {previousValue}, nice to meet you!',
-            end: true,
+            id: 'help',
+            message: 'Hi {previousValue}, do you need help with something?',
+            trigger: 'helpConfirm'
         },
+        {
+            id: 'helpConfirm',
+            options: [
+                { value: true, label: 'Yes', trigger: 'helpOptions' },
+                { value: false, label: 'No', trigger: 'endMessage' }
+            ]
+        },
+        {
+            id: 'helpOptions',
+            message: 'What can I help you with?',
+            trigger: 'chooseOption'
+        },
+        {
+            id: 'chooseOption',
+            options: [
+                { value: 'courses', label: 'Courses', trigger: 'courseSelect' },
+                { value: 'profile', label: 'Profile', trigger: (() => window.location.replace('/profile')) },
+                { value: 'dashboard', label: 'Dashboard', trigger: (() => window.location.replace('/dashboard')) },
+                { value: 'join', label: 'Join Warp Speed', trigger: (() => window.location.replace('/signup')) },
+                { value: false, label: 'Nevermind', trigger: 'exitConfirm' }
+            ]
+        },
+        {
+            id: 'courseSelect',
+            options: [
+                { value: 'Astronomy', label: 'Astronomy', trigger: 'learnMore' },
+                { value: 'Biology', label: 'Biology', trigger: 'learnMore' },
+                { value: 'History', label: 'History', trigger: 'learnMore' },
+                { value: false, label: 'Nevermind', trigger: 'exit' }
+            ]
+        },
+        {
+            id: 'learnMore',
+            message: 'Learn more about {previousValue} here (include a link to the relevant course).',
+            trigger: 'exit'
+        },
+        {
+            id: 'exit',
+            message: 'Do you need help with anything else?',
+            trigger: 'exitConfirm'
+        },
+        {
+            id: 'exitConfirm',
+            options: [
+                { value: true, label: 'Yes', trigger: 'helpOptions' },
+                { value: false, label: 'No', trigger: 'endMessage' }
+            ]
+        },
+        {
+            id: 'endMessage',
+            message: 'Farewell! If you have another question, let me know!',
+            trigger: 'repeat'
+        },
+        {
+            id: 'repeat',
+            options: [
+                { value: true, label: 'Ask Another Question', trigger: 'helpOptions' }
+            ]
+        }
     ];
 
     const theme = {
@@ -41,7 +100,9 @@ function Chat() {
                 <ThemeProvider theme={theme}>
                     <ChatBot
                         botAvatar={Emoji}
-                        steps={steps} floating={true} />
+                        steps={steps}
+                        floating={true}
+                        userDelay={250} />
                 </ThemeProvider>
             </div>
         </section>
