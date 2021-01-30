@@ -21,7 +21,7 @@ function LandingPage() {
                 <div>
                     {/* <p className="hero-text">Learning is the greatest pathway to your next career.</p>  */}
                     <p className="hero-text">Learn. Achieve. Connect. </p>
-                    <p className="hero-subtext">An educational platform that helps you get a leg up on the competition in the speed of light!</p>
+                    <p className="hero-subtext">An educational platform that helps you get a leg up on the competition at the speed of light!</p>
                 </div>
             </div>
         </div>

@@ -195,6 +195,7 @@ footer {
 /* LOGIN/SIGNUP STYLES */
 .login-title, .signup-title {
   padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 label {
