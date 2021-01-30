@@ -9,7 +9,7 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import LandingPage from './pages/LandingPage';
 import Login from './pages/Login';
-// import NotFound from './pages/NotFound';
+import NotFound from './pages/NotFound';
 // import Profile from './pages/Profile';
 import React from 'react';
 import Signup from './pages/Signup';
@@ -37,10 +37,9 @@ function App() {
               <Header />
               <div className="container">
                 <Switch>
-                  {/* <Route exact path="/" component={Home} />
                   {/* <Route exact path="/profile" component={Profile} />
                   <Route exact path='/course' component={Course} /> */}
-                  {/* <Route component={NotFound} /> */}
+                  <Route component={NotFound} />
                 </Switch>
                 {/* <Chat /> */}
               </div>
@@ -51,6 +50,7 @@ function App() {
                 <Route exact path="/login" component={Login} />
                 <Route exact path="/" component={LandingPage} />
                 <Route exact path="/signup" component={Signup} />
+                <Route component={NotFound} />
               </>
             )}
         </div>
