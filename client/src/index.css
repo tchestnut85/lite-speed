@@ -292,6 +292,34 @@ button {
 	background-color: lightgrey;
 	box-shadow: 0 0 10px 0 black;
 	color: var(--darkColor);
+	opacity: 0.7;
+}
+
+.chat-circle:hover::after {
+	content: 'Chat';
+	font-size: 50px;
+}
+
+.chat-circle:hover .chat-icon {
+	display: none;
+}
+
+.courses-circle:hover::after {
+	content: 'Courses';
+	font-size: 50px;
+}
+
+.courses-circle:hover .course-icon {
+	display: none;
+}
+
+.profile-circle:hover::after {
+	content: 'Profile';
+	font-size: 50px;
+}
+
+.profile-circle:hover .profile-icon {
+	display: none;
 }
 
 /* End Dashboard Styles */
