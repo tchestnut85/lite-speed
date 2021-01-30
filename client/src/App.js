@@ -11,7 +11,7 @@ import Header from './components/Header';
 import LandingPage from './pages/LandingPage';
 import Login from './pages/Login';
 import NotFound from './pages/NotFound';
-// import Profile from './pages/Profile';
+import Profile from './pages/Profile';
 import React from 'react';
 import Signup from './pages/Signup';
 
@@ -39,8 +39,8 @@ function App() {
               <div className="container">
                 <Switch>
                   <Route exact path="/dashboard" component={Dashboard} />
-                  {/* <Route exact path="/profile" component={Profile} />
-                  <Route exact path='/course' component={Course} /> */}
+                  <Route exact path="/profile" component={Profile} />
+                  {/* <Route exact path='/course' component={Course} /> */}
                   <Route component={NotFound} />
                 </Switch>
               </div>

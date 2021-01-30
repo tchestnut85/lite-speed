@@ -15,11 +15,7 @@ const resolvers = {
 
     user: async (parent, args, context) => {
       if (context.user) {
-        const user = await User.findById(context.user._id).populate({
-          populate: 'topic'
-        });
-
-        // user.topics.sort((a, b) => b.registerDate - a.registerDate);
+        const user = await User.findOne({ _id: context.user });
 
         return user;
       }

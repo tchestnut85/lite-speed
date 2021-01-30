@@ -199,6 +199,7 @@ footer {
 .signup-title {
 	padding-top: 20px;
 	padding-bottom: 20px;
+	color: var(--lightColor);
 }
 
 label {
@@ -245,13 +246,13 @@ label {
 	flex-direction: column;
 }
 
-.container,
 .signup-back,
 .login-back {
 	color: var(--lightColor);
 }
 
 form {
+	color: var(--lightColor);
 	width: 40%;
 }
 
@@ -351,4 +352,21 @@ button:hover {
 	display: none;
 }
 
-/* End Dashboard Styles */
+/* Profile Page Styles */
+.profile-header {
+	color: var(--darkColor);
+	text-align: center;
+	padding-top: 50px;
+}
+
+.profile-courses {
+	color: black;
+	padding: 25px;
+}
+.course-description {
+	line-height: 2;
+}
+
+.profile-email {
+	color: black;
+}

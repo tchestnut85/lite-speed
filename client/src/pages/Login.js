@@ -18,6 +18,8 @@ function Login(props) {
         } catch (e) {
             console.log(e);
         }
+
+        window.location.replace('/dashboard');
     };
 
     const handleChange = event => {
