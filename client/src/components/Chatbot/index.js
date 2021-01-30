@@ -3,7 +3,7 @@ import Emoji from '../../assets/thinking-emoji.jpg';
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 
-function Chat() {
+function Chatbot() {
 
     const steps = [
         {
@@ -109,4 +109,4 @@ function Chat() {
     );
 }
 
-export default Chat;
+export default Chatbot;
