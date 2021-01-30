@@ -47,9 +47,9 @@ function Signup(props) {
                     <Link to="/login" className="login-back">
                         <h4> Already a user? Go to Login &#8594;</h4>
                     </Link>
-                    
+
                     <h2 className="signup-title">Signup to start exploring Warp Speed!</h2>
-                    
+
                     <form id='signup-form' onSubmit={handleFormSubmit}>
                         <div className="flex-row space-between my-2">
                             <label htmlFor="firstName">First Name:</label>

@@ -20,6 +20,7 @@ function Header() {
                         <>
                             <Link to='/courses' className='list-item'>Courses</Link>
                             <Link to='/profile' className='list-item'>Profile</Link>
+                            <Link to='/dashboard' className='list-item'>Dashboard</Link>
                             <Link to='/logout' className='list-item' onClick={logout}>Logout</Link>
                         </>
                     }
