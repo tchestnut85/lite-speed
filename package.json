@@ -1,0 +1,35 @@
+{
+  "name": "project-3",
+  "version": "1.0.0",
+  "description": "Repo for Project 3.",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "cd server && npm start",
+    "start:dev": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "seed": "cd server && npm run seed",
+    "heroku-postbuild": "cd client && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tchestnut85/project-3.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tchestnut85/project-3/issues"
+  },
+  "homepage": "https://github.com/tchestnut85/project-3#readme",
+  "dependencies": {
+    "apollo-server-express": "^2.19.2",
+    "bcrypt": "^5.0.0",
+    "express": "^4.17.1",
+    "if-env": "^1.0.4",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.11.13"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0"
+  }
+}
