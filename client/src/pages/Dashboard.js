@@ -1,8 +1,25 @@
 import { Link } from 'react-router-dom';
+import { QUERY_USER } from '../utils/queries';
 import React from 'react';
+import { capitalizeFirstLetter } from '../utils/helpers';
+import { useQuery } from '@apollo/react-hooks';
 
 function Dashboard() {
+
+    const { loading, data } = useQuery(QUERY_USER);
+
+    const userData = data?.user || {};
+    console.log("userData: ", userData)
+
+    if (loading) {
+        return <div>Loading...</div>
+    };
+
     return (
+        <>
+        <div className="dashboard-title"> 
+            {capitalizeFirstLetter(userData.firstName)} {capitalizeFirstLetter(userData.lastName)}'s Dashboard
+        </div>
         <section className='circles-wrapper'>
             <Link to="/courses" className="dashboard-circles courses-circle">
                 <i className="fas fa-chalkboard-teacher fa-6x course-icon"></i>
@@ -16,6 +33,7 @@ function Dashboard() {
                 <i className="fas fa-user-circle fa-6x profile-icon"></i>
             </Link>
         </section>
+        </>
     );
 };
 

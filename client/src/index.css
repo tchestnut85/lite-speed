@@ -116,7 +116,7 @@ header {
 /* FOOTER STYLES */
 footer {
   bottom: 0;
-  /* position: absolute; */
+  position: absolute;
   padding: 30px;
   margin-top: 25px;
   width: 100%;
@@ -293,13 +293,13 @@ button:hover {
 	background-size: cover;
 }
 
-/* Dashboard Styles */
+/* DASHBOARD STYLES */
 
 .circles-wrapper {
-	margin: auto;
+	margin-bottom: 100px;
 	display: flex;
 	flex-wrap: wrap;
-	padding-top: 150px;
+	padding-top: 100px;
 	justify-content: center;
 	align-items: center;
 }
@@ -352,11 +352,19 @@ button:hover {
 	display: none;
 }
 
+.dashboard-title {
+	text-align: center;
+	font-size: 45px;
+	margin-top: 35px;
+}
+
 /* Profile Page Styles */
 .profile-header {
 	color: var(--darkColor);
 	text-align: center;
-	padding-top: 50px;
+	font-size: 45px;
+	margin-top: 35px;
+	margin-bottom: 35px;
 }
 
 .profile-courses {

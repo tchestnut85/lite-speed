@@ -1,11 +1,10 @@
-import React from 'react';
-import { useQuery } from '@apollo/react-hooks';
-import { QUERY_USER } from '../utils/queries';
-import { capitalizeFirstLetter } from '../utils/helpers';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-
+import Container from 'react-bootstrap/Container';
+import { QUERY_USER } from '../utils/queries';
+import React from 'react';
+import Row from 'react-bootstrap/Row';
+import { capitalizeFirstLetter } from '../utils/helpers';
+import { useQuery } from '@apollo/react-hooks';
 
 function Profile() {
     const courses = [
@@ -30,7 +29,7 @@ function Profile() {
     return (
         <section>
             <h1 className="profile-header">
-                Welcome {capitalizeFirstLetter(userData.firstName)} {capitalizeFirstLetter(userData.lastName)}
+                {capitalizeFirstLetter(userData.firstName)} {capitalizeFirstLetter(userData.lastName)}'s Profile
             </h1>
             <Container>
                 <Row>

@@ -39,9 +39,9 @@ function App() {
               <Header />
               <div className="container">
                 <Switch>
-                  {/* <Route exact path="/profile" component={Profile} />
+                  <Route exact path="/profile" component={Profile} />
                   <Route exact path="/dashboard" component={Dashboard} />
-                  <Route exact path='/course' component={Course} /> */}
+                  {/* <Route exact path='/course' component={Course} /> */}
                   <Route exact path='/courses/:id' component={Lesson} />
                   <Route component={NotFound} />
                 </Switch>
