@@ -4,9 +4,9 @@ db.once('open', async () => {
     await Courses.deleteMany();
     const courses = await Courses.insertMany([
         { title: 'Astronomy' },
-        // { title: 'Grey Goo' },
-        // { title: 'World War II' },
-        // { title: 'Geometry' }
+        { title: 'Grey Goo' },
+        { title: 'World War II' },
+        { title: 'Geometry' }
     ]);
     console.log('courses seeded');
     await Lesson.deleteMany();
@@ -28,5 +28,7 @@ db.once('open', async () => {
             price: 9.99
         }
     ]);
+    console.log('lessons seeded');
+
+    process.exit();
 });
-console.log('lessons seeded');

@@ -5,7 +5,7 @@ import { CREATE_USER } from '../utils/mutations';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/react-hooks';
 
-function Signup(props) {
+function Signup() {
     const [formState, setFormState] = useState({ firstName: '', lastName: '', email: '', password: '' });
     const [createUser] = useMutation(CREATE_USER);
 
