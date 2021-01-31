@@ -3,7 +3,11 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const lessonSchema = new Schema({
-    courseName: {
+    name: {
+        type: String,
+        required: true
+    },
+    courseId: {
         type: Schema.Types.ObjectId,
         ref: 'Courses',
         required: true
@@ -27,4 +31,6 @@ const lessonSchema = new Schema({
     }
 });
 
-module.exports = mongoose.model('Lesson', lessonSchema);
+const Lesson = mongoose.model('Lesson', lessonSchema);
+
+module.exports = Lesson;

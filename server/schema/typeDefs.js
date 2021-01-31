@@ -4,11 +4,13 @@ const typeDefs = gql`
   type Courses {
     _id: ID
     title: String
+    lessons: [Lesson]
   }
 
   type Lesson {
     _id: ID
-    courseName: Courses
+    name: String
+    courseId: Courses
     intro: String
     content: String
     image: String

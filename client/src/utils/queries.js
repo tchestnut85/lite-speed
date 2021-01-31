@@ -16,6 +16,14 @@ export const QUERY_COURSES = gql`
         courses {
             _id
             title
+            lessons {
+                _id
+                courseId
+                intro
+                content
+                image
+                price
+            }
         }
     }
 `;

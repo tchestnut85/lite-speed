@@ -12,7 +12,7 @@ db.once('open', async () => {
     await Lesson.deleteMany();
     const lessons = await Lesson.insertMany([
         {
-            courseName: courses[0]._id,
+            courseId: courses[0]._id,
             name: 'Astronomy',
             intro:
                 `Astronomy (from Greek: ἀστρονομία, literally meaning the science that studies the laws of the stars) is a natural science that studies celestial objects and phenomena. 

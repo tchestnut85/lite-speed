@@ -25,9 +25,8 @@ function Lesson() {
 
     return (
         <section className='lesson'>
-            <h2>Current Course: {lesson.courseName.title}</h2>
+            <h2>Introduction to {lesson.courseName.title}</h2>
             <div>
-                <span>Intro to {lesson.courseName.title}:</span>
                 <p>
                     {lesson.intro}
                 </p>

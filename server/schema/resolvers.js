@@ -8,18 +8,18 @@ const resolvers = {
       return await Courses.find();
     },
 
-    lessons: async (parent, { courseName }) => {
+    lessons: async (parent, { courseId }) => {
       const params = {};
 
-      if (courseName) {
-        params.courseName = courseName;
+      if (courseId) {
+        params.courseId = courseId;
       }
 
-      return await Lesson.find(params).populate('courseName');
+      return await Lesson.find(params).populate('courseId');
     },
 
     lesson: async (parent, { lessonId }, context) => {
-      return await Lesson.findById(lessonId).populate('courseName');
+      return await Lesson.findById(lessonId).populate('courseId');
     },
 
     users: async () => {

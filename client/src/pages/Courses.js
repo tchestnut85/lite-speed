@@ -1,18 +1,11 @@
 import { QUERY_COURSES } from '../utils/queries';
 import React from 'react';
-import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/react-hooks';
 
 function Courses() {
-    const { id: coursesId } = useParams();
-    console.log('coursesId', coursesId);
-    
-    const { loading, data } = useQuery(QUERY_COURSES, {
-        variables: { _id: coursesId }
-    });
 
-    console.log('data:' , data);
-    
+    const { loading, data } = useQuery(QUERY_COURSES);
+
     const courses = data?.courses || {};
     console.log('courses array', courses);
 
@@ -22,7 +15,7 @@ function Courses() {
 
     return (
         <>
-        <h1 className="page-title">Available Courses:</h1>
+            <h1 className="page-title">Available Courses:</h1>
             <section className='courses'>
                 <div className='course-titles'>
                     {courses.map((course) => (
