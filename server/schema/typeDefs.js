@@ -20,6 +20,7 @@ const typeDefs = gql`
     firstName: String
     lastName: String
     email: String
+    password: String
   }
 
   type Auth {
@@ -32,7 +33,7 @@ const typeDefs = gql`
     lessons(courses: ID, title: String): [Lesson]
     lesson(lessonId: ID!): Lesson
     users: [User]
-    user: User
+    me: User
   }
 
   type Mutation {

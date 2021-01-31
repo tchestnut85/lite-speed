@@ -26,7 +26,7 @@ const resolvers = {
       return User.find().select('-__v -password');
     },
 
-    user: async (parent, args, context) => {
+    me: async (parent, args, context) => {
       if (context.user) {
         const user = await User.findOne({ _id: context.user });
 
@@ -47,11 +47,15 @@ const resolvers = {
 
     updateUser: async (parent, args, context) => {
       if (context.user) {
-        return await User.findByIdAndUpdate(context.user._id, args, { new: true });
-      }
-
+        return await User.findByIdAndUpdate(
+          { _id: context.user },
+          { $set: { args } },
+          { new: true }
+        )
+      };
       throw new AuthenticationError('Not logged in');
     },
+
 
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
