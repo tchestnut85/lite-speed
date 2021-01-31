@@ -20,7 +20,7 @@ function Lesson() {
     console.log('lesson:', lesson);
 
     if (loading) {
-        return <div>Loading Lesson.</div>;
+        return <div>Loading Lesson...</div>;
     }
 
     return (

@@ -358,7 +358,7 @@ button:hover {
 	margin-top: 35px;
 }
 
-/* Profile Page Styles */
+/* PROFILE PAGE STYLES */
 .profile-header {
 	color: var(--darkColor);
 	text-align: center;
@@ -397,6 +397,12 @@ button:hover {
 	justify-content: space-between;
 	flex-direction: column;
 	align-items: center;
+}
+
+.page-title {
+	text-align: center;
+	font-size: 45px;
+	margin-top: 35px;
 }
 
 /* LESSON STYLES */

@@ -4,7 +4,6 @@ const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
-
     courses: async () => {
       return await Courses.find();
     },
