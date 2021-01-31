@@ -4,8 +4,8 @@ import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
 import Auth from './utils/auth';
 import Chatbot from './components/Chatbot';
+import Courses from './pages/Courses';
 import Dashboard from './pages/Dashboard';
-// import Course from './pages/Course';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import LandingPage from './pages/LandingPage';
@@ -39,9 +39,9 @@ function App() {
               <Header />
               <div className="container">
                 <Switch>
-                  {/* <Route exact path="/profile" component={Profile} />
+                  <Route exact path="/profile" component={Profile} />
                   <Route exact path="/dashboard" component={Dashboard} />
-                  <Route exact path='/course' component={Course} /> */}
+                  <Route exact path='/courses' component={Courses} />
                   <Route exact path='/courses/:id' component={Lesson} />
                   <Route component={NotFound} />
                 </Switch>
