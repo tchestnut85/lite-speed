@@ -45,15 +45,29 @@ const resolvers = {
       return { token, user };
     },
 
+    // updateUser: async (parent, args, context) => {
+    //   if (context.user) {
+    //     return await User.findByIdAndUpdate(context.user._id, { $set: { args } }, { new: true });
+    //   }
+    //   throw new AuthenticationError('Not logged in');
+    // },
+
     updateUser: async (parent, args, context) => {
+
       if (context.user) {
-        return await User.findByIdAndUpdate(
+        return await User.findOneAndUpdate(
           { _id: context.user },
-          { $set: { args } },
+          {
+            $set: {
+              email: args.email,
+              firstName: args.firstName,
+              lastName: args.lastName,
+              password: args.password
+            }
+          },
           { new: true }
         )
       };
-      throw new AuthenticationError('Not logged in');
     },
 
 

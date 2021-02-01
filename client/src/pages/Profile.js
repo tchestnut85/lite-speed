@@ -3,16 +3,18 @@ import { React, useState } from 'react';
 import { capitalizeFirstLetter } from '../utils/helpers';
 import { useQuery, useMutation } from '@apollo/react-hooks';
 import { UPDATE_USER } from '../utils/mutations';
+import Auth from '../utils/auth';
 
-function Profile() {
-    const [formState, setFormState] = useState();
+
+function Profile(props) {
+    const [formState, setFormState] = useState({ email: '', firstName: '', lastName: '', password: '' });
 
     const { loading, data } = useQuery(QUERY_ME);
 
     const [updateUser] = useMutation(UPDATE_USER);
 
     const userData = data?.me || {};
-    console.log("userData: ", userData);
+    // console.log("userData: ", userData);
 
     if (loading) {
         return <div>Loading...</div>
@@ -29,13 +31,19 @@ function Profile() {
                 lastName: formState.lastName
             }
         });
+        const token = mutationResponse;
+
+        console.log(mutationResponse);
+        console.log(token);
     };
 
-    const createInput = () => {
-        const container = document.querySelector("#email-container");
-        const emailInput = document.createElement('input');
-        emailInput.setAttribute('for', 'email-radio');
-        container.appendChild(emailInput);
+
+    const handleChange = event => {
+        const { name, value } = event.target;
+        setFormState({
+            ...formState,
+            [name]: value
+        });
     };
 
     return (
@@ -53,7 +61,6 @@ function Profile() {
                             <h4>Email:</h4>
                             <div className='flex-row'>
                                 <p>{userData.email}</p>
-                                <input type="checkbox" id="email-radio" className="email-radio" onClick={createInput} />
                             </div>
                         </div>
                         <div className="settings-firstName">
@@ -69,6 +76,32 @@ function Profile() {
                             <input type="password" value='placeholder' id='password-input' />
                         </div>
                     </div>
+                </div>
+                <div className="edit-settings-wrapper">
+                    <div>
+                        <h3>Edit Settings</h3>
+                    </div>
+                    <form id='signup-form' onSubmit={handleUpdate}>
+                        <div className="flex-row space-between my-2">
+                            <label htmlFor="email">Email:</label>
+                            <input placeholder='Your Email' className='' id="email" name='email' type='email' onChange={handleChange} />
+                        </div>
+                        <div className="flex-row space-between my-2">
+                            <label htmlFor="firstName">First Name:</label>
+                            <input placeholder='Your Name' className='' id="firstName" name='firstName' type='firstName' onChange={handleChange} />
+                        </div>
+                        <div className="flex-row space-between my-2">
+                            <label htmlFor="lastName">Last Name:</label>
+                            <input placeholder='Your Last Name' className='' id="lastName" name='lastName' type='lastName' onChange={handleChange} />
+                        </div>
+                        <div className="flex-row space-between my-2">
+                            <label htmlFor="password">Password:</label>
+                            <input type="password" placeholder='******' className='' id="password" name='password' onChange={handleChange} />
+                        </div>
+                        <div className="flex-row flex-end">
+                            <button type='submit'>Edit</button>
+                        </div>
+                    </form>
                 </div>
             </section>
         </section>

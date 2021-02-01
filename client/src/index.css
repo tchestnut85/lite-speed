@@ -360,7 +360,7 @@ button:hover {
 
 /* PROFILE PAGE STYLES */
 .profile-header {
-	color: var(--secondaryColor);
+	color: var(--darkColor);
 	text-align: center;
 	font-size: 45px;
 	margin-top: 35px;
@@ -376,7 +376,7 @@ button:hover {
 }
 
 .settings-container:hover {
-	box-shadow: -10px 15px 40px;
+	box-shadow: -10px 15px 40px var(--secondaryColor);
 }
 
 .settings-container h3 {
@@ -397,6 +397,46 @@ button:hover {
 .settings-container h4 {
 	text-decoration: underline;
 	padding-bottom: 5px;
+}
+
+.edit-settings-wrapper {
+	background-color: var(--darkColor);
+	margin: 0 50px;
+	width: 250px;
+	height: 400px;
+	border-radius: 15px;
+	border: 1px solid;
+}
+
+.edit-settings-wrapper:hover {
+	box-shadow: -10px 15px 40px var(--secondaryColor);
+}
+
+.edit-settings-wrapper h3 {
+	color: var(--lightColor);
+	text-align: center;
+	padding: 20px;
+	background-color: var(--primaryColor);
+	border-radius: 15px;
+}
+
+.edit-settings-form {
+	padding-top: 5px;
+	padding-left: 20px;
+}
+
+.change-email,
+.change-password {
+	padding-top: 20px;
+}
+
+.form-label {
+	padding-bottom: 10px;
+	text-decoration: underline;
+}
+
+.form-button {
+	margin-top: 20px;
 }
 
 /* COURSE LIST STYLE */
@@ -428,7 +468,7 @@ button:hover {
 /* LESSON STYLES */
 .lesson {
 	color: var(--secondaryColor);
-	margin-bottom: 50px;
+	margin-bottom: 150px;
 }
 
 .lesson-img {
