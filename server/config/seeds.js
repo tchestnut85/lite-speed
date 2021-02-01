@@ -1,5 +1,6 @@
 const db = require('./connection');
 const { Lesson, Courses } = require('../models');
+
 db.once('open', async () => {
     await Courses.deleteMany();
     const courses = await Courses.insertMany([
@@ -55,7 +56,7 @@ db.once('open', async () => {
                 exact date of the war's end is also not universally agreed upon. It was generally accepted at the time that the war ended with the armistice of 14 August 1945 (V-J Day), rather than with the formal surrender of Japan on 2 September 1945, which officially ended the war in Asia. A peace treaty between Japan and 
                 the Allies was signed in 1951. A 1990 treaty regarding Germany's future allowed the reunification of East and West Germany to take place and resolved most post-World War II issues. No formal peace treaty between Japan and the Soviet Union was ever signed.
                 `,
-            image: 'https://en.wikipedia.org/wiki/World_War_II#/media/File:USS_Pennsylvania_moving_into_Lingayen_Gulf.jpg',
+            image: 'https://www.history.com/.image/c_fit%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_620/MTU3ODc4NjAwMzAyMTQzMTk5/image-placeholder-title.jpg',
             price: 19.99
         },
         {
@@ -72,7 +73,7 @@ db.once('open', async () => {
                 mathematical analysis, and introducing the Riemann surface, and Henri Poincaré, the founder of algebraic topology and the geometric theory of dynamical systems. As a consequence of these major changes in the conception of geometry, the concept of "space" became something rich and varied, and the natural background 
                 for theories as different as complex analysis and classical mechanics.
                 `,
-            image: 'https://en.wikipedia.org/wiki/Geometry#/media/File:Stereographic_projection_in_3D.svg',
+            image: 'https://previews.123rf.com/images/microone/microone1811/microone181100050/128173156-doodle-maths-and-geometry-concept-trigonometry-functions-charts-and-mathematical-formulas-vector-sch.jpg',
             price: 29.99
         }
     ]);

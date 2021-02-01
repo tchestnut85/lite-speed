@@ -28,15 +28,19 @@ function Courses() {
 
     return (
         <>
-            <h1 className="page-title">Available Courses:</h1>
-            <section className='courses'>
+            <h1 className="page-title">
+                Available Courses
+            </h1>
+            
+            <section className='courses-wrapper'>
                 <div className='course-titles'>
                     {courses.map((course, i) => (
                         <button
                             key={course._id}
                             id={course._id}
+                            className="courses-btn"
                             onClick={() => { getLesson(course._id, i); }}>
-                            <h3>
+                            <h3 className="course-name">
                                 {course.title}
                             </h3>
                         </button>

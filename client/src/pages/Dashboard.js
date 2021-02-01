@@ -19,7 +19,8 @@ function Dashboard() {
         <>
             <h1 className="dashboard-title">
                 {capitalizeFirstLetter(userData.firstName)} {capitalizeFirstLetter(userData.lastName)}'s Dashboard
-        </h1>
+            </h1>
+            
             <section className='circles-wrapper'>
                 <Link to="/courses" className="dashboard-circles courses-circle">
                     <i className="fas fa-chalkboard-teacher fa-6x course-icon"></i>
