@@ -1,25 +1,64 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Topic } = require('../models');
+const { User, Courses, Lesson } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
-
-    topics: async () => {
-      return await Topic.find();
+    courses: async () => {
+      return await Courses.find();
     },
+
+    lessons: async (parent, { courses, name }) => {
+      const params = {};
+
+      if (courses) {
+        params.courses = courses;
+      }
+
+      if (name) {
+        params.name = {
+          $regex: name
+        };
+      }
+
+      // const lesson = await Lesson.findById(lesson._id).populate({
+      //   path: 'courses.lessons',
+      //   populate: 'lesson'
+      // });
+      return await Lesson.find(params).populate('courses');
+    },
+
+    // lessons: async (parent, { courseId }) => {
+    //   const params = {};
+
+    //   if (courseId) {
+    //     params.courseId = courseId;
+    //   }
+
+    //   return await Lesson.find(params).populate('courseId');
+    // },
+
+    lesson: async (parent, { _id }, context) => {
+      return await Lesson.findById(_id).populate('courses');
+    },
+
+    // lesson: async (parent, { _id }, context) => {
+    //   if (context.courses) {
+    //     const courses = await Courses.findById(context.courses._id).populate({
+    //       path: 'lessons',
+    //       populate: 'courses'
+    //     });
+    //     return await courses.lessons.id(_id);
+    //   }
+    // },
 
     users: async () => {
       return User.find().select('-__v -password');
     },
 
-    user: async (parent, args, context) => {
+    me: async (parent, args, context) => {
       if (context.user) {
-        const user = await User.findById(context.user._id).populate({
-          populate: 'topic'
-        });
-
-        // user.topics.sort((a, b) => b.registerDate - a.registerDate);
+        const user = await User.findOne({ _id: context.user });
 
         return user;
       }
@@ -38,11 +77,15 @@ const resolvers = {
 
     updateUser: async (parent, args, context) => {
       if (context.user) {
-        return await User.findByIdAndUpdate(context.user._id, args, { new: true });
-      }
-
+        return await User.findByIdAndUpdate(
+          { _id: context.user },
+          { $set: { args } },
+          { new: true }
+        )
+      };
       throw new AuthenticationError('Not logged in');
     },
+
 
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });

@@ -3,14 +3,16 @@ import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
 import Auth from './utils/auth';
-// import Chat from './components/Chat';
-// import Course from './pages/Course';
+import Chatbot from './components/Chatbot';
+import Courses from './pages/Courses';
+import Dashboard from './pages/Dashboard';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import LandingPage from './pages/LandingPage';
+import Lesson from './pages/Lesson';
 import Login from './pages/Login';
-// import NotFound from './pages/NotFound';
-// import Profile from './pages/Profile';
+import NotFound from './pages/NotFound';
+import Profile from './pages/Profile';
 import React from 'react';
 import Signup from './pages/Signup';
 
@@ -37,22 +39,24 @@ function App() {
               <Header />
               <div className="container">
                 <Switch>
-                  {/* <Route exact path="/" component={Home} />
-                  {/* <Route exact path="/profile" component={Profile} />
-                  <Route exact path='/course' component={Course} /> */}
-                  {/* <Route component={NotFound} /> */}
+                  <Route exact path="/profile" component={Profile} />
+                  <Route exact path="/dashboard" component={Dashboard} />
+                  <Route exact path='/courses' component={Courses} />
+                  <Route exact path='/courses/:id' component={Lesson} />
+                  <Route component={NotFound} />
                 </Switch>
-                {/* <Chat /> */}
               </div>
-              <Footer />
             </>
           ) : (
               <>
                 <Route exact path="/login" component={Login} />
                 <Route exact path="/" component={LandingPage} />
                 <Route exact path="/signup" component={Signup} />
+                <Route component={NotFound} />
               </>
             )}
+          <Footer />
+          <Chatbot />
         </div>
       </Router>
     </ApolloProvider>
