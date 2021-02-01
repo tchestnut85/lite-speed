@@ -7,12 +7,12 @@ const coursesSchema = new Schema({
     required: true,
     trim: true
   },
-  lessons: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: 'Lesson'
-    }
-  ]
+  // lessons: [
+  //   {
+  //     type: Schema.Types.ObjectId,
+  //     ref: 'Lesson'
+  //   }
+  // ]
 });
 
 const Courses = mongoose.model('Courses', coursesSchema);

@@ -4,13 +4,12 @@ const typeDefs = gql`
   type Courses {
     _id: ID
     title: String
-    lessons: [Lesson]
   }
 
   type Lesson {
     _id: ID
     name: String
-    courseId: Courses
+    courses: Courses
     intro: String
     content: String
     image: String
@@ -32,7 +31,7 @@ const typeDefs = gql`
   type Query {
     courses: [Courses]
     lessons(courses: ID, title: String): [Lesson]
-    lesson(lessonId: ID!): Lesson
+    lesson(_id: ID!): Lesson
     users: [User]
     user: User
   }
@@ -45,3 +44,9 @@ const typeDefs = gql`
 `;
 
 module.exports = typeDefs;
+
+// type Courses {
+//   _id: ID;
+//   title: String;
+//   lessons: [Lesson];
+// };

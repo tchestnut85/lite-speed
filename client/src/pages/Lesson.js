@@ -25,16 +25,16 @@ function Lesson() {
 
     return (
         <section className='lesson'>
-            <h2>Introduction to {lesson.courseName.title}</h2>
+            <h2>Introduction to {lesson.name}</h2>
             <div>
                 <p>
                     {lesson.intro}
                 </p>
-                <h3>{lesson.courseName.title} 101:</h3>
+                <h3>{lesson.name} 101:</h3>
                 <article>
                     {lesson.content}
                 </article>
-                <img alt={lesson.courseName.title} src={lesson.image} className='lesson-img'></img>
+                <img alt={lesson.name} src={lesson.image} className='lesson-img'></img>
             </div>
         </section>
     );

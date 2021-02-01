@@ -116,7 +116,8 @@ header {
 /* FOOTER STYLES */
 footer {
   bottom: 0;
-  position: absolute;
+  /* position: absolute; */
+  position: fixed;
   padding: 30px;
   margin-top: 25px;
   width: 100%;
@@ -408,7 +409,7 @@ button:hover {
 /* LESSON STYLES */
 .lesson {
   color: var(--secondaryColor);
-  margin-bottom: 50px;
+  margin-bottom: 150px;
 }
 
 .lesson-img {
