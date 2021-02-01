@@ -5,16 +5,18 @@ import { useQuery, useMutation } from '@apollo/react-hooks';
 import { UPDATE_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
 
-
-function Profile(props) {
+function Profile() {
     const [formState, setFormState] = useState({ email: '', firstName: '', lastName: '', password: '' });
 
     const { loading, data } = useQuery(QUERY_ME);
 
-    const [updateUser] = useMutation(UPDATE_USER);
 
     const userData = data?.me || {};
-    // console.log("userData: ", userData);
+    console.log("userData: ", userData);
+
+    const [updateUser] = useMutation(UPDATE_USER, {
+        variables: { _id: userData._id }
+    });
 
     if (loading) {
         return <div>Loading...</div>
@@ -22,8 +24,7 @@ function Profile(props) {
 
     const handleUpdate = async event => {
         event.preventDefault();
-
-        const mutationResponse = await updateUser({
+        const me = await updateUser({
             variables: {
                 email: formState.email,
                 password: formState.password,
@@ -31,10 +32,9 @@ function Profile(props) {
                 lastName: formState.lastName
             }
         });
-        const token = mutationResponse;
-
-        console.log(mutationResponse);
-        console.log(token);
+        const user = Auth.loggedIn(me);
+        window.location.replace('/profile');
+        return user;
     };
 
 
@@ -49,7 +49,7 @@ function Profile(props) {
     return (
         <section>
             <h1 className="profile-header">
-                {capitalizeFirstLetter(userData.firstName)} {capitalizeFirstLetter(userData.lastName)}'s Profile
+                Welcome {capitalizeFirstLetter(userData.firstName)} {capitalizeFirstLetter(userData.lastName)}
             </h1>
             <section className="flex-row">
                 <div className="settings-container">

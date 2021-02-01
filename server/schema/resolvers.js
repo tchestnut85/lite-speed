@@ -34,6 +34,16 @@ const resolvers = {
       }
 
       throw new AuthenticationError('Not logged in');
+    },
+
+    user: async (parent, args, context) => {
+      if (context.user) {
+        const user = await User.findOne({ _id: context.user });
+
+        return user;
+      }
+
+      throw new AuthenticationError('Not logged in');
     }
   },
 
@@ -53,21 +63,12 @@ const resolvers = {
     // },
 
     updateUser: async (parent, args, context) => {
-
-      if (context.user) {
-        return await User.findOneAndUpdate(
-          { _id: context.user },
-          {
-            $set: {
-              email: args.email,
-              firstName: args.firstName,
-              lastName: args.lastName,
-              password: args.password
-            }
-          },
-          { new: true }
-        )
-      };
+      const updatedUser = await User.findByIdAndUpdate(
+        { _id: context.user._id },
+        args,
+        { new: true }
+      );
+      return updatedUser;
     },
 
 
