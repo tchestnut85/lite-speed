@@ -289,9 +289,9 @@ button:hover {
 
 /* NOT FOUND STYLES */
 .error-img {
-	width: 100vw;
-	position: fixed;
-	background-size: cover;
+	width: 100%;
+	height: 100%;
+	position: absolute;
 }
 
 /* DASHBOARD STYLES */
@@ -455,19 +455,33 @@ button:hover {
   	margin-bottom: 250px;
 }
 
-.lesson-title, .lesson-name {
+.lesson-title {
 	padding: 20px;
 	text-align: center;
 }
 
-.lesson-intro, .lesson-content {
+img {
+	width: 40%;
+	float: left;
+	margin: 20px 15px 15px 20px;
+}
+
+.lesson-intro {
 	font-size: 16px;
 	padding: 10px;
 	margin-bottom: 35px;
 }
 
-img {
-	width: 40%;
-	align-items: center;
+.lesson-name {
+	padding: 20px;
+	text-align: center;
 }
+
+.lesson-content {
+	font-size: 16px;
+	padding: 20px;
+	margin-bottom: 35px;
+	overflow-wrap: break-word;
+}
+
 
