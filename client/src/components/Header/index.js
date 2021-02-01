@@ -12,10 +12,16 @@ function Header() {
     return (
         <header>
             <div className='nav-wrap'>
-                <Link to="/" className="nav-title">
-                    <h1>Warp <i>Speed</i></h1>
-                </Link>
-                <nav className='navbar'>
+                {Auth.loggedIn() ? (
+                    <Link to="/dashboard" className="nav-title">
+                        <h1>Warp <i>Speed</i></h1>
+                    </Link>
+                ) : (
+                        <Link to="/" className="nav-title">
+                            <h1>Warp <i>Speed</i></h1>
+                        </Link>
+                    )}
+                < nav className='navbar'>
                     {
                         <>
                             <Link to='/courses' className='list-item'>Courses</Link>
@@ -26,7 +32,7 @@ function Header() {
                     }
                 </nav>
             </div>
-        </header>
+        </header >
     );
 }
 
