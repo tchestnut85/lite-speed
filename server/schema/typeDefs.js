@@ -8,7 +8,8 @@ const typeDefs = gql`
 
   type Lesson {
     _id: ID
-    courseName: Courses
+    name: String
+    courses: Courses
     intro: String
     content: String
     image: String
@@ -31,7 +32,7 @@ const typeDefs = gql`
   type Query {
     courses: [Courses]
     lessons(courses: ID, title: String): [Lesson]
-    lesson(lessonId: ID!): Lesson
+    lesson(_id: ID!): Lesson
     users: [User]
     me: User
   }
@@ -44,3 +45,9 @@ const typeDefs = gql`
 `;
 
 module.exports = typeDefs;
+
+// type Courses {
+//   _id: ID;
+//   title: String;
+//   lessons: [Lesson];
+// };

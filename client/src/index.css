@@ -115,13 +115,14 @@ header {
 
 /* FOOTER STYLES */
 footer {
-	bottom: 0;
-	position: absolute;
-	padding: 30px;
-	margin-top: 25px;
-	width: 100%;
-	color: var(--lightColor);
-	background-color: var(--darkColor);
+  bottom: 0;
+  /* position: absolute; */
+  position: fixed;
+  padding: 30px;
+  margin-top: 25px;
+  width: 100%;
+  color: var(--lightColor);
+  background-color: var(--darkColor);
 }
 
 .signup-form {
@@ -427,8 +428,8 @@ button:hover {
 
 /* LESSON STYLES */
 .lesson {
-	color: var(--secondaryColor);
-	margin-bottom: 50px;
+  color: var(--secondaryColor);
+  margin-bottom: 150px;
 }
 
 .lesson-img {

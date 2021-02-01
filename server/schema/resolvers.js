@@ -8,19 +8,49 @@ const resolvers = {
       return await Courses.find();
     },
 
-    lessons: async (parent, { courseName }) => {
+    lessons: async (parent, { courses, name }) => {
       const params = {};
 
-      if (courseName) {
-        params.courseName = courseName;
+      if (courses) {
+        params.courses = courses;
       }
 
-      return await Lesson.find(params).populate('courseName');
+      if (name) {
+        params.name = {
+          $regex: name
+        };
+      }
+
+      // const lesson = await Lesson.findById(lesson._id).populate({
+      //   path: 'courses.lessons',
+      //   populate: 'lesson'
+      // });
+      return await Lesson.find(params).populate('courses');
     },
 
-    lesson: async (parent, { lessonId }, context) => {
-      return await Lesson.findById(lessonId).populate('courseName');
+    // lessons: async (parent, { courseId }) => {
+    //   const params = {};
+
+    //   if (courseId) {
+    //     params.courseId = courseId;
+    //   }
+
+    //   return await Lesson.find(params).populate('courseId');
+    // },
+
+    lesson: async (parent, { _id }, context) => {
+      return await Lesson.findById(_id).populate('courses');
     },
+
+    // lesson: async (parent, { _id }, context) => {
+    //   if (context.courses) {
+    //     const courses = await Courses.findById(context.courses._id).populate({
+    //       path: 'lessons',
+    //       populate: 'courses'
+    //     });
+    //     return await courses.lessons.id(_id);
+    //   }
+    // },
 
     users: async () => {
       return User.find().select('-__v -password');

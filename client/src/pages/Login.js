@@ -15,11 +15,10 @@ function Login() {
             const mutationResponse = await login({ variables: { email: formState.email, password: formState.password } });
             const token = mutationResponse.data.login.token;
             Auth.login(token);
+            window.location.replace('/dashboard');
         } catch (e) {
             console.log(e);
         }
-
-        window.location.replace('/dashboard');
     };
 
     const handleChange = event => {
