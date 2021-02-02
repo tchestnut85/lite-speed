@@ -1,15 +1,24 @@
+import { Link } from 'react-router-dom';
 import React from "react";
-import error from '../assets/404-2.jpg';
 
 const NotFound = () => {
 
   return (
-    <div>
-          <img 
-            src={error}
-            alt="404error"
-            className="error-img"
-          />
+    <div className='notfound-image'>
+      <div className="notfound-overlay">
+        <div className='landing-nav'>
+           <Link to="/" className="landing-nav-title">
+            <h1>Warp <i>Speed</i></h1>
+          </Link>
+
+          {/* <nav className='landing-navbar'>
+            <>
+              <Link to='/login' className='landing-list-item'>Login</Link>
+              <Link to='/signup' className='landing-list-item'>Signup</Link>
+            </> */}
+          {/* </nav> */}
+        </div>
+      </div>
     </div>
   );
 };
