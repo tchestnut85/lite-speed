@@ -30,21 +30,21 @@ function Lesson() {
                 <p className="lesson-intro">
                     {lesson.intro}
                 </p>
-                
+
                 <h3 className="lesson-name">
                     {lesson.name} 101
                 </h3>
-                
-                <img 
-                src={lesson.image} 
-                alt={lesson.name} 
-                className='lesson-img' 
+
+                <img
+                    src={lesson.image}
+                    alt={lesson.name}
+                    className='lesson-img'
                 />
-                
+
                 <article className="lesson-content">
                     {lesson.content}
                 </article>
-                
+
             </div>
         </section>
     );
