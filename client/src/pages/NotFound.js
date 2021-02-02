@@ -5,11 +5,11 @@ const NotFound = () => {
 
   return (
     <div>
-          <img 
-            src={error}
-            alt="404error"
-            className="error-img"
-          />
+      <img
+        src={error}
+        alt="404error"
+        className="error-img"
+      />
     </div>
   );
 };
