@@ -1,9 +1,10 @@
-import { QUERY_ME } from '../utils/queries';
+import { CHANGE_PASSWORD, UPDATE_USER } from '../utils/mutations';
 import { React, useState } from 'react';
-import { capitalizeFirstLetter } from '../utils/helpers';
-import { useQuery, useMutation } from '@apollo/react-hooks';
-import { UPDATE_USER } from '../utils/mutations';
+import { useMutation, useQuery } from '@apollo/react-hooks';
+
 import Auth from '../utils/auth';
+import { QUERY_ME } from '../utils/queries';
+import { capitalizeFirstLetter } from '../utils/helpers';
 
 function Profile() {
     const [formState, setFormState] = useState({ email: '', firstName: '', lastName: '', password: '' });
@@ -18,6 +19,10 @@ function Profile() {
         variables: { _id: userData._id }
     });
 
+    const [changePassword] = useMutation(CHANGE_PASSWORD, {
+        variables: { password: userData.password }
+    });
+
     if (loading) {
         return <div>Loading...</div>
     };
@@ -27,12 +32,17 @@ function Profile() {
         const me = await updateUser({
             variables: {
                 email: formState.email,
-                password: formState.password,
+                // password: formState.password,
                 firstName: formState.firstName,
                 lastName: formState.lastName
             }
         });
-        const user = Auth.loggedIn(me);
+        const password = await changePassword({
+            variables: {
+                password: formState.password
+            }
+        });
+        const user = Auth.loggedIn(me, password);
         window.location.replace('/profile');
         return user;
     };

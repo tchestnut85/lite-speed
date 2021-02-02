@@ -118,7 +118,18 @@ const resolvers = {
       const token = signToken(user);
 
       return { token, user };
-    }
+    },
+
+    changePassword: async (parent, args, context) => {
+      const user = await User.findOneAndUpdate(
+        { password: context.user.password },
+        args,
+        { new: true }
+      )
+      const token = signToken(user);
+
+      return { token, user };
+      }
   }
 };
 
