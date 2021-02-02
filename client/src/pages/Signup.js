@@ -43,7 +43,7 @@ function Signup() {
                         <h1>Warp <i>Speed</i></h1>
                     </Link>
                 </div>
-                <div className="container my-1">
+                <div className="signup-container my-1">
                     <Link to="/login" className="login-back">
                         <h4> Already a user? Go to Login &#8594;</h4>
                     </Link>

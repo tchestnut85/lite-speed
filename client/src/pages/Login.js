@@ -37,7 +37,7 @@ function Login() {
                         <h1>Warp <i>Speed</i></h1>
                     </Link>
                 </div>
-                <div className="container my-1">
+                <div className="login-container my-1">
                     <Link to="/signup" className="signup-back">
                         <h4>Not a User? Go to Signup &#8594;</h4>
                     </Link>

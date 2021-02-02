@@ -208,6 +208,13 @@ label {
 	font-weight: bold;
 }
 
+.login-container, .signup-container {
+	width: 85%;
+	/* max-width: 1200px; */
+	margin-left: auto;
+	margin-right: auto;
+}
+
 .login-image {
 	height: 100vh;
 	width: 100vw;
