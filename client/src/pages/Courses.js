@@ -8,11 +8,9 @@ function Courses() {
     const { loading: courseLoading, data: courseData } = useQuery(QUERY_ALL_COURSES);
 
     const { data: lessonData } = useQuery(QUERY_LESSONS);
-    // console.log('lessonData:', lessonData.lessons[0].courses._id);
     console.log('lessonData:', lessonData);
 
     const courses = courseData?.courses || {};
-    // console.log('courses array', courses);
 
     if (courseLoading) {
         return <div>Loading Courses...</div>;
@@ -31,7 +29,7 @@ function Courses() {
             <h1 className="page-title">
                 Available Courses
             </h1>
-            
+
             <section className='courses-wrapper'>
                 <div className='course-titles'>
                     {courses.map((course, i) => (

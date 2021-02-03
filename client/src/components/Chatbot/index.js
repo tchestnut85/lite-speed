@@ -52,7 +52,7 @@ function Chatbot() {
             id: 'courseSelect',
             hideInput: true,
             options: [
-                { value: 'Space', label: 'Space', trigger: (() => Auth.loggedIn() ? window.location.replace('/courses/60174b423680971d7839e1a7') : window.location.replace('/signup')) },
+                { value: 'Space', label: 'Space', trigger: (() => Auth.loggedIn() ? window.location.replace(`/courses/60174b423680971d7839e1a7`) : window.location.replace('/signup')) },
                 { value: 'Science', label: 'Science', trigger: (() => Auth.loggedIn() ? window.location.replace('/courses/60174b423680971d7839e1a8') : window.location.replace('/signup')) },
                 { value: 'History', label: 'History', trigger: (() => Auth.loggedIn() ? window.location.replace('/courses/60174b423680971d7839e1a9') : window.location.replace('/signup')) },
                 { value: 'Mathematics', label: 'Mathematics', trigger: (() => Auth.loggedIn() ? window.location.replace('/courses/60174b423680971d7839e1aa') : window.location.replace('/signup')) },

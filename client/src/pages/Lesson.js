@@ -1,9 +1,7 @@
-// import { useDispatch, useSelector } from 'react-redux';
-
-// import { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 
 import { QUERY_LESSON } from '../utils/queries';
-import React from 'react';
+import { idbPromise } from '../utils/helpers';
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/react-hooks';
 
@@ -14,10 +12,22 @@ function Lesson() {
     const { loading, data } = useQuery(QUERY_LESSON, {
         variables: { id: lessonId }
     });
-    console.log('data:', data);
 
     const lesson = data?.lesson || {};
     console.log('lesson:', lesson);
+
+    useEffect(() => {
+        if (data) {
+            data.products.forEach((lesson) => {
+                idbPromise('lessons', 'put', lesson);
+            });
+        }
+        // } else if (!loading) {
+        //     idbPromise('lessons', 'get').then((lessons) => {
+
+        //     });
+        // }
+    }, [data, loading]);
 
     if (loading) {
         return <div>Loading Lesson...</div>;
