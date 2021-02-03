@@ -13,9 +13,13 @@
 	padding: 0px;
 }
 
+html,
+body {
+  min-height: 100%;
+}
+
 body {
 	margin: 0;
-	min-height: 100%;
 	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
 		'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 	-webkit-font-smoothing: antialiased;
@@ -42,10 +46,11 @@ code {
 }
 
 .container {
-	/* width: 85%; */
-	/* max-width: 1200px; */
+	min-height: 100vh;
+	padding-bottom: 100px; 
 	margin-left: auto;
 	margin-right: auto;
+	position: relative;
 }
 
 .mx-1 {
@@ -116,10 +121,7 @@ header {
 /* FOOTER STYLES */
 footer {
   bottom: 0;
-  /* position: absolute; */
-  position: fixed;
   padding: 30px;
-  margin-top: 25px;
   width: 100%;
   color: var(--lightColor);
   background-color: var(--darkColor);
@@ -186,9 +188,9 @@ footer {
 
 .hero-subtext {
 	color: var(--lightColor);
-	margin: 55px;
+	margin: 15px;
 	text-align: center;
-	font-size: 35px;
+	font-size: 30px;
 }
 
 /* LOGIN/SIGNUP STYLES */

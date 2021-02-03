@@ -1,11 +1,11 @@
 # Lite Speed Educational Platform
 
-<a href="https://warp-speed.herokuapp.com/">![Deployed Application](https://img.shields.io/badge/Deployed%20App-Warp%20Speed-5498AC?style=for-the-badge)</a>
+<a href="https://warp-speed.herokuapp.com/">![Deployed Application](https://img.shields.io/badge/Deployed%20App-Lite%20Speed-5498AC?style=for-the-badge)</a>
 
 ![License](https://img.shields.io/badge/license-MIT%20License-orange.svg)
 
 ## Description
-Lite Speed is an educational platform that helps users gain an advantage on the competition by learning about subjects that interest the user. Once the user signs up, they are taken to their dashboard to select from a few options including courses, chat and profile. The courses section will show subjects and each one has an introductory lesson included. The profile page will show the user credentials and allow for changes. The app also features a ChatBot that helps with any questions the user may have while using the app.
+Lite Speed is an educational platform that helps users gain an advantage on the competition by learning about subjects that interest the user. Once the user signs up, they are taken to their dashboard to select from a few options including courses and profile. The courses section will show subjects and each one has an introductory lesson included. The profile page will show the user credentials and allow for changes. The app also features a ChatBot that helps with any questions the user may have while using the app.
 
 ## Table of Contents
 * [Technologies](#technologies)
@@ -33,16 +33,21 @@ Lite Speed is an educational platform that helps users gain an advantage on the 
 ![Screenshots]()
 
 ## Enhancements
-The tasks for this project include: ___
+The tasks for this project include: 
+* React for the front end UI
+* Use GraphQL with a Node.js and Express.js server
+* Use queries and mutations for retrieving, adding, updating and deleting data
+* Deploy using Heroku with Course/lesson data 
+* Progressive Web App using a web manifest, service worker for offline functionality and is installable
+* Includes authentication using JSON Web Tokens and hashes user password with bcrypt
 
 ## Contributors
 Tom Chestnut, Peyton Schlafley and Brian Spiewak
 
-
 ## Links
-<a href="https://warp-speed.herokuapp.com/">![Deployed Application](https://img.shields.io/badge/Deployed%20App-Warp%20Speed-5498AC?style=for-the-badge)</a> 
+<a href="https://warp-speed.herokuapp.com/">![Deployed Application](https://img.shields.io/badge/Deployed%20App-Lite%20Speed-5498AC?style=for-the-badge)</a> 
 
-<a href="https://github.com/tchestnut85/warp-speed">![GitHub Repository](https://img.shields.io/badge/GitHub%20Repository-100000?style=for-the-badge&logo=github&logoColor=white)</a>  
+<a href="https://github.com/tchestnut85/lite-speed">![GitHub Repository](https://img.shields.io/badge/GitHub%20Repository-100000?style=for-the-badge&logo=github&logoColor=white)</a>  
 
 <a href="https://github.com/users/tchestnut85/projects/1">![GitHub Repository](https://img.shields.io/badge/GitHub%20Projects-100000?style=for-the-badge&logo=github&logoColor=white)</a> 
 
@@ -52,4 +57,7 @@ This app is licensed under the MIT license.
 
 ## Questions 
 * For questions, contact any team member using the following email addresses: <br> thomaschestnut00@gmail.com, pschlafley0@gmail.com or bspiewak6@gmail.com 
-* GitHub Usernames: tchestnut85, pschlafley and bspiewak6
+* GitHub profiles: 
+    * <a href="https://github.com/tchestnut85">tchestnut85</a> 
+    * <a href="https://github.com/pschlafley">pschlafley</a> 
+    * <a href="https://github.com/bspiewak6">bspiewak6</a>
