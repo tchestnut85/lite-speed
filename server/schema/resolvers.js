@@ -93,12 +93,15 @@ const resolvers = {
     // },
 
     updateUser: async (parent, args, context) => {
-      const updatedUser = await User.findByIdAndUpdate(
-        { _id: context.user._id },
-        args,
-        { new: true }
-      );
-      return updatedUser;
+      console.log(args);
+      if (context.user) {
+        const updatedUser = await User.findByIdAndUpdate(
+          { _id: context.user._id },
+          args,
+          { new: true }
+        );
+        return updatedUser;
+      }
     },
 
 
@@ -129,7 +132,7 @@ const resolvers = {
       const token = signToken(user);
 
       return { token, user };
-      }
+    }
   }
 };
 

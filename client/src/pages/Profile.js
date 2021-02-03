@@ -1,4 +1,4 @@
-import { CHANGE_PASSWORD, UPDATE_USER } from '../utils/mutations';
+import { UPDATE_USER } from '../utils/mutations';
 import { React, useState } from 'react';
 import { useMutation, useQuery } from '@apollo/react-hooks';
 
@@ -19,30 +19,23 @@ function Profile() {
         variables: { _id: userData._id }
     });
 
-    const [changePassword] = useMutation(CHANGE_PASSWORD, {
-        variables: { password: userData.password }
-    });
-
     if (loading) {
         return <div>Loading...</div>
     };
 
     const handleUpdate = async event => {
+        console.log('test');
+        console.log(formState);
         event.preventDefault();
         const me = await updateUser({
             variables: {
                 email: formState.email,
-                // password: formState.password,
+                password: formState.password,
                 firstName: formState.firstName,
                 lastName: formState.lastName
             }
         });
-        const password = await changePassword({
-            variables: {
-                password: formState.password
-            }
-        });
-        const user = Auth.loggedIn(me, password);
+        const user = Auth.loggedIn(me);
         window.location.replace('/profile');
         return user;
     };
@@ -94,15 +87,15 @@ function Profile() {
                     <form id='signup-form' onSubmit={handleUpdate}>
                         <div className="flex-row space-between my-2">
                             <label htmlFor="email">Email:</label>
-                            <input placeholder='Your Email' className='' id="email" name='email' type='email' onChange={handleChange} />
+                            <input placeholder='Your Email' className='' id="email" name='email' type='email' onBlur={handleChange} />
                         </div>
                         <div className="flex-row space-between my-2">
                             <label htmlFor="firstName">First Name:</label>
-                            <input placeholder='Your Name' className='' id="firstName" name='firstName' type='firstName' onChange={handleChange} />
+                            <input placeholder='Your Name' className='' id="firstName" name='firstName' type='firstName' onBlur={handleChange} />
                         </div>
                         <div className="flex-row space-between my-2">
                             <label htmlFor="lastName">Last Name:</label>
-                            <input placeholder='Your Last Name' className='' id="lastName" name='lastName' type='lastName' onChange={handleChange} />
+                            <input placeholder='Your Last Name' className='' id="lastName" name='lastName' type='lastName' onBlur={handleChange} />
                         </div>
                         <div className="flex-row space-between my-2">
                             <label htmlFor="password">Password:</label>
