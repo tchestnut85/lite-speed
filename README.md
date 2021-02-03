@@ -1,11 +1,11 @@
-# Warp Speed Educational Platform
+# Lite Speed Educational Platform
 
 <a href="https://warp-speed.herokuapp.com/">![Deployed Application](https://img.shields.io/badge/Deployed%20App-Warp%20Speed-5498AC?style=for-the-badge)</a>
 
 ![License](https://img.shields.io/badge/license-MIT%20License-orange.svg)
 
 ## Description
-Warp Speed is an educational platform that helps users gain an advantage on the competition by learning about subjects that interest the user. Once the user signs up, they are taken to their dashboard to select from a few options including courses, chat and profile. The courses section will show subjects and each one has an introductory lesson included. The profile page will show the user credentials and allow for changes. The app also features a ChatBot that helps with any questions the user may have while using the app.
+Lite Speed is an educational platform that helps users gain an advantage on the competition by learning about subjects that interest the user. Once the user signs up, they are taken to their dashboard to select from a few options including courses, chat and profile. The courses section will show subjects and each one has an introductory lesson included. The profile page will show the user credentials and allow for changes. The app also features a ChatBot that helps with any questions the user may have while using the app.
 
 ## Table of Contents
 * [Technologies](#technologies)

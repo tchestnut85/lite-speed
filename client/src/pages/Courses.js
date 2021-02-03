@@ -9,7 +9,7 @@ function Courses() {
 
     const { data: lessonData } = useQuery(QUERY_LESSONS);
     // console.log('lessonData:', lessonData.lessons[0].courses._id);
-    console.log('lessonData:', lessonData);
+    // console.log('lessonData:', lessonData);
 
     const courses = courseData?.courses || {};
     // console.log('courses array', courses);

@@ -125,11 +125,6 @@ footer {
   background-color: var(--darkColor);
 }
 
-.signup-form {
-	float: right;
-	padding-right: 10px;
-}
-
 /* LANDING PAGE STYLE */
 .big-image {
 	height: 100vh;
@@ -306,26 +301,26 @@ button:hover {
 
 /* DASHBOARD STYLES */
 .circles-wrapper {
-	margin-bottom: 100px;
 	display: flex;
 	flex-wrap: wrap;
-	padding-top: 100px;
+	padding-top: 80px;
 	justify-content: center;
 	align-items: center;
-}
+	flex-direction: row;
+} 
 
 .dashboard-circles {
 	border: 5px solid var(--primaryColor);
-	margin: auto;
 	height: 250px;
 	width: 250px;
 	display: flex;
 	background-color: gray;
 	border-radius: 50%;
-	justify-content: center;
+	justify-content: space-around;
 	align-items: center;
-	color: white;
+	color: var(--lightColor);
 	text-decoration: none;
+	margin: 0 45px 45px 25px;
 }
 
 .dashboard-circles:hover {
@@ -451,7 +446,13 @@ button:hover {
 }
 
 /* COURSE LIST STYLE */
-.courses {
+.page-title {
+	text-align: center;
+	font-size: 45px;
+	margin-top: 35px;
+}
+
+.courses-wrapper {
 	display: flex;
 	flex-wrap: wrap;
 	padding-top: 80px;
@@ -471,15 +472,8 @@ button:hover {
 	font-size: 28px;
 }
 
-.page-title {
-	text-align: center;
-	font-size: 45px;
-	margin-top: 35px;
-}
-
 .courses-btn {
 	border: 5px solid var(--primaryColor);
-	margin: auto;
 	height: 250px;
 	width: 250px;
 	display: flex;
@@ -501,7 +495,6 @@ button:hover {
 
 /* LESSON STYLES */
 .lesson {
-	color: var(--secondaryColor);
 	margin-bottom: 150px;
 }
 

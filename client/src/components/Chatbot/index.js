@@ -44,7 +44,7 @@ function Chatbot() {
                 { value: 'courses', label: 'Courses', trigger: 'courseSelect' },
                 { value: 'profile', label: 'Profile', trigger: (() => window.location.replace('/profile')) },
                 { value: 'dashboard', label: 'Dashboard', trigger: (() => window.location.replace('/dashboard')) },
-                { value: 'join', label: 'Join Warp Speed', trigger: (() => window.location.replace('/signup')) },
+                { value: 'join', label: 'Join Lite Speed', trigger: (() => window.location.replace('/signup')) },
                 { value: false, label: 'Nevermind', trigger: 'endMessage' }
             ]
         },
