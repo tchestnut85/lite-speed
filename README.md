@@ -24,6 +24,7 @@ Warp Speed is an educational platform that helps users gain an advantage on the 
 ![MongoDB Atlas](https://img.shields.io/badge/MongoDB%20Atlas-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)  
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)  
 ![Mongoose.js](https://img.shields.io/badge/Mongoose.js-880000?style=for-the-badge)  
+![Apollo Server](https://img.shields.io/badge/Apollo%20Server-20232A?style=for-the-badge)  
 ![GraphQL Playground](https://img.shields.io/badge/GraphQL-FF4500?style=for-the-badge)    
 ![Heroku](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)  
 
