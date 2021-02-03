@@ -495,4 +495,13 @@ button:hover {
 	overflow-wrap: break-word;
 }
 
+.back-course button {
+	float: right;
+	margin-right: 45px;
+	text-decoration: none;
+	color: var(--lightColor);
+	background-color: var(--primaryColor);
+	font-weight: bold;
+	font-size: 18px;
+}
 

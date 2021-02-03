@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/warp-speed', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/lite-speed', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,

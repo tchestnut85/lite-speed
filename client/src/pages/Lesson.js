@@ -12,26 +12,28 @@ function Lesson() {
     const { loading, data } = useQuery(QUERY_LESSON, {
         variables: { id: lessonId }
     });
-
+    console.log(data);
+    // console.log(data.lesson);
     const lesson = data?.lesson || {};
     console.log('lesson:', lesson);
 
     useEffect(() => {
         if (data) {
-            data.products.forEach((lesson) => {
-                idbPromise('lessons', 'put', lesson);
-            });
+            idbPromise('lessons', 'put', data.lesson);
+            console.log(data.lesson);
         }
         // } else if (!loading) {
-        //     idbPromise('lessons', 'get').then((lessons) => {
-
-        //     });
+        //     console.log(lessons);
+        //     idbPromise('lessons', 'get')
+        //         .then(lessons.filter(lesson => lesson._id === lessonId));
         // }
     }, [data, loading]);
 
     if (loading) {
         return <div>Loading Lesson...</div>;
     }
+
+
 
     return (
         <section className='lesson'>
@@ -54,7 +56,7 @@ function Lesson() {
                 <article className="lesson-content">
                     {lesson.content}
                 </article>
-
+                <a href="/courses" className="back-course"><button>Go back to course list &#8594; </button></a>
             </div>
         </section>
     );

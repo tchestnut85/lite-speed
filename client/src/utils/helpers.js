@@ -5,7 +5,7 @@ export function capitalizeFirstLetter(string) {
 export function idbPromise(storeName, method, object) {
     return new Promise((resolve, reject) => {
 
-        const request = window.indexedDB.open('warp-speed', 1);
+        const request = window.indexedDB.open('lite-speed', 1);
 
         let db, tx, store;
 
@@ -13,6 +13,7 @@ export function idbPromise(storeName, method, object) {
             const db = request.result;
             db.createObjectStore('courses', { keyPath: '_id' });
             db.createObjectStore('lessons', { keyPath: '_id' });
+            db.createObjectStore('user', { keyPath: '_id' });
         };
 
         request.onerror = function (e) {

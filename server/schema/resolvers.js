@@ -21,36 +21,12 @@ const resolvers = {
         };
       }
 
-      // const lesson = await Lesson.findById(lesson._id).populate({
-      //   path: 'courses.lessons',
-      //   populate: 'lesson'
-      // });
       return await Lesson.find(params).populate('courses');
     },
-
-    // lessons: async (parent, { courseId }) => {
-    //   const params = {};
-
-    //   if (courseId) {
-    //     params.courseId = courseId;
-    //   }
-
-    //   return await Lesson.find(params).populate('courseId');
-    // },
 
     lesson: async (parent, { _id }, context) => {
       return await Lesson.findById(_id).populate('courses');
     },
-
-    // lesson: async (parent, { _id }, context) => {
-    //   if (context.courses) {
-    //     const courses = await Courses.findById(context.courses._id).populate({
-    //       path: 'lessons',
-    //       populate: 'courses'
-    //     });
-    //     return await courses.lessons.id(_id);
-    //   }
-    // },
 
     users: async () => {
       return User.find().select('-__v -password');
@@ -81,7 +57,7 @@ const resolvers = {
           { _id: context.user },
           { $set: { args } },
           { new: true }
-        )
+        );
       };
       throw new AuthenticationError('Not logged in');
     },
