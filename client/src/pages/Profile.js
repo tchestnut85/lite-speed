@@ -1,9 +1,9 @@
-import { UPDATE_USER } from '../utils/mutations';
 import { React, useState } from 'react';
 import { useMutation, useQuery } from '@apollo/react-hooks';
 
 import Auth from '../utils/auth';
 import { QUERY_ME } from '../utils/queries';
+import { UPDATE_USER } from '../utils/mutations';
 import { capitalizeFirstLetter } from '../utils/helpers';
 
 function Profile() {
@@ -13,7 +13,6 @@ function Profile() {
 
 
     const userData = data?.me || {};
-    console.log("userData: ", userData);
 
     const [updateUser] = useMutation(UPDATE_USER, {
         variables: { _id: userData._id }
@@ -74,10 +73,10 @@ function Profile() {
                             <h4>Last Name:</h4>
                             <p>{capitalizeFirstLetter(userData.lastName)}</p>
                         </div>
-                        <div className="settings-password">
+                        {/* <div className="settings-password">
                             <h4>Password:</h4>
                             <input type="password" value='placeholder' id='password-input' />
-                        </div>
+                        </div> */}
                     </div>
                 </div>
                 <div className="edit-settings-wrapper">

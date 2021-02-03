@@ -9,7 +9,6 @@ function Dashboard() {
     const { loading, data } = useQuery(QUERY_ME);
 
     const userData = data?.me || {};
-    console.log("userData: ", userData)
 
     if (loading) {
         return <div>Loading...</div>
