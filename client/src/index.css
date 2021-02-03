@@ -471,7 +471,7 @@ button:hover {
 	text-align: center;
 }
 
-img {
+.lesson-img {
 	width: 40%;
 	float: left;
 	margin: 20px 15px 15px 50px;

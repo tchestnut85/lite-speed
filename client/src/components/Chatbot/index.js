@@ -1,5 +1,6 @@
+import Auth from '../../utils/auth';
 import ChatBot from 'react-simple-chatbot';
-import Emoji from '../../assets/thinking-emoji.jpg';
+import Help from '../../assets/help.jpg';
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 
@@ -8,7 +9,7 @@ function Chatbot() {
     const steps = [
         {
             id: 'namePrompt',
-            message: 'Hello! What\'s your name?',
+            message: 'Hello, what\'s your name?',
             trigger: 'name',
         },
         {
@@ -19,10 +20,12 @@ function Chatbot() {
         {
             id: 'help',
             message: 'Hi {previousValue}, do you need help with something?',
+            hideInput: true,
             trigger: 'helpConfirm'
         },
         {
             id: 'helpConfirm',
+            hideInput: true,
             options: [
                 { value: true, label: 'Yes', trigger: 'helpOptions' },
                 { value: false, label: 'No', trigger: 'endMessage' }
@@ -31,39 +34,40 @@ function Chatbot() {
         {
             id: 'helpOptions',
             message: 'What can I help you with?',
+            hideInput: true,
             trigger: 'chooseOption'
         },
         {
             id: 'chooseOption',
+            hideInput: true,
             options: [
                 { value: 'courses', label: 'Courses', trigger: 'courseSelect' },
                 { value: 'profile', label: 'Profile', trigger: (() => window.location.replace('/profile')) },
                 { value: 'dashboard', label: 'Dashboard', trigger: (() => window.location.replace('/dashboard')) },
                 { value: 'join', label: 'Join Warp Speed', trigger: (() => window.location.replace('/signup')) },
-                { value: false, label: 'Nevermind', trigger: 'exitConfirm' }
+                { value: false, label: 'Nevermind', trigger: 'endMessage' }
             ]
         },
         {
             id: 'courseSelect',
+            hideInput: true,
             options: [
-                { value: 'Astronomy', label: 'Astronomy', trigger: 'learnMore' },
-                { value: 'Biology', label: 'Biology', trigger: 'learnMore' },
-                { value: 'History', label: 'History', trigger: 'learnMore' },
+                { value: 'Space', label: 'Space', trigger: (() => Auth.loggedIn() ? window.location.replace('/courses/60174b423680971d7839e1a7') : window.location.replace('/signup')) },
+                { value: 'Science', label: 'Science', trigger: (() => Auth.loggedIn() ? window.location.replace('/courses/60174b423680971d7839e1a8') : window.location.replace('/signup')) },
+                { value: 'History', label: 'History', trigger: (() => Auth.loggedIn() ? window.location.replace('/courses/60174b423680971d7839e1a9') : window.location.replace('/signup')) },
+                { value: 'Mathematics', label: 'Mathematics', trigger: (() => Auth.loggedIn() ? window.location.replace('/courses/60174b423680971d7839e1aa') : window.location.replace('/signup')) },
                 { value: false, label: 'Nevermind', trigger: 'exit' }
             ]
         },
         {
-            id: 'learnMore',
-            message: 'Learn more about {previousValue} here (include a link to the relevant course).',
-            trigger: 'exit'
-        },
-        {
             id: 'exit',
+            hideInput: true,
             message: 'Do you need help with anything else?',
             trigger: 'exitConfirm'
         },
         {
             id: 'exitConfirm',
+            hideInput: true,
             options: [
                 { value: true, label: 'Yes', trigger: 'helpOptions' },
                 { value: false, label: 'No', trigger: 'endMessage' }
@@ -71,11 +75,13 @@ function Chatbot() {
         },
         {
             id: 'endMessage',
+            hideInput: true,
             message: 'Farewell! If you have another question, let me know!',
             trigger: 'repeat'
         },
         {
             id: 'repeat',
+            hideInput: true,
             options: [
                 { value: true, label: 'Ask Another Question', trigger: 'helpOptions' }
             ]
@@ -99,7 +105,7 @@ function Chatbot() {
             <div>
                 <ThemeProvider theme={theme}>
                     <ChatBot
-                        botAvatar={Emoji}
+                        botAvatar={Help}
                         steps={steps}
                         floating={true}
                         userDelay={250} />
