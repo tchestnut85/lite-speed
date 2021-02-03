@@ -20,9 +20,6 @@ function Courses() {
 
     const getLesson = (courseId, i) => {
         const lesson = lessonData.lessons.filter(lesson => lesson.courses._id === courseId);
-        console.log(courseId);
-        console.log('lesson:', lesson);
-        console.log('i:', i);
         window.location.replace(`/courses/${lesson[0]._id}`);
     };
 
@@ -31,7 +28,7 @@ function Courses() {
             <h1 className="page-title">
                 Available Courses
             </h1>
-            
+
             <section className='courses-wrapper'>
                 <div className='course-titles'>
                     {courses.map((course, i) => (
