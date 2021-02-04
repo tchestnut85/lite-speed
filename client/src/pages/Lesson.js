@@ -5,15 +5,12 @@ import { useQuery } from '@apollo/react-hooks';
 
 function Lesson() {
     const { id: lessonId } = useParams();
-    console.log(lessonId);
 
     const { loading, data } = useQuery(QUERY_LESSON, {
         variables: { id: lessonId }
     });
-    console.log('data:', data);
 
     const lesson = data?.lesson || {};
-    console.log('lesson:', lesson);
 
     if (loading) {
         return <div>Loading Lesson...</div>;
