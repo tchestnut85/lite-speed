@@ -53,18 +53,12 @@ function Profile() {
             <h1 className="profile-header">
                 Welcome {capitalizeFirstLetter(userData.firstName)} {capitalizeFirstLetter(userData.lastName)}
             </h1>
-            <section className="flex-row">
+            <section className="flex-row settings-wrapper">
                 <div className="settings-container">
                     <div>
                         <h3>Your Settings</h3>
                     </div>
                     <div className="settings-content">
-                        <div className="settings-email" id="email-container">
-                            <h4>Email:</h4>
-                            <div className='flex-row'>
-                                <p>{userData.email}</p>
-                            </div>
-                        </div>
                         <div className="settings-firstName">
                             <h4>First Name:</h4>
                             <p>{capitalizeFirstLetter(userData.firstName)}</p>
@@ -73,35 +67,37 @@ function Profile() {
                             <h4>Last Name:</h4>
                             <p>{capitalizeFirstLetter(userData.lastName)}</p>
                         </div>
-                        {/* <div className="settings-password">
-                            <h4>Password:</h4>
-                            <input type="password" value='placeholder' id='password-input' />
-                        </div> */}
+                        <div className="settings-email" id="email-container">
+                            <h4>Email:</h4>
+                            <div className='flex-row'>
+                                <p>{userData.email}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div className="edit-settings-wrapper">
+                <div className="edit-settings-container">
                     <div>
                         <h3>Edit Settings</h3>
                     </div>
-                    <form id='signup-form' onSubmit={handleUpdate}>
-                        <div className="flex-row space-between my-2">
-                            <label htmlFor="email">Email:</label>
-                            <input placeholder='Your Email' className='' id="email" name='email' type='email' onBlur={handleChange} />
-                        </div>
+                    <form className='edit-settings-form' id='signup-form' onSubmit={handleUpdate}>
                         <div className="flex-row space-between my-2">
                             <label htmlFor="firstName">First Name:</label>
-                            <input placeholder='Your Name' className='' id="firstName" name='firstName' type='firstName' onBlur={handleChange} />
+                            <input placeholder='Enter New Name' className='' id="firstName" name='firstName' type='firstName' onBlur={handleChange} />
                         </div>
                         <div className="flex-row space-between my-2">
                             <label htmlFor="lastName">Last Name:</label>
-                            <input placeholder='Your Last Name' className='' id="lastName" name='lastName' type='lastName' onBlur={handleChange} />
+                            <input placeholder='Enter New Name' className='' id="lastName" name='lastName' type='lastName' onBlur={handleChange} />
+                        </div>
+                        <div className="flex-row space-between my-2">
+                            <label htmlFor="email">Email:</label>
+                            <input placeholder='Enter New Email' className='' id="email" name='email' type='email' onBlur={handleChange} />
                         </div>
                         <div className="flex-row space-between my-2">
                             <label htmlFor="password">Password:</label>
                             <input type="password" placeholder='******' className='' id="password" name='password' onChange={handleChange} />
                         </div>
-                        <div className="flex-row flex-end">
-                            <button type='submit'>Edit</button>
+                        <div className="flex-row flex-end form-button-wrapper">
+                            <button className='form-button' type='submit'>Edit</button>
                         </div>
                     </form>
                 </div>
