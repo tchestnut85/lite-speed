@@ -44,7 +44,7 @@ function Lesson() {
                 <article className="lesson-content">
                     {lesson.content}
                 </article>
-
+                <a href="/courses" className="back-course"><button>Go back to course list &#8594; </button></a>
             </div>
         </section>
     );

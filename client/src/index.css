@@ -305,7 +305,7 @@ button:hover {
 .circles-wrapper {
 	display: flex;
 	flex-wrap: wrap;
-	padding-top: 80px;
+	padding-top: 200px;
 	justify-content: center;
 	align-items: center;
 	flex-direction: row;
@@ -457,7 +457,7 @@ button:hover {
 .courses-wrapper {
 	display: flex;
 	flex-wrap: wrap;
-	padding-top: 80px;
+	padding-top: 200px;
 	justify-content: space-between;
 	align-items: center;
 	flex-direction: column;
@@ -530,4 +530,13 @@ button:hover {
 	white-space: pre-wrap;
 }
 
+.back-course button {
+	float: right;
+	margin-right: 45px;
+	text-decoration: none;
+	color: var(--lightColor);
+	background-color: var(--primaryColor);
+	font-weight: bold;
+	font-size: 18px;
+}
 
