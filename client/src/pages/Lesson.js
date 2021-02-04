@@ -1,7 +1,3 @@
-// import { useDispatch, useSelector } from 'react-redux';
-
-// import { useEffect, useState } from 'react';
-
 import { QUERY_LESSON } from '../utils/queries';
 import React from 'react';
 import { useParams } from 'react-router-dom';

@@ -47,9 +47,3 @@ const typeDefs = gql`
 `;
 
 module.exports = typeDefs;
-
-// type Courses {
-//   _id: ID;
-//   title: String;
-//   lessons: [Lesson];
-// };

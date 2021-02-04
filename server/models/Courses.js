@@ -6,13 +6,7 @@ const coursesSchema = new Schema({
     type: String,
     required: true,
     trim: true
-  },
-  // lessons: [
-  //   {
-  //     type: Schema.Types.ObjectId,
-  //     ref: 'Lesson'
-  //   }
-  // ]
+  }
 });
 
 const Courses = mongoose.model('Courses', coursesSchema);

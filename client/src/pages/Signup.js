@@ -33,7 +33,6 @@ function Signup() {
             [name]: value
         });
     };
-    console.log(formState);
 
     return (
         <div className='signup-image'>

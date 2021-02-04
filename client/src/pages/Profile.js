@@ -19,12 +19,10 @@ function Profile() {
     });
 
     if (loading) {
-        return <div>Loading...</div>
+        return <div>Loading...</div>;
     };
 
     const handleUpdate = async event => {
-        console.log('test');
-        console.log(formState);
         event.preventDefault();
         const me = await updateUser({
             variables: {
