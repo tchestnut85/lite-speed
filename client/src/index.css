@@ -415,7 +415,7 @@ button:hover {
 
 .edit-settings-container {
 	background-color: var(--darkColor);
-	margin: 20px 50px;
+	margin: 0 50px;
 	width: 272px;
 	height: 400px;
 	border-radius: 15px;
