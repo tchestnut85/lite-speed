@@ -1,6 +1,6 @@
 # Lite Speed Educational Platform
 
-<a href="https://warp-speed.herokuapp.com/">![Deployed Application](https://img.shields.io/badge/Deployed%20App-Lite%20Speed-5498AC?style=for-the-badge)</a>
+<a href="https://lite-speed.herokuapp.com/">![Deployed Application](https://img.shields.io/badge/Deployed%20App-Lite%20Speed-5498AC?style=for-the-badge)</a>
 
 ![License](https://img.shields.io/badge/license-MIT%20License-orange.svg)
 
@@ -29,8 +29,22 @@ Lite Speed is an educational platform that helps users gain an advantage on the 
 ![Heroku](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)  
 
 ## Screenshots
-#### Homepage
-![Screenshots]()
+#### Landing Page
+![Screenshots](./client/src/assets/images/screenshot_landingpage.png)
+#### Signup Page
+![Screenshots](./client/src/assets/images/screenshot_signup.png)
+#### Login Page
+![Screenshots](./client/src/assets/images/screenshot_login.png)
+#### ChatBot Feature (can be used before signing up and when logged in)
+![Screenshots](./client/src/assets/images/screenshot_chatbot.png)
+#### After Login, user is taken to Dashboard Page
+![Screenshots](./client/src/assets/images/screenshot_dashboard.png)
+#### Courses Page
+![Screenshots](./client/src/assets/images/screenshot_courses.png)
+#### Lesson Page
+![Screenshots](./client/src/assets/images/screenshot_lesson.png)
+#### Profile Page
+![Screenshots](./client/src/assets/images/screenshot_profile.png)
 
 ## Enhancements
 The tasks for this project include: 
@@ -40,12 +54,13 @@ The tasks for this project include:
 * Deploy using Heroku with Course/lesson data 
 * Progressive Web App using a web manifest, service worker for offline functionality and is installable
 * Includes authentication using JSON Web Tokens and hashes user password with bcrypt
+* Added React Simple Chatbot to help a user if they have an questions while interacting with the app
 
 ## Contributors
 Tom Chestnut, Peyton Schlafley and Brian Spiewak
 
 ## Links
-<a href="https://warp-speed.herokuapp.com/">![Deployed Application](https://img.shields.io/badge/Deployed%20App-Lite%20Speed-5498AC?style=for-the-badge)</a> 
+<a href="https://lite-speed.herokuapp.com/">![Deployed Application](https://img.shields.io/badge/Deployed%20App-Lite%20Speed-5498AC?style=for-the-badge)</a>
 
 <a href="https://github.com/tchestnut85/lite-speed">![GitHub Repository](https://img.shields.io/badge/GitHub%20Repository-100000?style=for-the-badge&logo=github&logoColor=white)</a>  
 

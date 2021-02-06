@@ -1,5 +1,6 @@
 import { QUERY_LESSON } from '../utils/queries';
 import React from 'react';
+// import { idbPromise } from '../utils/helpers';
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/react-hooks';
 
@@ -12,9 +13,25 @@ function Lesson() {
 
     const lesson = data?.lesson || {};
 
+    // IndexedDB functionality to be implemented later
+    // useEffect(() => {
+    //     if (data) {
+    //         idbPromise('lessons', 'put', data.lesson);
+    //         console.log(data.lesson);
+    //     } else if (!loading) {
+    //         idbPromise('lessons', 'get').then(
+    //             (lessons) => {
+    //                 const idbLesson = lessons.filter(lesson => lesson._id === lessonId);
+    //                 console.log('idbLesson:', idbLesson);
+    //             });
+    //     }
+    // }, [data, loading]);
+
     if (loading) {
         return <div>Loading Lesson...</div>;
     }
+
+
 
     return (
         <section className='lesson'>

@@ -24,6 +24,7 @@ export const QUERY_ALL_COURSES = gql`
 export const QUERY_LESSON = gql`
     query lesson($id: ID!) {
         lesson(_id: $id) {
+            _id
             courses {
                 _id
                 title

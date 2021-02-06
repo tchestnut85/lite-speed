@@ -134,7 +134,7 @@ footer {
 	float: left;
 	position: relative;
 	background-size: cover;
-	background-image: url('../src/assets/cover1.jpg');
+	background-image: url('../src/assets/images/cover1.jpg');
 }
 
 .overlay {
@@ -219,7 +219,7 @@ label {
 	float: left;
 	position: relative;
 	background-size: cover;
-	background-image: url('../src/assets/cover2.jpg');
+	background-image: url('../src/assets/images/cover2.jpg');
 }
 
 .login-overlay {
@@ -239,7 +239,7 @@ label {
 	float: left;
 	position: relative;
 	background-size: cover;
-	background-image: url('../src/assets/cover3.jpg');
+	background-image: url('../src/assets/images/cover3.jpg');
 }
 
 .signup-overlay {
@@ -299,7 +299,7 @@ button:hover {
 	float: left;
 	position: relative;
 	background-size: cover;
-	background-image: url('../src/assets/404-2.jpg');
+	background-image: url('../src/assets/images/404.jpg');
 }
 
 /* DASHBOARD STYLES */

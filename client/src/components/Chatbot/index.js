@@ -1,6 +1,6 @@
 import Auth from '../../utils/auth';
 import ChatBot from 'react-simple-chatbot';
-import Help from '../../assets/help.jpg';
+import Help from '../../assets/images/help.jpg';
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 
