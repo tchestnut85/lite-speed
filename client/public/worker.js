@@ -8,14 +8,7 @@ const urlsToCache = [
     './images/cover2.jpg',
     './images/cover3.jpg',
     './images/help.jpg',
-    './manifest.json',
-    './android-chrome-192x192.jpg',
-    './android-chrome-512x512.jpg',
-    './favicon-16x16.jpg',
-    './favicon-32x32.jpg',
-    './favicon.ico',
-    './logo192.png',
-    './logo512.png'
+    './manifest.json'
 ];
 
 // Install a service worker
