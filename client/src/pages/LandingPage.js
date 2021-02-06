@@ -8,7 +8,7 @@ function LandingPage() {
             <div className="overlay">
                 <div className='landing-nav'>
                     <Link to="/" className="landing-nav-title">
-                        <h1>Warp <i>Speed</i></h1>
+                        <h1>Lite <i>Speed</i></h1>
                     </Link>
 
                     <nav className='landing-navbar'>

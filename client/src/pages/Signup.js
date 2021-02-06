@@ -33,14 +33,13 @@ function Signup() {
             [name]: value
         });
     };
-    console.log(formState);
 
     return (
         <div className='signup-image'>
             <div className="signup-overlay">
                 <div className='landing-nav'>
                     <Link to="/" className="landing-nav-title">
-                        <h1>Warp <i>Speed</i></h1>
+                        <h1>Lite <i>Speed</i></h1>
                     </Link>
                 </div>
                 <div className="signup-container my-1">
@@ -48,7 +47,7 @@ function Signup() {
                         <h4> Already a user? Go to Login &#8594;</h4>
                     </Link>
 
-                    <h2 className="signup-title">Signup to start exploring Warp Speed!</h2>
+                    <h2 className="signup-title">Signup to start exploring Lite Speed!</h2>
 
                     <form id='signup-form' onSubmit={handleFormSubmit}>
                         <div className="flex-row space-between my-2">

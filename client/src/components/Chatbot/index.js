@@ -44,7 +44,7 @@ function Chatbot() {
                 { value: 'courses', label: 'Courses', trigger: 'courseSelect' },
                 { value: 'profile', label: 'Profile', trigger: (() => window.location.replace('/profile')) },
                 { value: 'dashboard', label: 'Dashboard', trigger: (() => window.location.replace('/dashboard')) },
-                { value: 'join', label: 'Join Warp Speed', trigger: (() => window.location.replace('/signup')) },
+                { value: 'join', label: 'Join Lite Speed', trigger: (() => window.location.replace('/signup')) },
                 { value: false, label: 'Nevermind', trigger: 'endMessage' }
             ]
         },
@@ -52,10 +52,10 @@ function Chatbot() {
             id: 'courseSelect',
             hideInput: true,
             options: [
-                { value: 'Space', label: 'Space', trigger: (() => Auth.loggedIn() ? window.location.replace(`/courses/60174b423680971d7839e1a7`) : window.location.replace('/signup')) },
-                { value: 'Science', label: 'Science', trigger: (() => Auth.loggedIn() ? window.location.replace('/courses/60174b423680971d7839e1a8') : window.location.replace('/signup')) },
-                { value: 'History', label: 'History', trigger: (() => Auth.loggedIn() ? window.location.replace('/courses/60174b423680971d7839e1a9') : window.location.replace('/signup')) },
-                { value: 'Mathematics', label: 'Mathematics', trigger: (() => Auth.loggedIn() ? window.location.replace('/courses/60174b423680971d7839e1aa') : window.location.replace('/signup')) },
+                { value: 'Space', label: 'Space', trigger: (() => Auth.loggedIn() ? window.location.replace('/courses/601b53864c55360004d937ff') : window.location.replace('/signup')) },
+                { value: 'Science', label: 'Science', trigger: (() => Auth.loggedIn() ? window.location.replace('/courses/601b53864c55360004d93800') : window.location.replace('/signup')) },
+                { value: 'History', label: 'History', trigger: (() => Auth.loggedIn() ? window.location.replace('/courses/601b53864c55360004d93801') : window.location.replace('/signup')) },
+                { value: 'Mathematics', label: 'Mathematics', trigger: (() => Auth.loggedIn() ? window.location.replace('/courses/601b53864c55360004d93802') : window.location.replace('/signup')) },
                 { value: false, label: 'Nevermind', trigger: 'exit' }
             ]
         },

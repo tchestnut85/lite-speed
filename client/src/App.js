@@ -33,7 +33,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div className="flex-column justify-flex-start min-100-vh">
+        <div>
           {Auth.loggedIn() ? (
             <>
               <Header />
@@ -52,7 +52,6 @@ function App() {
                 <Route exact path="/login" component={Login} />
                 <Route exact path="/" component={LandingPage} />
                 <Route exact path="/signup" component={Signup} />
-                {/* <Route component={NotFound} /> */}
               </>
             )}
           <Footer />

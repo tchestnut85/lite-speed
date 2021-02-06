@@ -8,7 +8,6 @@ function Courses() {
     const { loading: courseLoading, data: courseData } = useQuery(QUERY_ALL_COURSES);
 
     const { data: lessonData } = useQuery(QUERY_LESSONS);
-    console.log('lessonData:', lessonData);
 
     const courses = courseData?.courses || {};
 
@@ -18,9 +17,6 @@ function Courses() {
 
     const getLesson = (courseId, i) => {
         const lesson = lessonData.lessons.filter(lesson => lesson.courses._id === courseId);
-        console.log(courseId);
-        console.log('lesson:', lesson);
-        console.log('i:', i);
         window.location.replace(`/courses/${lesson[0]._id}`);
     };
 

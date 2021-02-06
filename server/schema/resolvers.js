@@ -40,6 +40,16 @@ const resolvers = {
       }
 
       throw new AuthenticationError('Not logged in');
+    },
+
+    user: async (parent, args, context) => {
+      if (context.user) {
+        const user = await User.findOne({ _id: context.user });
+
+        return user;
+      }
+
+      throw new AuthenticationError('Not logged in');
     }
   },
 
@@ -52,14 +62,20 @@ const resolvers = {
     },
 
     updateUser: async (parent, args, context) => {
+      console.log(args);
       if (context.user) {
-        return await User.findByIdAndUpdate(
-          { _id: context.user },
-          { $set: { args } },
+        const updatedUser = await User.findByIdAndUpdate(
+          { _id: context.user._id },
+          args,
           { new: true }
         );
+<<<<<<< HEAD
       };
       throw new AuthenticationError('Not logged in');
+=======
+        return updatedUser;
+      }
+>>>>>>> develop
     },
 
 
@@ -76,6 +92,17 @@ const resolvers = {
         throw new AuthenticationError('Incorrect credentials');
       }
 
+      const token = signToken(user);
+
+      return { token, user };
+    },
+
+    changePassword: async (parent, args, context) => {
+      const user = await User.findOneAndUpdate(
+        { password: context.user.password },
+        args,
+        { new: true }
+      );
       const token = signToken(user);
 
       return { token, user };

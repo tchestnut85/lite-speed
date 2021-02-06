@@ -6,9 +6,9 @@ function Footer() {
         <footer>
             <div className='flex-row space-between'>
                 <div>
-                    <h2>Warp <i>Speed</i></h2>
+                    <h2>Lite <i>Speed</i></h2>
                     <p>
-                        Expand your skill set and knowledge base at the speed of light
+                        Expand your knowledge and skill set at the speed of light
                     </p>
                 </div>
             </div>

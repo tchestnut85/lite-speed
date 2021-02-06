@@ -13,9 +13,13 @@
 	padding: 0px;
 }
 
+html,
+body {
+	min-height: 100%;
+}
+
 body {
 	margin: 0;
-	min-height: 100%;
 	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
 		'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 	-webkit-font-smoothing: antialiased;
@@ -42,10 +46,11 @@ code {
 }
 
 .container {
-	/* width: 85%; */
-	/* max-width: 1200px; */
+	min-height: 100vh;
+	padding-bottom: 100px;
 	margin-left: auto;
 	margin-right: auto;
+	position: relative;
 }
 
 .mx-1 {
@@ -115,19 +120,11 @@ header {
 
 /* FOOTER STYLES */
 footer {
-  bottom: 0;
-  /* position: absolute; */
-  position: fixed;
-  padding: 30px;
-  margin-top: 25px;
-  width: 100%;
-  color: var(--lightColor);
-  background-color: var(--darkColor);
-}
-
-.signup-form {
-	float: right;
-	padding-right: 10px;
+	bottom: 0;
+	padding: 30px;
+	width: 100%;
+	color: var(--lightColor);
+	background-color: var(--darkColor);
 }
 
 /* LANDING PAGE STYLE */
@@ -191,9 +188,9 @@ footer {
 
 .hero-subtext {
 	color: var(--lightColor);
-	margin: 55px;
+	margin: 15px;
 	text-align: center;
-	font-size: 35px;
+	font-size: 30px;
 }
 
 /* LOGIN/SIGNUP STYLES */
@@ -208,7 +205,8 @@ label {
 	font-weight: bold;
 }
 
-.login-container, .signup-container {
+.login-container,
+.signup-container {
 	width: 85%;
 	/* max-width: 1200px; */
 	margin-left: auto;
@@ -306,26 +304,26 @@ button:hover {
 
 /* DASHBOARD STYLES */
 .circles-wrapper {
-	margin-bottom: 100px;
 	display: flex;
 	flex-wrap: wrap;
-	padding-top: 100px;
+	padding-top: 200px;
 	justify-content: center;
 	align-items: center;
+	flex-direction: row;
 }
 
 .dashboard-circles {
 	border: 5px solid var(--primaryColor);
-	margin: auto;
 	height: 250px;
 	width: 250px;
 	display: flex;
 	background-color: gray;
 	border-radius: 50%;
-	justify-content: center;
+	justify-content: space-around;
 	align-items: center;
-	color: white;
+	color: var(--lightColor);
 	text-decoration: none;
+	margin: 0 45px 45px 25px;
 }
 
 .dashboard-circles:hover {
@@ -372,22 +370,23 @@ button:hover {
 .profile-header {
 	color: var(--darkColor);
 	text-align: center;
+	padding-top: 15px;
 	font-size: 45px;
-	margin-top: 35px;
-	margin-bottom: 35px;
+	margin-top: 50px;
+}
+
+.settings-wrapper {
+	justify-content: space-around;
+	margin: 0 auto;
+	padding-top: 100px;
 }
 
 .settings-container {
 	background-color: lightgray;
-	width: 250px;
+	width: 272px;
 	height: 400px;
 	border-radius: 15px;
 	border: 1px solid;
-	margin-left: 100px;
-}
-
-.settings-container:hover {
-	box-shadow: -10px 15px 40px;
 }
 
 .settings-container h3 {
@@ -405,17 +404,69 @@ button:hover {
 	padding: 20px;
 }
 
+.settings-content {
+	margin-top: 35px;
+}
+
 .settings-container h4 {
 	text-decoration: underline;
 	padding-bottom: 5px;
 }
 
-/* COURSES LIST STYLE */
+.edit-settings-container {
+	background-color: var(--darkColor);
+	margin: 0 50px;
+	width: 272px;
+	height: 400px;
+	border-radius: 15px;
+	border: 1px solid;
+}
+
+.edit-settings-container h3 {
+	color: var(--lightColor);
+	text-align: center;
+	padding: 20px;
+	background-color: var(--primaryColor);
+	border-radius: 15px;
+}
+
+.edit-settings-container label {
+	margin-bottom: 5px;
+	text-decoration: underline;
+}
+
+.edit-settings-form {
+	padding-left: 15px;
+}
+
+.form-label {
+	padding-bottom: 10px;
+	text-decoration: underline;
+}
+
+.form-button-wrapper {
+	padding-right: 25px;
+}
+
+.form-button {
+	background-color: var(--lightColor);
+}
+
+.form-button:hover {
+	background-color: var(--primaryColor);
+}
+
+/* COURSE LIST STYLE */
+.page-title {
+	text-align: center;
+	font-size: 45px;
+	margin-top: 35px;
+}
+
 .courses-wrapper {
-	margin-bottom: 100px;
 	display: flex;
 	flex-wrap: wrap;
-	padding-top: 80px;
+	padding-top: 200px;
 	justify-content: space-between;
 	align-items: center;
 	flex-direction: column;
@@ -432,15 +483,8 @@ button:hover {
 	font-size: 28px;
 }
 
-.page-title {
-	text-align: center;
-	font-size: 45px;
-	margin-top: 35px;
-}
-
 .courses-btn {
 	border: 5px solid var(--primaryColor);
-	margin: auto;
 	height: 250px;
 	width: 250px;
 	display: flex;
@@ -462,8 +506,7 @@ button:hover {
 
 /* LESSON STYLES */
 .lesson {
-	color: var(--darkColor);
-  	margin-bottom: 250px;
+	margin-bottom: 150px;
 }
 
 .lesson-title {
@@ -474,13 +517,13 @@ button:hover {
 .lesson-img {
 	width: 40%;
 	float: left;
-	margin: 20px 15px 15px 20px;
+	margin: 20px 15px 15px 50px;
 }
 
 .lesson-intro {
 	font-size: 16px;
 	padding: 10px;
-	margin-bottom: 35px;
+	margin: 10px 40px 35px 40px;
 }
 
 .lesson-name {
@@ -491,8 +534,9 @@ button:hover {
 .lesson-content {
 	font-size: 16px;
 	padding: 20px;
-	margin-bottom: 35px;
+	margin: 0 40px 35px 40px;
 	overflow-wrap: break-word;
+	white-space: pre-wrap;
 }
 
 .back-course button {
