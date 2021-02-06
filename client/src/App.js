@@ -43,6 +43,7 @@ function App() {
                   <Route exact path="/dashboard" component={Dashboard} />
                   <Route exact path='/courses' component={Courses} />
                   <Route exact path='/courses/:id' component={Lesson} />
+                  <Route exact path="/" component={Dashboard} />
                   <Route component={NotFound} />
                 </Switch>
               </div>
