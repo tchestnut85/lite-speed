@@ -1,6 +1,6 @@
 # Lite Speed Educational Platform
 
-<a href="https://warp-speed.herokuapp.com/">![Deployed Application](https://img.shields.io/badge/Deployed%20App-Lite%20Speed-5498AC?style=for-the-badge)</a>
+<a href="https://lite-speed.herokuapp.com/">![Deployed Application](https://img.shields.io/badge/Deployed%20App-Lite%20Speed-5498AC?style=for-the-badge)</a>
 
 ![License](https://img.shields.io/badge/license-MIT%20License-orange.svg)
 
@@ -60,7 +60,7 @@ The tasks for this project include:
 Tom Chestnut, Peyton Schlafley and Brian Spiewak
 
 ## Links
-<a href="https://warp-speed.herokuapp.com/">![Deployed Application](https://img.shields.io/badge/Deployed%20App-Lite%20Speed-5498AC?style=for-the-badge)</a> 
+<a href="https://lite-speed.herokuapp.com/">![Deployed Application](https://img.shields.io/badge/Deployed%20App-Lite%20Speed-5498AC?style=for-the-badge)</a>
 
 <a href="https://github.com/tchestnut85/lite-speed">![GitHub Repository](https://img.shields.io/badge/GitHub%20Repository-100000?style=for-the-badge&logo=github&logoColor=white)</a>  
 
