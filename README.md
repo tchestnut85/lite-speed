@@ -30,21 +30,21 @@ Lite Speed is an educational platform that helps users gain an advantage on the 
 
 ## Screenshots
 #### Landing Page
-![Screenshots](./client/src/assets/screenshot_landingpage.png)
+![Screenshots](./client/src/assets/images/screenshot_landingpage.png)
 #### Signup Page
-![Screenshots](./client/src/assets/screenshot_signup.png)
+![Screenshots](./client/src/assets/images/screenshot_signup.png)
 #### Login Page
-![Screenshots](./client/src/assets/screenshot_login.png)
+![Screenshots](./client/src/assets/images/screenshot_login.png)
 #### ChatBot Feature (can be used before signing up and when logged in)
-![Screenshots](./client/src/assets/screenshot_chatbot.png)
+![Screenshots](./client/src/assets/images/screenshot_chatbot.png)
 #### After Login, user is taken to Dashboard Page
-![Screenshots](./client/src/assets/screenshot_dashboard.png)
+![Screenshots](./client/src/assets/images/screenshot_dashboard.png)
 #### Courses Page
-![Screenshots](./client/src/assets/screenshot_courses.png)
+![Screenshots](./client/src/assets/images/screenshot_courses.png)
 #### Lesson Page
-![Screenshots](./client/src/assets/screenshot_lesson.png)
+![Screenshots](./client/src/assets/images/screenshot_lesson.png)
 #### Profile Page
-![Screenshots](./client/src/assets/screenshot_profile.png)
+![Screenshots](./client/src/assets/images/screenshot_profile.png)
 
 ## Enhancements
 The tasks for this project include: 
