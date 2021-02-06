@@ -69,13 +69,8 @@ const resolvers = {
           args,
           { new: true }
         );
-<<<<<<< HEAD
-      };
-      throw new AuthenticationError('Not logged in');
-=======
         return updatedUser;
       }
->>>>>>> develop
     },
 
 

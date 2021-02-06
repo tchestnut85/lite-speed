@@ -18,12 +18,13 @@ function Lesson() {
         if (data) {
             idbPromise('lessons', 'put', data.lesson);
             console.log(data.lesson);
+        } else if (!loading) {
+            idbPromise('lessons', 'get').then(
+                (lessons) => {
+                    const idbLesson = lessons.filter(lesson => lesson._id === lessonId);
+                    console.log('idbLesson:', idbLesson);
+                });
         }
-        // } else if (!loading) {
-        //     console.log(lessons);
-        //     idbPromise('lessons', 'get')
-        //         .then(lessons.filter(lesson => lesson._id === lessonId));
-        // }
     }, [data, loading]);
 
     if (loading) {
