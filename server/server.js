@@ -6,12 +6,18 @@ const { typeDefs, resolvers } = require('./schema');
 const { authMiddleware } = require('./utils/auth');
 const db = require('./config/connection');
 
+
 const PORT = process.env.PORT || 3001;
 const app = express();
 const server = new ApolloServer({
     typeDefs,
     resolvers,
     context: authMiddleware
+});
+
+const io = require('socket.io')(PORT);
+io.on('connection', (socket) => {
+    console.log('io connection successful', socket)
 });
 
 server.applyMiddleware({ app });
