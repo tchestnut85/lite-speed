@@ -11,7 +11,7 @@ function Header() {
 
     return (
         <header>
-            <div className='nav-wrap'>
+            <div className='nav-wrap flex-row'>
                 {Auth.loggedIn() ? (
                     <Link to="/dashboard" className="nav-title">
                         <h1>Lite <i>Speed</i></h1>
@@ -21,7 +21,7 @@ function Header() {
                             <h1>Lite <i>Speed</i></h1>
                         </Link>
                     )}
-                < nav className='navbar'>
+                < nav className='navbar flex-row'>
                     {
                         <>
                             <Link to='/courses' className='list-item'>Courses</Link>

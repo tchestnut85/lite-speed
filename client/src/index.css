@@ -131,9 +131,10 @@ footer {
 .big-image {
 	height: 100vh;
 	width: 100vw;
-	float: left;
-	position: relative;
+	position: fixed;
 	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
 	background-image: url('../src/assets/images/cover1.jpg');
 }
 
@@ -216,9 +217,10 @@ label {
 .login-image {
 	height: 100vh;
 	width: 100vw;
-	float: left;
-	position: relative;
+	position: fixed;
 	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
 	background-image: url('../src/assets/images/cover2.jpg');
 }
 
@@ -236,9 +238,10 @@ label {
 .signup-image {
 	height: 100vh;
 	width: 100vw;
-	float: left;
-	position: relative;
+	position: fixed;
 	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
 	background-image: url('../src/assets/images/cover3.jpg');
 }
 
@@ -548,4 +551,27 @@ button:hover {
 	font-weight: bold;
 	font-size: 18px;
 }
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 650px) {
+	.edit-settings-container {
+		margin-top: 50px;
+	}
+
+	.nav-wrap {
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+@media screen and (max-width: 350px) {
+
+	.edit-settings-container {
+		margin-top: 50px;
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
+
 
