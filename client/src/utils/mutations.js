@@ -52,3 +52,17 @@ export const CHANGE_PASSWORD = gql`
         }
 `;
 
+export const SAVE_COURSES = gql`
+        mutation saveCourses($courseData: CourseInput!) {
+            saveCourses(courseData: $courseData) {
+                _id
+                firstName
+                lastName
+                email
+                savedCourses {
+                    _id
+                    title
+                }
+            }
+        }
+`;

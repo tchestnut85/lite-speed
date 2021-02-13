@@ -62,7 +62,6 @@ const resolvers = {
     },
 
     updateUser: async (parent, args, context) => {
-      console.log(args);
       if (context.user) {
         const updatedUser = await User.findByIdAndUpdate(
           { _id: context.user._id },
@@ -101,6 +100,18 @@ const resolvers = {
       const token = signToken(user);
 
       return { token, user };
+    },
+
+    saveCourses: async (parent, { courseData }, context) => {
+      console.log("courseData:", courseData);
+      if (context.user) {
+        const updatedUser = await User.findByIdAndUpdate(
+          { _id: context.user._id },
+          { $push: { savedCourses: courseData } },
+          { new: true }
+        )
+        return updatedUser;
+      }
     }
   }
 };

@@ -3,6 +3,8 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 const bcrypt = require('bcrypt');
 
+// const Courses = require('./Courses');
+
 const userSchema = new Schema({
   firstName: {
     type: String,
@@ -23,8 +25,19 @@ const userSchema = new Schema({
     type: String,
     required: true,
     minlength: 5
+  },
+  savedCourses: {
+    type: Schema.Types.ObjectId,
+    ref: 'Courses',
+    required: true
   }
-});
+},
+  {
+    toJSON: {
+      virtuals: true
+    }
+  }
+);
 
 // set up pre-save middleware to create password
 userSchema.pre('save', async function (next) {
@@ -37,7 +50,8 @@ userSchema.pre('save', async function (next) {
 });
 
 userSchema.pre('findOneAndUpdate', async function () {
-  this._update.password = await bcrypt.hash(this._update.password, 10)
+  const saltRounds = 10;
+  this._update.password = await bcrypt.hash(this._update.password, saltRounds)
 });
 
 // compare the incoming password with the hashed password
@@ -45,6 +59,10 @@ userSchema.methods.isCorrectPassword = async function (password) {
   const isCorrect = await bcrypt.compare(password, this.password);
   return isCorrect;
 };
+
+userSchema.virtual('courseCount').get(function () {
+  return this.savedCourses.length;
+});
 
 const User = mongoose.model('User', userSchema);
 
