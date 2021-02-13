@@ -41,6 +41,10 @@ code {
 	justify-content: space-between;
 }
 
+.column {
+	flex-direction: column;
+}
+
 .flex-end {
 	justify-content: flex-end;
 }
@@ -208,10 +212,29 @@ label {
 
 .login-container,
 .signup-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	width: 85%;
 	/* max-width: 1200px; */
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.login-container label, .signup-container label {
+	margin-bottom: 15px;
+}
+
+.signup-form, .login-form {
+	width: 275px;
+	background-color: rgba(211, 211, 211, 0.30);
+	padding: 25px 15px 25px 15px;
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 .login-image {
@@ -294,6 +317,22 @@ button {
 button:hover {
 	background-color: var(--primaryColor);
 }
+
+.btn {
+	padding: 15px 25px;
+	border-radius: 5px;
+	background-color: var(--primaryColor);
+	color: white;
+}
+
+.btn {
+	transition: background-color .25s ease-in-out;
+}
+
+.btn:hover {
+	background-color: var(--secondaryColor);
+}
+
 
 /* NOT FOUND STYLES */
 .notfound-image {
@@ -553,6 +592,12 @@ button:hover {
 }
 
 /* MEDIA QUERIES */
+@media screen and (max-width: 1024px) {
+	.login-container label, .signup-container label {
+		margin-bottom: 15px;
+	}
+}
+
 @media screen and (max-width: 650px) {
 	.edit-settings-container {
 		margin-top: 50px;
