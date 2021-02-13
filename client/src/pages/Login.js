@@ -43,8 +43,8 @@ function Login() {
                     </Link>
 
                     <h2 className="login-title">Login</h2>
-                    <form onSubmit={handleFormSubmit}>
-                        <div className="flex-row space-between my-2">
+                    <form class='login-form' onSubmit={handleFormSubmit}>
+                        <div className="flex-row column space-between my-2">
                             <label htmlFor="email">Email address:</label>
                             <input
                                 placeholder="youremail@test.com"
@@ -54,7 +54,7 @@ function Login() {
                                 onChange={handleChange}
                             />
                         </div>
-                        <div className="flex-row space-between my-2">
+                        <div className="flex-row column space-between my-2">
                             <label htmlFor="pwd">Password:</label>
                             <input
                                 placeholder="******"
@@ -70,7 +70,7 @@ function Login() {
                             </div> : null
                         }
                         <div className="flex-row flex-end">
-                            <button type="submit">
+                            <button className='btn' type="submit">
                                 Submit
                             </button>
                         </div>
