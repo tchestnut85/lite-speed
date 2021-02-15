@@ -113,6 +113,10 @@ header {
 	color: var(--lightColor);
 }
 
+.nav-title h1, .nav-title i, .landing-nav-title h1, .landing-nav-title i, .hero-text, .hero-subtext {
+	font-family: 'Archivo', sans-serif;
+}
+
 .list-item {
 	text-decoration: none;
 	padding: 15px;
@@ -561,7 +565,7 @@ button:hover {
 
 .lesson-title, .lesson-name {
 	padding: 20px;
-	margin: 0 100px;
+	margin: 0 40px;
 	text-align: center;
 	border-bottom: solid 1px black;
 }
