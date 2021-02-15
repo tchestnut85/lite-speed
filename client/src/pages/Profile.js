@@ -48,7 +48,7 @@ function Profile() {
 
     return (
         <section>
-            <h1 className="profile-header">
+            <h1 className="profile-header page-title">
                 Welcome {capitalizeFirstLetter(userData.firstName)} {capitalizeFirstLetter(userData.lastName)}
             </h1>
             <section className="flex-row settings-wrapper">
