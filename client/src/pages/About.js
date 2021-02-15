@@ -10,6 +10,13 @@ function About() {
             <section className="flex-row about-wrapper">
                 <div className="about-container">
                     <div>
+                        Tom Chestnut
+                    </div>
+                    <div>
+                        Peyton Schlafley 
+                    </div>
+                    <div>
+                        Brian Spiewak
                     </div>
                 </div>
             </section>
