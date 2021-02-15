@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import React from 'react';
 
 function Footer() {
@@ -11,6 +12,9 @@ function Footer() {
                         Expand your knowledge and skill set at the speed of light
                     </p>
                 </div>
+                <Link to="/about" className="about-title">
+                    <button>About the Team</button>
+                </Link>
             </div>
         </footer>
     )

@@ -552,6 +552,17 @@ button:hover {
 	font-size: 18px;
 }
 
+/* ABOUT STYLES */
+.about-title button{
+	float: right;
+	margin: 15px 75px 30px 30px;
+	text-decoration: none;
+	color: var(--lightColor);
+	background-color: var(--primaryColor);
+	font-weight: bold;
+	font-size: 18px;
+}
+
 /* MEDIA QUERIES */
 @media screen and (max-width: 650px) {
 	.edit-settings-container {
