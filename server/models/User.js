@@ -27,16 +27,11 @@ const userSchema = new Schema({
     minlength: 5
   },
   savedCourses: {
-    type: Schema.Types.ObjectId,
+    type: Schema.Types.Array,
     ref: 'Courses',
-    required: true
+    required: false
   }
 },
-  {
-    toJSON: {
-      virtuals: true
-    }
-  }
 );
 
 // set up pre-save middleware to create password
@@ -60,9 +55,6 @@ userSchema.methods.isCorrectPassword = async function (password) {
   return isCorrect;
 };
 
-userSchema.virtual('courseCount').get(function () {
-  return this.savedCourses.length;
-});
 
 const User = mongoose.model('User', userSchema);
 

@@ -26,23 +26,23 @@ function Courses() {
         window.location.replace(`/courses/${lesson[0]._id}`);
     };
 
-    const handleSaveCourse = async (_id) => {
-        console.log(_id);
-
+    const handleSaveCourse = async (courseId, i, courseTitle) => {
+        console.log(i);
         const token = Auth.loggedIn() ? Auth.getToken() : null;
 
         if (!token) {
             return false;
         }
         try {
-            const { data } = await saveCourses({
-                variables: { courseData: { _id } }
+            await saveCourses({
+                variables: { courseId: courseId, courseTitle: courseTitle }
             })
-            console.log("data:", data);
-            return data;
+            // console.log("data:", data);
         } catch (err) {
+            console.log("data:", data.courses[i].title);
             console.error(err);
         }
+        return data;
     };
 
     return (
@@ -68,7 +68,7 @@ function Courses() {
                                 <button
                                     key={i}
                                     id={course._id}
-                                    onClick={() => { handleSaveCourse(course._id) }}
+                                    onClick={() => { handleSaveCourse(course._id, i, course.title) }}
                                 >Save this course</button>
                             </div>
                         </>

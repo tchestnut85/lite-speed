@@ -53,12 +53,13 @@ export const CHANGE_PASSWORD = gql`
 `;
 
 export const SAVE_COURSES = gql`
-        mutation saveCourses($courseData: CourseInput!) {
-            saveCourses(courseData: $courseData) {
+        mutation saveCourses($courseId: ID!, $courseTitle: String!) {
+            saveCourses(courseId: $courseId, courseTitle: $courseTitle) {
                 _id
                 firstName
                 lastName
                 email
+                password
                 savedCourses {
                     _id
                     title

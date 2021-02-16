@@ -102,12 +102,11 @@ const resolvers = {
       return { token, user };
     },
 
-    saveCourses: async (parent, { courseData }, context) => {
-      console.log("courseData:", courseData);
+    saveCourses: async (parent, { courseId, courseTitle }, context) => {
       if (context.user) {
         const updatedUser = await User.findByIdAndUpdate(
           { _id: context.user._id },
-          { $push: { savedCourses: courseData } },
+          { $addToSet: { savedCourses: { courseId, courseTitle } } },
           { new: true }
         )
         return updatedUser;

@@ -6,11 +6,6 @@ const typeDefs = gql`
     title: String
   }
 
-  input CourseInput {
-    _id: ID
-    title: String
-  }
-
   type Lesson {
     _id: ID
     name: String
@@ -27,7 +22,6 @@ const typeDefs = gql`
     lastName: String
     email: String
     password: String
-    courseCount: Int
     savedCourses: [Courses]
   }
 
@@ -50,7 +44,7 @@ const typeDefs = gql`
     updateUser(firstName: String, email: String, lastName: String, password: String): Auth
     login(email: String!, password: String!): Auth
     changePassword(password: String): User
-    saveCourses(courseData: CourseInput!): User
+    saveCourses(courseId: ID!, courseTitle: String!): User
   }
 `;
 
