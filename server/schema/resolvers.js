@@ -91,22 +91,22 @@ const resolvers = {
       return { token, user };
     },
 
-    changePassword: async (parent, args, context) => {
-      const user = await User.findOneAndUpdate(
-        { password: context.user.password },
-        args,
-        { new: true }
-      );
-      const token = signToken(user);
+    // changePassword: async (parent, args, context) => {
+    //   const user = await User.findOneAndUpdate(
+    //     { password: context.user.password },
+    //     args,
+    //     { new: true }
+    //   );
+    //   const token = signToken(user);
 
-      return { token, user };
-    },
+    //   return { token, user };
+    // },
 
     saveCourses: async (parent, { courseId, courseTitle }, context) => {
       if (context.user) {
         const updatedUser = await User.findByIdAndUpdate(
           { _id: context.user._id },
-          { $addToSet: { savedCourses: { courseId, courseTitle } } },
+          { $addToSet: { savedCourses: { _id: courseId, title: courseTitle } } },
           { new: true }
         )
         return updatedUser;

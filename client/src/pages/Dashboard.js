@@ -33,6 +33,16 @@ function Dashboard() {
                 <Link to="/profile" className="dashboard-circles profile-circle">
                     <i className="fas fa-user-circle fa-6x profile-icon"></i>
                 </Link>
+
+                <div className='circles-wrapper'>
+                    {userData.savedCourses.map((course) => {
+                        return (
+                            <Link to="/profile" className="dashboard-circles">
+                                {course.title}
+                            </Link>
+                        )
+                    })}
+                </div>
             </section>
         </>
     );

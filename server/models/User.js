@@ -44,10 +44,19 @@ userSchema.pre('save', async function (next) {
   next();
 });
 
-userSchema.pre('findOneAndUpdate', async function () {
-  const saltRounds = 10;
-  this._update.password = await bcrypt.hash(this._update.password, saltRounds)
-});
+// userSchema.pre('findOneAndUpdate', async function () {
+//   const saltRounds = 10;
+//   this._update.password = await bcrypt.hash(this._update.password, saltRounds, function (err) {
+//     if (err) {
+//       console.error(err);
+//     }
+//   })
+//   if (!this._update.password) {
+//     return;
+//   } else {
+//     next()
+//   }
+// });
 
 // compare the incoming password with the hashed password
 userSchema.methods.isCorrectPassword = async function (password) {
