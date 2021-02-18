@@ -10,6 +10,7 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import LandingPage from './pages/LandingPage';
 import Lesson from './pages/Lesson';
+import LessonQuiz from './components/LessonQuiz';
 import Login from './pages/Login';
 import NotFound from './pages/NotFound';
 import Profile from './pages/Profile';
@@ -44,6 +45,7 @@ function App() {
                   <Route exact path='/courses' component={Courses} />
                   <Route exact path='/courses/:id' component={Lesson} />
                   <Route exact path="/" component={Dashboard} />
+                  <Route exact path="/lessonquiz" component={LessonQuiz} />
                   <Route component={NotFound} />
                 </Switch>
               </div>
