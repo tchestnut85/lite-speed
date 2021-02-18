@@ -613,12 +613,12 @@ button:hover {
 /* ABOUT STYLES */
 .about-title button {
 	float: right;
-	margin: 15px 75px 30px 30px;
+	margin: 15px 75px 15px 30px;
 	text-decoration: none;
 	color: var(--lightColor);
 	background-color: var(--primaryColor);
 	font-weight: bold;
-	font-size: 18px;
+	font-size: 14px;
 }
 
 .about-header {
