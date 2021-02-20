@@ -113,7 +113,12 @@ header {
 	color: var(--lightColor);
 }
 
-.nav-title h1, .nav-title i, .landing-nav-title h1, .landing-nav-title i, .hero-text, .hero-subtext {
+.nav-title h1,
+.nav-title i,
+.landing-nav-title h1,
+.landing-nav-title i,
+.hero-text,
+.hero-subtext {
 	font-family: 'Archivo', sans-serif;
 }
 
@@ -229,13 +234,15 @@ label {
 	margin-right: auto;
 }
 
-.login-container label, .signup-container label {
+.login-container label,
+.signup-container label {
 	margin-bottom: 15px;
 }
 
-.signup-form, .login-form {
+.signup-form,
+.login-form {
 	width: 275px;
-	background-color: rgba(211, 211, 211, 0.30);
+	background-color: rgba(211, 211, 211, 0.3);
 	padding: 25px 15px 25px 15px;
 	border-radius: 5px;
 	display: flex;
@@ -333,13 +340,12 @@ button:hover {
 }
 
 .btn {
-	transition: background-color .25s ease-in-out;
+	transition: background-color 0.25s ease-in-out;
 }
 
 .btn:hover {
 	background-color: var(--secondaryColor);
 }
-
 
 /* NOT FOUND STYLES */
 .notfound-image {
@@ -414,6 +420,23 @@ button:hover {
 	font-size: 45px;
 	margin: 35px 100px 0 100px;
 	border-bottom: solid 1px black;
+}
+
+.courses-circles {
+	border: 5px solid var(--primaryColor);
+	height: 100px;
+	width: 100px;
+	display: flex;
+	background-color: gray;
+	border-radius: 50%;
+	color: var(--lightColor);
+}
+
+.my-courses {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding-top: 100px;
 }
 
 /* PROFILE PAGE STYLES */
@@ -563,7 +586,8 @@ button:hover {
 	margin-bottom: 150px;
 }
 
-.lesson-title, .lesson-name {
+.lesson-title,
+.lesson-name {
 	padding: 20px;
 	margin: 0 40px;
 	text-align: center;
@@ -583,7 +607,7 @@ button:hover {
 	padding: 10px;
 	line-height: 1.75;
 	margin: 10px 40px 35px 40px;
-	background-color: rgba(211, 211, 211, 0.40);
+	background-color: rgba(211, 211, 211, 0.4);
 	border: solid 1px rgba(0, 0, 0, 0.25);
 	border-radius: 5px;
 }
@@ -595,7 +619,7 @@ button:hover {
 	margin: 10px 40px 35px 40px;
 	overflow-wrap: break-word;
 	white-space: pre-wrap;
-	background-color: rgba(211, 211, 211, 0.40);
+	background-color: rgba(211, 211, 211, 0.4);
 	border: solid 1px rgba(0, 0, 0, 0.25);
 	border-radius: 5px;
 }
@@ -677,11 +701,13 @@ button:hover {
 
 /* MEDIA QUERIES */
 @media screen and (max-width: 1024px) {
-	.login-container label, .signup-container label {
+	.login-container label,
+	.signup-container label {
 		margin-bottom: 15px;
 	}
 
-	.courses-wrapper, .circles-wrapper {
+	.courses-wrapper,
+	.circles-wrapper {
 		padding-top: 75px;
 	}
 
@@ -745,6 +771,3 @@ button:hover {
 		margin-left: 0;
 	}
 }
-
-
-
