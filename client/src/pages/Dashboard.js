@@ -15,7 +15,7 @@ function Dashboard() {
     // console.log(userData);
 
     if (loading) {
-        return <div>Loading...</div>
+        return <div>Loading...</div>;
     };
 
     const getLesson = (courseId) => {
@@ -26,7 +26,7 @@ function Dashboard() {
 
     return (
         <>
-            <h1 className="dashboard-title">
+            <h1 className="dashboard-title page-title">
                 {capitalizeFirstLetter(userData.firstName)} {capitalizeFirstLetter(userData.lastName)}'s Dashboard
             </h1>
 

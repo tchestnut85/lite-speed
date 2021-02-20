@@ -32,8 +32,6 @@ function Lesson() {
         return <div>Loading Lesson...</div>;
     }
 
-
-
     return (
         <section className='lesson'>
             <h2 className="lesson-title">Introduction to {lesson.name}</h2>

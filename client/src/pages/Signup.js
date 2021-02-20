@@ -49,25 +49,25 @@ function Signup() {
 
                     <h2 className="signup-title">Signup to start exploring Lite Speed!</h2>
 
-                    <form id='signup-form' onSubmit={handleFormSubmit}>
-                        <div className="flex-row space-between my-2">
+                    <form id='signup-form' class='signup-form' onSubmit={handleFormSubmit}>
+                        <div className="flex-row column space-between my-2">
                             <label htmlFor="firstName">First Name:</label>
                             <input placeholder='Your Name' className='' id="firstName" name='firstName' type='firstName' onChange={handleChange} />
                         </div>
-                        <div className="flex-row space-between my-2">
+                        <div className="flex-row column space-between my-2">
                             <label htmlFor="lastName">Last Name:</label>
                             <input placeholder='Your Last Name' className='' id="lastName" name='lastName' type='lastName' onChange={handleChange} />
                         </div>
-                        <div className="flex-row space-between my-2">
-                            <label htmlFor="email">Email:</label>
+                        <div className="flex-row column space-between my-2">
+                            <label htmlFor="email">Email Address:</label>
                             <input placeholder='Your Email' className='' id="email" name='email' type='email' onChange={handleChange} />
                         </div>
-                        <div className="flex-row space-between my-2">
+                        <div className="flex-row column space-between my-2">
                             <label htmlFor="password">Password:</label>
                             <input type="password" placeholder='******' className='' id="password" name='password' onChange={handleChange} />
                         </div>
-                        <div className="flex-row flex-end">
-                            <button type='submit'>Signup!</button>
+                        <div className="flex-row column flex-end">
+                            <button className='btn' type='submit'>Signup!</button>
                         </div>
                     </form>
                 </div>
