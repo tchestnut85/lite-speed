@@ -13,7 +13,6 @@ function Courses() {
     const { data: lessonData } = useQuery(QUERY_LESSONS);
 
     const courses = data?.courses || {};
-    // console.log(courses);
 
     const [saveCourses] = useMutation(SAVE_COURSES);
 
@@ -37,9 +36,7 @@ function Courses() {
             await saveCourses({
                 variables: { courseId: courseId, courseTitle: courseTitle }
             })
-            // console.log("data:", data);
         } catch (err) {
-            console.log("data:", data.courses[i].title);
             console.error(err);
         }
         return data;

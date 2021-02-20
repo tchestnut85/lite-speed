@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 const bcrypt = require('bcrypt');
+// const Lesson = require('./Lesson');
 
 // const Courses = require('./Courses');
 
@@ -29,7 +30,12 @@ const userSchema = new Schema({
   savedCourses: {
     type: Schema.Types.Array,
     ref: 'Courses',
-    required: false
+    required: false,
+    lessons: [{
+      type: Schema.Types.ObjectId,
+      ref: 'Lesson',
+      required: false
+    }]
   }
 },
 );

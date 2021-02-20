@@ -366,6 +366,23 @@ button:hover {
 	margin-top: 35px;
 }
 
+.courses-circles {
+	border: 5px solid var(--primaryColor);
+	height: 100px;
+	width: 100px;
+	display: flex;
+	background-color: gray;
+	border-radius: 50%;
+	color: var(--lightColor);
+}
+
+.my-courses {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding-top: 100px;
+}
+
 /* PROFILE PAGE STYLES */
 .profile-header {
 	color: var(--darkColor);
