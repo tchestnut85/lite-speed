@@ -67,3 +67,18 @@ export const SAVE_COURSES = gql`
             }
         }
 `;
+
+export const REMOVE_COURSE = gql`
+        mutation removeCourse($courseId: ID!) {
+            removeCourse(courseId: $courseId) {
+                _id
+                firstName
+                lastName
+                email
+                password
+                savedCourses {
+                    _id
+                }
+            }
+        }
+`;
