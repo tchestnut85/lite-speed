@@ -630,7 +630,6 @@ button:hover {
 
 .about-container {
 	width: 100%;
-	/* display: grid; */
 	flex-wrap: wrap;
 	grid-template-columns: repeat(3, 1fr);
 	gap: 20px;
@@ -664,7 +663,7 @@ button:hover {
 	width: 200px;
 	height: 250px;
 	float: left;
-	margin: 20px 25px 15px 50px;
+	margin: 20px 25px 15px 30px;
 	border-radius: 5px;
 	box-shadow: 3px 3px 10px black;
 }
@@ -691,6 +690,12 @@ button:hover {
 	}
 }
 
+@media screen and (max-width: 768px) {
+	.about-content {
+		height: 600px;
+	}
+}
+
 @media screen and (max-width: 650px) {
 	.edit-settings-container {
 		margin-top: 50px;
@@ -708,9 +713,13 @@ button:hover {
 	.about-content {
 		height: 1450px;
 	}
+
+	.about-title button {
+		margin-left: 0;
+	}
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 375px) {
 	.edit-settings-container {
 		margin-top: 50px;
 		margin-left: 0;
@@ -719,6 +728,21 @@ button:hover {
 
 	.lesson-content {
 		overflow-wrap: normal;
+	}
+	
+	.about-img {
+		width: 100px;
+		height: 150px;
+		float: left;
+		margin: 20px 55px 25px 20px;
+	}
+
+	.about-content {
+		height: 2500px;
+	}
+
+	.about-title button {
+		margin-left: 0;
 	}
 }
 
