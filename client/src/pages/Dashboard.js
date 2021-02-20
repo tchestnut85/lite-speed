@@ -11,15 +11,15 @@ function Dashboard() {
     const userData = data?.me || {};
 
     if (loading) {
-        return <div>Loading...</div>
+        return <div>Loading...</div>;
     };
 
     return (
         <>
-            <h1 className="dashboard-title">
+            <h1 className="dashboard-title page-title">
                 {capitalizeFirstLetter(userData.firstName)} {capitalizeFirstLetter(userData.lastName)}'s Dashboard
             </h1>
-            
+
             <section className='circles-wrapper'>
                 <Link to="/courses" className="dashboard-circles courses-circle">
                     <i className="fas fa-chalkboard-teacher fa-6x course-icon"></i>
