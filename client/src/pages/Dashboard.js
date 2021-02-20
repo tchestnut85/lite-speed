@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom';
 import { QUERY_ME } from '../utils/queries';
-import React from 'react';
+import React, { useState } from 'react';
 import { capitalizeFirstLetter } from '../utils/helpers';
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery, useMutation } from '@apollo/react-hooks';
 import { QUERY_LESSONS } from '../utils/queries';
+import { REMOVE_COURSE } from '../utils/mutations';
+import Auth from '../utils/auth';
 
 
 function Dashboard() {
@@ -13,6 +15,9 @@ function Dashboard() {
 
     const userData = data?.me || {};
     // console.log(userData);
+    const [isSavedCourses, setSavedCourses] = useState(userData.savedCourses);
+
+    const [removeCourse] = useMutation(REMOVE_COURSE);
 
     if (loading) {
         return <div>Loading...</div>;
@@ -23,6 +28,20 @@ function Dashboard() {
         window.location.replace(`/courses/${lesson[0]._id}`);
     };
 
+    const handleRemoveCourse = async (courseId) => {
+        const token = Auth.loggedIn() ? Auth.getToken() : null;
+
+        if (!token) {
+            return false;
+        }
+        try {
+            await removeCourse({
+                variables: { courseId: courseId }
+            })
+        } catch (err) {
+            console.error(err)
+        }
+    };
 
     return (
         <>
@@ -44,21 +63,32 @@ function Dashboard() {
                 </Link>
 
             </section>
-            <div className=''>
-                <h2 className='dashboard-title'>My Courses</h2>
-                <div className='my-courses'>
-                    {userData.savedCourses.map((course) => {
-                        console.log(course);
-                        return (
-                            <div>
-                                <button onClick={() => { getLesson(course._id) }} className="dashboard-circles" key={course.title}>
-                                    {course.title}
-                                </button>
-                            </div>
-                        )
-                    })}
+            {isSavedCourses && (
+                <div>
+                    <h2 className='dashboard-title'>My Courses</h2>
+                    <div className='my-courses'>
+                        {userData.savedCourses.map((course) => {
+                            console.log(course);
+                            return (
+                                <div>
+                                    <button onClick={() => { getLesson(course._id) }} className="dashboard-circles" key={course.title}>
+                                        <p className='myCourses'>
+                                            {course.title}
+                                        </p>
+                                    </button>
+                                    <button
+                                        key={course._id}
+                                        id={course._id}
+                                        onClick={() => { handleRemoveCourse(course._id) }}
+                                    >
+                                        Remove this course
+                                    </button>
+                                </div>
+                            )
+                        })}
+                    </div>
                 </div>
-            </div>
+            )}
         </>
     );
 };

@@ -1,13 +1,12 @@
 import { QUERY_ALL_COURSES, QUERY_LESSONS } from '../utils/queries';
 
-import { React } from 'react';
+import React from 'react';
 import { useQuery, useMutation } from '@apollo/react-hooks';
 import { SAVE_COURSES } from '../utils/mutations';
 import Auth from '../utils/auth';
 
 
 function Courses() {
-
     const { loading: courseLoading, data } = useQuery(QUERY_ALL_COURSES);
 
     const { data: lessonData } = useQuery(QUERY_LESSONS);
@@ -26,7 +25,6 @@ function Courses() {
     };
 
     const handleSaveCourse = async (courseId, i, courseTitle) => {
-        console.log(i);
         const token = Auth.loggedIn() ? Auth.getToken() : null;
 
         if (!token) {
@@ -66,7 +64,9 @@ function Courses() {
                                     key={i}
                                     id={course._id}
                                     onClick={() => { handleSaveCourse(course._id, i, course.title) }}
-                                >Save this course</button>
+                                >
+                                    Save this course
+                                </button>
                             </div>
                         </>
                     ))}

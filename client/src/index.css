@@ -439,6 +439,10 @@ button:hover {
 	padding-top: 100px;
 }
 
+.myCourses {
+	font-size: 50px;
+}
+
 /* PROFILE PAGE STYLES */
 .profile-header {
 	color: var(--darkColor);

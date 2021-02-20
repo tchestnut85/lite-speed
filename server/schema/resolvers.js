@@ -111,6 +111,17 @@ const resolvers = {
         )
         return updatedUser;
       }
+    },
+
+    removeCourse: async (parent, { courseId }, context) => {
+      if (context.user) {
+        const updatedUser = await User.findByIdAndUpdate(
+          { _id: context.user._id },
+          { $pull: { savedCourses: { _id: courseId } } },
+          { new: true }
+        )
+        return updatedUser;
+      }
     }
   }
 };

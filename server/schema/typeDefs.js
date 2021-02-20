@@ -45,6 +45,7 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     changePassword(password: String): User
     saveCourses(courseId: ID!, courseTitle: String!): User
+    removeCourse(courseId: ID!): User
   }
 `;
 
