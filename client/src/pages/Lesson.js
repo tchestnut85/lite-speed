@@ -52,7 +52,12 @@ function Lesson() {
                 <article className="lesson-content">
                     {lesson.content}
                 </article>
-                <a href="/courses" className="back-course"><button>Go back to course list &#8594; </button></a>
+                <div className='flex-row mx-2 px-2 space-between'>
+                    <a href="/courses" className="back-course"><button>&#8592; Go back to course list </button></a>
+                    {/* <a href={`/quiz/${lesson._id}`} className="back-course"><button>Take the Quiz!</button></a> */}
+
+                    <a href={`/quiz/${(lesson.courses.title).toLowerCase()}`} className="back-course"><button>Take the Quiz!</button></a>
+                </div>
             </div>
         </section>
     );

@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+const gradeSchema = require('./Grades');
 const { Schema } = mongoose;
 const bcrypt = require('bcrypt');
 
@@ -23,7 +23,8 @@ const userSchema = new Schema({
     type: String,
     required: true,
     minlength: 5
-  }
+  },
+  grades: [gradeSchema]
 });
 
 // set up pre-save middleware to create password
@@ -37,7 +38,7 @@ userSchema.pre('save', async function (next) {
 });
 
 userSchema.pre('findOneAndUpdate', async function () {
-  this._update.password = await bcrypt.hash(this._update.password, 10)
+  this._update.password = await bcrypt.hash(this._update.password, 10);
 });
 
 // compare the incoming password with the hashed password

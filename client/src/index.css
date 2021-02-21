@@ -601,7 +601,7 @@ button:hover {
 }
 
 .back-course button {
-	float: right;
+	/* float: right; */
 	margin-right: 45px;
 	text-decoration: none;
 	color: var(--lightColor);
@@ -616,6 +616,12 @@ button:hover {
 
 .back-course:hover button {
 	background-color: var(--secondaryColor);
+}
+
+/* QUIZ STYLING */
+.react-quiz-container {
+	margin-top: 0 !important;
+	padding: 50px 25px 0 25px;
 }
 
 /* MEDIA QUERIES */

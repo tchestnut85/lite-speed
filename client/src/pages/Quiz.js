@@ -4,7 +4,7 @@ import React from 'react';
 function Quiz() {
 
     return (
-        <section>
+        <section className='py-2'>
             <LessonQuiz />
         </section>
     );

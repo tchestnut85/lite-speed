@@ -45,7 +45,7 @@ function App() {
                   <Route exact path='/courses' component={Courses} />
                   <Route exact path='/courses/:id' component={Lesson} />
                   <Route exact path="/" component={Dashboard} />
-                  <Route exact path="/lessonquiz" component={LessonQuiz} />
+                  <Route exact path="/quiz/:quizName" component={LessonQuiz} />
                   <Route component={NotFound} />
                 </Switch>
               </div>
