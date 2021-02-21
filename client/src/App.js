@@ -1,5 +1,6 @@
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 
+import About from './pages/About';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
 import Auth from './utils/auth';
@@ -44,6 +45,7 @@ function App() {
                   <Route exact path="/dashboard" component={Dashboard} />
                   <Route exact path='/courses' component={Courses} />
                   <Route exact path='/courses/:id' component={Lesson} />
+                  <Route exact path="/about" component={About} />
                   <Route exact path="/" component={Dashboard} />
                   <Route exact path="/quiz/:quizName" component={LessonQuiz} />
                   <Route component={NotFound} />

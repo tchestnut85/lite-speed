@@ -1,17 +1,46 @@
 import { Link } from 'react-router-dom';
 import { QUERY_ME } from '../utils/queries';
-import React from 'react';
+import React, { useState } from 'react';
 import { capitalizeFirstLetter } from '../utils/helpers';
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery, useMutation } from '@apollo/react-hooks';
+import { QUERY_LESSONS } from '../utils/queries';
+import { REMOVE_COURSE } from '../utils/mutations';
+import Auth from '../utils/auth';
+
 
 function Dashboard() {
-
     const { loading, data } = useQuery(QUERY_ME);
+    const { data: lessonData } = useQuery(QUERY_LESSONS);
+    console.log(lessonData);
 
     const userData = data?.me || {};
+    // console.log(userData);
+    const [isSavedCourses, setSavedCourses] = useState(userData.savedCourses);
+
+    const [removeCourse] = useMutation(REMOVE_COURSE);
 
     if (loading) {
         return <div>Loading...</div>;
+    };
+
+    const getLesson = (courseId) => {
+        const lesson = lessonData.lessons.filter(lesson => lesson.courses._id === courseId);
+        window.location.replace(`/courses/${lesson[0]._id}`);
+    };
+
+    const handleRemoveCourse = async (courseId) => {
+        const token = Auth.loggedIn() ? Auth.getToken() : null;
+
+        if (!token) {
+            return false;
+        }
+        try {
+            await removeCourse({
+                variables: { courseId: courseId }
+            })
+        } catch (err) {
+            console.error(err)
+        }
     };
 
     return (
@@ -32,7 +61,34 @@ function Dashboard() {
                 <Link to="/profile" className="dashboard-circles profile-circle">
                     <i className="fas fa-user-circle fa-6x profile-icon"></i>
                 </Link>
+
             </section>
+            {isSavedCourses && (
+                <div>
+                    <h2 className='dashboard-title'>My Courses</h2>
+                    <div className='my-courses'>
+                        {userData.savedCourses.map((course) => {
+                            console.log(course);
+                            return (
+                                <div>
+                                    <button onClick={() => { getLesson(course._id) }} className="dashboard-circles" key={course.title}>
+                                        <p className='myCourses'>
+                                            {course.title}
+                                        </p>
+                                    </button>
+                                    <button
+                                        key={course._id}
+                                        id={course._id}
+                                        onClick={() => { handleRemoveCourse(course._id) }}
+                                    >
+                                        Remove this course
+                                    </button>
+                                </div>
+                            )
+                        })}
+                    </div>
+                </div>
+            )}
         </>
     );
 };

@@ -8,6 +8,10 @@ export const QUERY_ME = gql`
             firstName
             lastName
             password
+            savedCourses {
+                _id
+                title
+            }
         }
     } 
 `;

@@ -22,6 +22,7 @@ const typeDefs = gql`
     lastName: String
     email: String
     password: String
+    savedCourses: [Courses]
   }
 
   type Auth {
@@ -43,6 +44,8 @@ const typeDefs = gql`
     updateUser(firstName: String, email: String, lastName: String, password: String): Auth
     login(email: String!, password: String!): Auth
     changePassword(password: String): User
+    saveCourses(courseId: ID!, courseTitle: String!): User
+    removeCourse(courseId: ID!): User
   }
 `;
 
