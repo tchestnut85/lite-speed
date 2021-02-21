@@ -7,7 +7,11 @@ db.once('open', async () => {
         { title: 'Space' },
         { title: 'Science' },
         { title: 'History' },
-        { title: 'Mathematics' }
+        { title: 'Mathematics' },
+        { title: 'Web Development' },
+        { title: 'English' },
+        { title: 'Art' },
+        { title: 'Geography' }
     ]);
     console.log('courses seeded');
     await Lesson.deleteMany();
@@ -160,7 +164,223 @@ Complex geometry first appeared as a distinct area of study in the work of Bernh
                 `,
             image: 'https://previews.123rf.com/images/microone/microone1811/microone181100050/128173156-doodle-maths-and-geometry-concept-trigonometry-functions-charts-and-mathematical-formulas-vector-sch.jpg',
             price: 29.99
-        }
+        },
+        {
+            courses: courses[4]._id,
+            name: 'React',
+            intro:
+                `React (also known as React.js or ReactJS) is an open-source, front end, JavaScript library for building user interfaces or UI components. It is maintained by Facebook and a community of individual developers and companies. React can be used as a base in the development of single-page or mobile applications. However, React is only concerned with state management and rendering that state to the DOM, so creating React applications usually requires the use of additional libraries for routing, and fully-fledged form solutions. React Router and Formik are examples of such libraries respectively.`,
+            
+            content: 
+                `Basic Usage: The Greeter function is a React component that accepts a property greeting. The variable App is an instance of the Greeter component where the greeting property is set to 'Hello World!'. The ReactDOM.render method then renders our Greeter component inside the DOM element with id myReactApp.
+        
+Components: React code is made of entities called components. Components can be rendered to a particular element in the DOM using the React DOM library. When rendering a component, one can pass in values that are known as "props" 
+        
+The two primary ways of declaring components in React is via functional components and class-based components.
+                
+Functional components: Functional components are declared with a function that then returns some JSX.
+                
+Class-based components: Class-based components are declared using ES6 classes.
+        
+Virtual DOM: Another notable feature is the use of a virtual Document Object Model, or virtual DOM. React creates an in-memory data-structure cache, computes the resulting differences, and then updates the browser's displayed DOM efficiently. This process is called reconciliation. This allows the programmer to write code as if the entire page is rendered on each change, while the React libraries only render subcomponents that actually change. This selective rendering provides a major performance boost. It saves the effort of recalculating the CSS style, layout for the page and rendering for the entire page.
+                
+Lifecycle methods: Lifecycle methods use a form of hooking that allows the execution of code at set points during a component's lifetime.
+        
+shouldComponentUpdate allows the developer to prevent unnecessary re-rendering of a component by returning false if a render is not required.
+        
+componentDidMount is called once the component has "mounted" (the component has been created in the user interface, often by associating it with a DOM node). This is commonly used to trigger data loading from a remote source via an API.
+        
+componentWillUnmount is called immediately before the component is torn down or "unmounted". This is commonly used to clear resource-demanding dependencies to the component that will not simply be removed with the unmounting of the component (e.g., removing any setInterval() instances that are related to the component, or an "eventListener" set on the "document" because of the presence of the component)
+        
+render is the most important lifecycle method and the only required one in any component. It is usually called every time the component's state is updated, which should be reflected in the user interface.
+                
+JSX: JSX, or JavaScript XML, is an extension to the JavaScript language syntax. Similar in appearance to HTML, JSX provides a way to structure component rendering using syntax familiar to many developers. React components are typically written using JSX, although they do not have to be (components may also be written in pure JavaScript). JSX is similar to another extension syntax created by Facebook for PHP called XHP.
+                
+Nested elements: Multiple elements on the same level need to be wrapped in a single React element such as the <div> element shown above, a fragment delineated by <Fragment> or in its shorthand form <>, or returned as an array.
+        
+Conditional Statements: If–else statements cannot be used inside JSX but conditional expressions can be used instead. The example below will render { i === 1 ? 'true' : 'false' } as the string 'true' because i is equal to 1.
+        
+Code written in JSX requires conversion with a tool such as Babel before it can be understood by web browsers. This processing is generally performed during a software build process before the application is deployed.
+        
+React Hooks: Hooks are functions that let developers "hook into" React state and lifecycle features from function components. Hooks don’t work inside classes — they let you use React without classes.
+        
+React provides a few built-in hooks like useState, useContext, useReducer and useEffect. Others are documented in the Hooks API Reference. useState , useReducer and useEffect, which are the most used, are for controlling state and side effects respectively.
+                
+Rules of hooks: There are rules of hooks which describe the characteristic code pattern that hooks rely on. It is the modern way to handle state with React.
+        
+Hooks should only be called at the top level (not inside loops or if statements).
+        
+Hooks should only be called from React function components, not normal functions or class components
+        
+Although these rules can't be enforced at runtime, code analysis tools such as linters can be configured to detect many mistakes during development. The rules apply to both usage of hooks and the implementation of custom hooks, which may call other hooks.
+        
+Future Development: Project status can be tracked via the core team discussion forum. However, major changes to React go through the Future of React repository issues and pull requests. This enables the React community to provide feedback on new potential features, experimental APIs and JavaScript syntax improvements.
+                `,
+            image: 'https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg',
+            price: 9.99
+        },
+        {
+            courses: courses[5]._id,
+            name: 'Literature',
+            intro:
+                `Literature broadly is any collection of written work, but it is also used more narrowly for writings specifically considered to be an art form, especially prose fiction, drama, and poetry. In recent centuries, the definition has expanded to include oral literature, much of which has been transcribed. Literature is a method of recording, preserving, and transmitting knowledge and entertainment.`,
+            
+            content: 
+                `Literature, as an art form, can also include works in various non-fiction genres, such as autobiography, diaries, memoir, letters, and the essay. Within its broad definition, literature includes non-fictional books, articles or other printed information on a particular subject.
+                
+Etymologically, the term derives from Latin literatura/litteratura "learning, a writing, grammar," originally "writing formed with letters," from litera/littera "letter". In spite of this, the term has also been applied to spoken or sung texts. Developments in print technology have allowed an ever-growing distribution and proliferation of written works, which now includes electronic literature.
+        
+Literature is classified according to whether it is poetry, prose or drama, and such works are categorized according to historical periods, or their adherence to certain aesthetic features, or genre.
+                
+Definitions: Definitions of literature have varied over time. In Western Europe, prior to the 18th century, literature denoted all books and writing. Then, during the Romantic period, a more restricted sense of the term emerged that emphasised the idea that "literature" was "imaginative" writing. Contemporary debates over what constitutes literature can be seen as returning to older, more inclusive notions, so that cultural studies, for instance, include, in addition to canonical works, popular and minority genres. The word is also used in reference non-written works: to "oral literature" and "the literature of preliterate culture".
+
+A value judgment definition of literature considers it as consisting solely of high quality writing that forms part of the belles-lettres ("fine writing") tradition. An example of this in the (1910–11) Encyclopædia Britannica that classified literature as "the best expression of the best thought reduced to writing".
+                
+Oral literature: The use of the term "literature" here is a little problematic because of its origins in the Latin littera, “letter,” essentially writing. Alternatives such as "oral forms" and "oral genres" have been suggested. but the word literature is widely used.
+
+Oral literature is an ancient human tradition found in "all corners of the world". Modern archaeology has been unveiling evidence of the human efforts to preserve and transmit arts and knowledge that depended completely or partially on an oral tradition, across various cultures:
+
+The Judeo-Christian Bible reveals its oral traditional roots; medieval European manuscripts are penned by performing scribes; geometric vases from archaic Greece mirror Homer's oral style. (...) Indeed, if these final decades of the millennium have taught us anything, it must be that oral tradition never was the other we accused it of being; it never was the primitive, preliminary technology of communication we thought it to be. Rather, if the whole truth is told, oral tradition stands out as the single most dominant communicative technology of our species as both a historical fact and, in many areas still, a contemporary reality.
+
+The earliest poetry is believed to have been recited or sung, employed as a way of remembering history, genealogy, and law.
+
+In Asia, the transmission of folklore, mythologies as well as scriptures in ancient India, in different Indian religions, was by oral tradition, preserved with precision with the help of elaborate mnemonic techniques.
+
+The early Buddhist texts are also generally believed to be of oral tradition, with the first by comparing inconsistencies in the transmitted versions of literature from various oral societies such as the Greek, Serbia and other cultures, then noting that the Vedic literature is too consistent and vast to have been composed and transmitted orally across generations, without being written down.[citation needed] According to Goody, the Vedic texts likely involved both a written and oral tradition, calling it a "parallel products of a literate society".
+
+Australian Aboriginal culture has thrived on oral traditions and oral histories passed down through thousands of years. In a study published in February 2020, new evidence showed that both Budj Bim and Tower Hill volcanoes erupted between 34,000 and 40,000 years ago. Significantly, this is a "minimum age constraint for human presence in Victoria", and also could be interpreted as evidence for the oral histories of the Gunditjmara people, an Aboriginal Australian people of south-western Victoria, which tell of volcanic eruptions being some of the oldest oral traditions in existence. An axe found underneath volcanic ash in 1947 had already proven that humans inhabited the region before the eruption of Tower Hill.
+
+All ancient Greek literature was to some degree oral in nature, and the earliest literature was completely so. Homer's epic poetry, states Michael Gagarin, was largely composed, performed and transmitted orally. As folklores and legends were performed in front of distant audiences, the singers would substitute the names in the stories with local characters or rulers to give the stories a local flavor and thus connect with the audience, but making the historicity embedded in the oral tradition as unreliable. The lack of surviving texts about the Greek and Roman religious traditions have led scholars to presume that these were ritualistic and transmitted as oral traditions, but some scholars disagree that the complex rituals in the ancient Greek and Roman civilizations were an exclusive product of an oral tradition.
+
+Writing systems are not known to have existed among Native North Americans before contact with Europeans. Oral storytelling traditions flourished in a context without the use of writing to record and preserve history, scientific knowledge, and social practices. While some stories were told for amusement and leisure, most functioned as practical lessons from tribal experience applied to immediate moral, social, psychological, and environmental issues. Stories fuse fictional, supernatural, or otherwise exaggerated characters and circumstances with real emotions and morals as a means of teaching. Plots often reflect real life situations and may be aimed at particular people known by the story's audience. In this way, social pressure could be exerted without directly causing embarrassment or social exclusion. For example, rather than yelling, Inuit parents might deter their children from wandering too close to the water's edge by telling a story about a sea monster with a pouch for children within its reach.
+
+Writing: Around the 4th millennium BC, the complexity of trade and administration in Mesopotamia outgrew human memory, and writing became a more dependable method of recording and presenting transactions in a permanent form. Though in both ancient Egypt and Mesoamerica, writing may have already emerged because of the need to record historical and environmental events. Subsequent innovations included more uniform, predictable, legal systems, sacred texts, and the origins of modern practices of scientific inquiry and knowledge-consolidation, all largely reliant on portable and easily reproducible forms of writing.
+
+Publishing: Publishing became possible with the invention of writing, but became more practical with the invention of printing. Prior to printing, distributed works were copied manually, by scribes.
+
+The Chinese inventor Bi Sheng made movable type of earthenware circa 1045. Then c.1450, separately Johannes Gutenberg invented movable type in Europe. This invention gradually made books less expensive to produce and more widely available.
+
+Early printed books, single sheets and images which were created before 1501 in Europe are known as incunables or incunabula. "A man born in 1453, the year of the fall of Constantinople, could look back from his fiftieth year on a lifetime in which about eight million books had been printed, more perhaps than all the scribes of Europe had produced since Constantine founded his city in A.D. 330."
+
+Eventually, printing enabled other forms of publishing besides books. The history of modern newspaper publishing started in Germany in 1609, with publishing of magazines following in 1663.
+
+Poetry: Poetry has traditionally been distinguished from prose by its greater use of the aesthetic qualities of language, including musical devices such as assonance, aliteration, rhyme, and rhythm, and by being set in lines and verses rather than paragraphs, and more recently its use of other typographical elements. This distinction is complicated by various hybrid forms such as the sound poetry, concrete poetry and prose poem, and more generally by the fact that prose possesses rhythm. Abram Lipsky refers to it as an "open secret" that "prose is not distinguished from poetry by lack of rhythm".
+
+Prior to the 19th century, poetry was commonly understood to be something set in metrical lines: "any kind of subject consisting of Rhythm or Verses". Possibly as a result of Aristotle's influence (his Poetics), "poetry" before the 19th century was usually less a technical designation for verse than a normative category of fictive or rhetorical art. As a form it may pre-date literacy, with the earliest works being composed within and sustained by an oral tradition; hence it constitutes the earliest example of literature.
+                `,
+            image: 'https://upload.wikimedia.org/wikipedia/commons/f/f3/Open_book_01.svg',
+            price: 9.99
+        },
+        {
+            courses: courses[6]._id,
+            name: 'Photography',
+            intro:
+                `Photography is the art, application, and practice of creating durable images by recording light, either electronically by means of an image sensor, or chemically by means of a light-sensitive material such as photographic film. It is employed in many fields of science, manufacturing (e.g., photolithography), and business, as well as its more direct uses for art, film and video production, recreational purposes, hobby, and mass communication.
+
+                Typically, a lens is used to focus the light reflected or emitted from objects into a real image on the light-sensitive surface inside a camera during a timed exposure. With an electronic image sensor, this produces an electrical charge at each pixel, which is electronically processed and stored in a digital image file for subsequent display or processing. The result with photographic emulsion is an invisible latent image, which is later chemically "developed" into a visible image, either negative or positive depending on the purpose of the photographic material and the method of processing. A negative image on film is traditionally used to photographically create a positive image on a paper base, known as a print, either by using an enlarger or by contact printing.`,
+            
+            content: 
+                `Etymology: The word "photography" was created from the Greek roots φωτός (phōto's), genitive of φῶς (phōs), "light" and γραφή (graphé) "representation by means of lines" or "drawing", together meaning "drawing with light".
+
+Several people may have coined the same new term from these roots independently. Hercules Florence, a French painter and inventor living in Campinas, Brazil, used the French form of the word, photographie, in private notes which a Brazilian historian believes were written in 1834. This claim is widely reported but is not yet largely recognized internationally. The first use of the word by the Franco-Brazilian inventor became widely known after the research of Boris Kossoy in 1980.
+                
+The German newspaper Vossische Zeitung of 25 February 1839 contained an article entitled Photographie, discussing several priority claims – especially Henry Fox Talbot's – regarding Daguerre's claim of invention. The article is the earliest known occurrence of the word in public print. It was signed "J.M.", believed to have been Berlin astronomer Johann von Maedler. The astronomer Sir John Herschel is also credited with coining the word, independent of Talbot, in 1839.
+                
+The inventors Nicéphore Niépce, Henry Fox Talbot and Louis Daguerre seem not to have known or used the word "photography", but referred to their processes as "Heliography" (Niépce), "Photogenic Drawing"/"Talbotype"/"Calotype" (Talbot) and "Daguerreotype" (Daguerre).
+
+Precursor technologies: Photography is the result of combining several technical discoveries, relating to seeing an image and capturing the image. The discovery of the camera obscura ("dark chamber" in Latin) that provides an image of a scene dates back to ancient China. Greek mathematicians Aristotle and Euclid independently described a camera obscura in the 5th and 4th centuries BCE. In the 6th century CE, Byzantine mathematician Anthemius of Tralles used a type of camera obscura in his experiments.
+
+The Arab physicist Ibn al-Haytham (Alhazen) (965–1040) also invented a camera obscura as well as the first true pinhole camera. The invention of the camera has been traced back to the work of Ibn al-Haytham. While the effects of a single light passing through a pinhole had been described earlier, Ibn al-Haytham gave the first correct analysis of the camera obscura, including the first geometrical and quantitative descriptions of the phenomenon, and was the first to use a screen in a dark room so that an image from one side of a hole in the surface could be projected onto a screen on the other side. He also first understood the relationship between the focal point and the pinhole, and performed early experiments with afterimages, laying the foundations for the invention of photography in the 19th century.
+
+Leonardo da Vinci mentions natural camera obscura that are formed by dark caves on the edge of a sunlit valley. A hole in the cave wall will act as a pinhole camera and project a laterally reversed, upside down image on a piece of paper. Renaissance painters used the camera obscura which, in fact, gives the optical rendering in color that dominates Western Art. It is a box with a small hole in one side, which allows specific light rays to enter, projecting an inverted image onto a viewing screen or paper.
+
+The birth of photography was then concerned with inventing means to capture and keep the image produced by the camera obscura. Albertus Magnus (1193–1280) discovered silver nitrate, and Georg Fabricius (1516–1571) discovered silver chloride, and the techniques described in Ibn al-Haytham's Book of Optics are capable of producing primitive photographs using medieval materials.
+
+Daniele Barbaro described a diaphragm in 1566. Wilhelm Homberg described how light darkened some chemicals (photochemical effect) in 1694. The fiction book Giphantie, published in 1760, by French author Tiphaigne de la Roche, described what can be interpreted as photography.
+
+Around the year 1800, British inventor Thomas Wedgwood made the first known attempt to capture the image in a camera obscura by means of a light-sensitive substance. He used paper or white leather treated with silver nitrate. Although he succeeded in capturing the shadows of objects placed on the surface in direct sunlight, and even made shadow copies of paintings on glass, it was reported in 1802 that "the images formed by means of a camera obscura have been found too faint to produce, in any moderate time, an effect upon the nitrate of silver." The shadow images eventually darkened all over.
+
+Invention: The first permanent photoetching was an image produced in 1822 by the French inventor Nicéphore Niépce, but it was destroyed in a later attempt to make prints from it. Niépce was successful again in 1825. In 1826 or 1827, he made the View from the Window at Le Gras, the earliest surviving photograph from nature (i.e., of the image of a real-world scene, as formed in a camera obscura by a lens). Because Niépce's camera photographs required an extremely long exposure (at least eight hours and probably several days), he sought to greatly improve his bitumen process or replace it with one that was more practical. In partnership with Louis Daguerre, he worked out post-exposure processing methods that produced visually superior results and replaced the bitumen with a more light-sensitive resin, but hours of exposure in the camera were still required. With an eye to eventual commercial exploitation, the partners opted for total secrecy.
+
+Niépce died in 1833 and Daguerre then redirected the experiments toward the light-sensitive silver halides, which Niépce had abandoned many years earlier because of his inability to make the images he captured with them light-fast and permanent. Daguerre's efforts culminated in what would later be named the daguerreotype process. The essential elements—a silver-plated surface sensitized by iodine vapor, developed by mercury vapor, and "fixed" with hot saturated salt water—were in place in 1837. The required exposure time was measured in minutes instead of hours. Daguerre took the earliest confirmed photograph of a person in 1838 while capturing a view of a Paris street: unlike the other pedestrian and horse-drawn traffic on the busy boulevard, which appears deserted, one man having his boots polished stood sufficiently still throughout the several-minutes-long exposure to be visible. The existence of Daguerre's process was publicly announced, without details, on 7 January 1839. The news created an international sensation. France soon agreed to pay Daguerre a pension in exchange for the right to present his invention to the world as the gift of France, which occurred when complete working instructions were unveiled on 19 August 1839. In that same year, American photographer Robert Cornelius is credited with taking the earliest surviving photographic self-portrait.
+
+In Brazil, Hercules Florence had apparently started working out a silver-salt-based paper process in 1832, later naming it Photographie.
+
+Meanwhile, a British inventor, William Fox Talbot, had succeeded in making crude but reasonably light-fast silver images on paper as early as 1834 but had kept his work secret. After reading about Daguerre's invention in January 1839, Talbot published his hitherto secret method and set about improving on it. At first, like other pre-daguerreotype processes, Talbot's paper-based photography typically required hours-long exposures in the camera, but in 1840 he created the calotype process, which used the chemical development of a latent image to greatly reduce the exposure needed and compete with the daguerreotype. In both its original and calotype forms, Talbot's process, unlike Daguerre's, created a translucent negative which could be used to print multiple positive copies; this is the basis of most modern chemical photography up to the present day, as daguerreotypes could only be replicated by rephotographing them with a camera. Talbot's famous tiny paper negative of the Oriel window in Lacock Abbey, one of a number of camera photographs he made in the summer of 1835, may be the oldest camera negative in existence.
+
+In France, Hippolyte Bayard invented his own process for producing direct positive paper prints and claimed to have invented photography earlier than Daguerre or Talbot.
+
+British chemist John Herschel made many contributions to the new field. He invented the cyanotype process, later familiar as the "blueprint". He was the first to use the terms "photography", "negative" and "positive". He had discovered in 1819 that sodium thiosulphate was a solvent of silver halides, and in 1839 he informed Talbot (and, indirectly, Daguerre) that it could be used to "fix" silver-halide-based photographs and make them completely light-fast. He made the first glass negative in late 1839.
+
+In the March 1851 issue of The Chemist, Frederick Scott Archer published his wet plate collodion process. It became the most widely used photographic medium until the gelatin dry plate, introduced in the 1870s, eventually replaced it. There are three subsets to the collodion process; the Ambrotype (a positive image on glass), the Ferrotype or Tintype (a positive image on metal) and the glass negative, which was used to make positive prints on albumen or salted paper.
+
+Many advances in photographic glass plates and printing were made during the rest of the 19th century. In 1891, Gabriel Lippmann introduced a process for making natural-color photographs based on the optical phenomenon of the interference of light waves. His scientifically elegant and important but ultimately impractical invention earned him the Nobel Prize in Physics in 1908.
+
+Glass plates were the medium for most original camera photography from the late 1850s until the general introduction of flexible plastic films during the 1890s. Although the convenience of the film greatly popularized amateur photography, early films were somewhat more expensive and of markedly lower optical quality than their glass plate equivalents, and until the late 1910s they were not available in the large formats preferred by most professional photographers, so the new medium did not immediately or completely replace the old. Because of the superior dimensional stability of glass, the use of plates for some scientific applications, such as astrophotography, continued into the 1990s, and in the niche field of laser holography, it has persisted into the 2010s.
+
+Digital: In 1981, Sony unveiled the first consumer camera to use a charge-coupled device for imaging, eliminating the need for film: the Sony Mavica. While the Mavica saved images to disk, the images were displayed on television, and the camera was not fully digital.
+
+The first digital camera to both record and save images in a digital format was the Fujix DS-1P created by Fujfilm in 1988.
+
+In 1991, Kodak unveiled the DCS 100, the first commercially available digital single lens reflex camera. Although its high cost precluded uses other than photojournalism and professional photography, commercial digital photography was born.
+
+Digital imaging uses an electronic image sensor to record the image as a set of electronic data rather than as chemical changes on film. An important difference between digital and chemical photography is that chemical photography resists photo manipulation because it involves film and photographic paper, while digital imaging is a highly manipulative medium. This difference allows for a degree of image post-processing that is comparatively difficult in film-based photography and permits different communicative potentials and applications. Digital photography dominates the 21st century. More than 99% of photographs taken around the world are through digital cameras, increasingly through smartphones.
+
+Law: Photography is both restricted as well as protected by the law in many jurisdictions. Protection of photographs is typically achieved through the granting of copyright or moral rights to the photographer. In the United States, photography is protected as a First Amendment right and anyone is free to photograph anything seen in public spaces as long as it is in plain view. In the UK a recent law (Counter-Terrorism Act 2008) increases the power of the police to prevent people, even press photographers, from taking pictures in public places. In South Africa, any person may photograph any other person, without their permission, in public spaces and the only specific restriction placed on what may not be photographed by government is related to anything classed as national security. Each country has different laws.
+                `,
+            image: 'https://upload.wikimedia.org/wikipedia/commons/c/c2/Reflex_camera_simple_labels.svg',
+            price: 9.99
+        },
+        {
+            courses: courses[7]._id,
+            name: 'Geography',
+            intro:
+                `Geography is a systematic study of the Universe and its features. Traditionally, geography has been associated with cartography and place names. Although many geographers are trained in toponymy and cartology, this is not their main preoccupation. Geographers study the space and the temporal database distribution of phenomena, processes, and features as well as the interaction of humans and their environment. Because space and place affect a variety of topics, such as economics, health, climate, plants and animals, geography is highly interdisciplinary. The interdisciplinary nature of the geographical approach depends on an attentiveness to the relationship between physical and human phenomena and its spatial patterns.
+                
+                Geography as a discipline can be split broadly into two main subsidiary fields: human geography and physical geography. The former largely focuses on the built environment and how humans create, view, manage, and influence space. The latter examines the natural environment, and how organisms, climate, soil, water, and landforms produce and interact. The difference between these approaches led to a third field, environmental geography, which combines physical and human geography and concerns the interactions between the environment and humans.
+                `,
+            
+            content: 
+                `Physiography: Physical geography (or physiography) focuses on geography as an Earth science. It aims to understand the physical problems and the issues of lithosphere, hydrosphere, atmosphere, pedosphere, and global flora and fauna patterns (biosphere). Physical geography is the study of earth's seasons, climate, atmosphere, soil, streams, landforms, and oceans.
+
+Anthropogeography: Human geography is a branch of geography that focuses on the study of patterns and processes that shape the human society. It encompasses the human, political, cultural, social, and economic aspects.
+
+Integrated geography: Integrated geography is concerned with the description of the spatial interactions between humans and the natural world. It requires an understanding of the traditional aspects of physical and human geography, like the ways that human societies conceptualize the environment. Integrated geography has emerged as a bridge between human and physical geography, as a result of the increasing specialisation of the two sub-fields. Since the changing of the human relationship with the environment as a result of globalization and technological change, a new approach was needed to understand the changing and dynamic relationship. Examples of areas of research in environmental geography include: emergency management, environmental management, sustainability, and political ecology.
+          
+Geomatics: Geomatics is concerned with the application of computers to the traditional spatial techniques used in cartography and topography. Geomatics emerged from the quantitative revolution in geography in the mid-1950s. Today, geomatics methods include spatial analysis, geographic information systems (GIS), remote sensing, and global positioning systems (GPS). Geomatics has led to a revitalization of some geography departments, especially in Northern America where the subject had a declining status during the 1950s.
+
+Regional Geography: A branch which is concerned with the description of the unique characteristics of the earth's surface, resulting in each area from the combination of its complete natural or elements, as of physical and human environment. The main aim is to understand, or define the uniqueness, or character of a particular region that consists of natural as well as human elements. Attention is paid also to regionalization, which covers the proper techniques of space delimitation into regions.
+
+Cartography: Cartography studies the representation of the Earth's surface with abstract symbols (map making). Although other subdisciplines of geography rely on maps for presenting their analyses, the actual making of maps is abstract enough to be regarded separately. Cartography has grown from a collection of drafting techniques into an actual science.
+
+Cartographers must learn cognitive psychology and ergonomics to understand which symbols convey information about the Earth most effectively, and behavioural psychology to induce the readers of their maps to act on the information. They must learn geodesy and fairly advanced mathematics to understand how the shape of the Earth affects the distortion of map symbols projected onto a flat surface for viewing. It can be said, without much controversy, that cartography is the seed from which the larger field of geography grew. Most geographers will cite a childhood fascination with maps as an early sign they would end up in the field.
+
+Geographic information systems: Geographic information systems (GIS) deal with the storage of information about the Earth for automatic retrieval by a computer, in an accurate manner appropriate to the information's purpose. In addition to all of the other subdisciplines of geography, GIS specialists must understand computer science and database systems. GIS has revolutionized the field of cartography: nearly all mapmaking is now done with the assistance of some form of GIS software. GIS also refers to the science of using GIS software and GIS techniques to represent, analyse, and predict the spatial relationships. In this context, GIS stands for geographic information science.
+
+Remote sensing: Remote sensing is the science of obtaining information about Earth features from measurements made at a distance. Remotely sensed data comes in many forms, such as satellite imagery, aerial photography, and data obtained from hand-held sensors. Geographers increasingly use remotely sensed data to obtain information about the Earth's land surface, ocean, and atmosphere, because it: (a) supplies objective information at a variety of spatial scales (local to global), (b) provides a synoptic view of the area of interest, (c) allows access to distant and inaccessible sites, (d) provides spectral information outside the visible portion of the electromagnetic spectrum, and (e) facilitates studies of how features/areas change over time. Remotely sensed data may be analysed either independently of, or in conjunction with other digital data layers (e.g., in a geographic information system).
+
+Quantitative methods: Geostatistics deal with quantitative data analysis, specifically the application of statistical methodology to the exploration of geographic phenomena. Geostatistics is used extensively in a variety of fields, including hydrology, geology, petroleum exploration, weather analysis, urban planning, logistics, and epidemiology. The mathematical basis for geostatistics derives from cluster analysis, linear discriminant analysis and non-parametric statistical tests, and a variety of other subjects. Applications of geostatistics rely heavily on geographic information systems, particularly for the interpolation (estimate) of unmeasured points. Geographers are making notable contributions to the method of quantitative techniques.
+
+Qualitative methods: Geographic qualitative methods, or ethnographical research techniques, are used by human geographers. In cultural geography there is a tradition of employing qualitative research techniques, also used in anthropology and sociology. Participant observation and in-depth interviews provide human geographers with qualitative data.
+
+History: The oldest known world maps date back to ancient Babylon from the 9th century BC. The best known Babylonian world map, however, is the Imago Mundi of 600 BC. The map as reconstructed by Eckhard Unger shows Babylon on the Euphrates, surrounded by a circular landmass showing Assyria, Urartu, and several cities, in turn surrounded by a "bitter river" (Oceanus), with seven islands arranged around it so as to form a seven-pointed star. The accompanying text mentions seven outer regions beyond the encircling ocean. The descriptions of five of them have survived. In contrast to the Imago Mundi, an earlier Babylonian world map dating back to the 9th century BC depicted Babylon as being further north from the center of the world, though it is not certain what that center was supposed to represent.
+
+The ideas of Anaximander (c. 610–545 BC): considered by later Greek writers to be the true founder of geography, come to us through fragments quoted by his successors. Anaximander is credited with the invention of the gnomon, the simple, yet efficient Greek instrument that allowed the early measurement of latitude. Thales is also credited with the prediction of eclipses. The foundations of geography can be traced to the ancient cultures, such as the ancient, medieval, and early modern Chinese. The Greeks, who were the first to explore geography as both art and science, achieved this through Cartography, Philosophy, and Literature, or through Mathematics. There is some debate about who was the first person to assert that the Earth is spherical in shape, with the credit going either to Parmenides or Pythagoras. Anaxagoras was able to demonstrate that the profile of the Earth was circular by explaining eclipses. However, he still believed that the Earth was a flat disk, as did many of his contemporaries. One of the first estimates of the radius of the Earth was made by Eratosthenes.
+
+The first rigorous system of latitude and longitude lines is credited to Hipparchus. He employed a sexagesimal system that was derived from Babylonian mathematics. The meridians were sub-divided into 360°, with each degree further subdivided into 60 (minutes). To measure the longitude at different locations on Earth, he suggested using eclipses to determine the relative difference in time. The extensive mapping by the Romans as they explored new lands would later provide a high level of information for Ptolemy to construct detailed atlases. He extended the work of Hipparchus, using a grid system on his maps and adopting a length of 56.5 miles for a degree.
+
+From the 3rd century onwards, Chinese methods of geographical study and writing of geographical literature became much more comprehensive than what was found in Europe at the time (until the 13th century). Chinese geographers such as Liu An, Pei Xiu, Jia Dan, Shen Kuo, Fan Chengda, Zhou Daguan, and Xu Xiake wrote important treatises, yet by the 17th century advanced ideas and methods of Western-style geography were adopted in China. During the Middle Ages, the fall of the Roman empire led to a shift in the evolution of geography from Europe to the Islamic world. Muslim geographers such as Muhammad al-Idrisi produced detailed world maps (such as Tabula Rogeriana), while other geographers such as Yaqut al-Hamawi, Abu Rayhan Biruni, Ibn Battuta, and Ibn Khaldun provided detailed accounts of their journeys and the geography of the regions they visited. Turkish geographer, Mahmud al-Kashgari drew a world map on a linguistic basis, and later so did Piri Reis (Piri Reis map). Further, Islamic scholars translated and interpreted the earlier works of the Romans and the Greeks and established the House of Wisdom in Baghdad for this purpose.[21] Abū Zayd al-Balkhī, originally from Balkh, founded the "Balkhī school" of terrestrial mapping in Baghdad.[22] Suhrāb, a late tenth century Muslim geographer accompanied a book of geographical coordinates, with instructions for making a rectangular world map with equirectangular projection or cylindrical equidistant projection.[23]
+
+Abu Rayhan Biruni (976–1048) first described a polar equi-azimuthal equidistant projection of the celestial sphere. He was regarded as the most skilled when it came to mapping cities and measuring the distances between them, which he did for many cities in the Middle East and the Indian subcontinent. He often combined astronomical readings and mathematical equations, in order to develop methods of pin-pointing locations by recording degrees of latitude and longitude. He also developed similar techniques when it came to measuring the heights of mountains, depths of the valleys, and expanse of the horizon. He also discussed human geography and the planetary habitability of the Earth. He also calculated the latitude of Kath, Khwarezm, using the maximum altitude of the Sun, and solved a complex geodesic equation in order to accurately compute the Earth's circumference, which was close to modern values of the Earth's circumference.[25] His estimate of 6,339.9 km for the Earth radius was only 16.8 km less than the modern value of 6,356.7 km. In contrast to his predecessors, who measured the Earth's circumference by sighting the Sun simultaneously from two different locations, al-Biruni developed a new method of using trigonometric calculations, based on the angle between a plain and mountain top, which yielded more accurate measurements of the Earth's circumference, and made it possible for it to be measured by a single person from a single location. The European Age of Discovery during the 16th and the 17th centuries, where many new lands were discovered and accounts by European explorers such as Christopher Columbus, Marco Polo, and James Cook revived a desire for both accurate geographic detail, and more solid theoretical foundations in Europe. The problem facing both explorers and geographers was finding the latitude and longitude of a geographic location. The problem of latitude was solved long ago but that of longitude remained; agreeing on what zero meridian should be was only part of the problem. It was left to John Harrison to solve it by inventing the chronometer H-4 in 1760, and later in 1884 for the International Meridian Conference to adopt by convention the Greenwich meridian as zero meridian.[27]
+
+The 18th and the 19th centuries were the times when geography became recognized as a discrete academic discipline, and became part of a typical university curriculum in Europe (especially Paris and Berlin). The development of many geographic societies also occurred during the 19th century, with the foundations of the Société de Géographie in 1821, the Royal Geographical Society in 1830, Russian Geographical Society in 1845, American Geographical Society in 1851, and the National Geographic Society in 1888. The influence of Immanuel Kant, Alexander von Humboldt, Carl Ritter, and Paul Vidal de la Blache can be seen as a major turning point in geography from a philosophy to an academic subject.
+
+Over the past two centuries, the advancements in technology with computers have led to the development of geomatics and new practices such as participant observation and geostatistics being incorporated into geography's portfolio of tools. In the West during the 20th century, the discipline of geography went through four major phases: environmental determinism, regional geography, the quantitative revolution, and critical geography. The strong interdisciplinary links between geography and the sciences of geology and botany, as well as economics, sociology and demographics have also grown greatly, especially as a result of earth system science that seeks to understand the world in a holistic view.
+
+                `,
+            image: 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Map_of_the_world_by_the_US_Gov_as_of_2016_no_legend.svg',
+            price: 9.99
+        },
     ]);
     console.log('lessons seeded');
     process.exit();

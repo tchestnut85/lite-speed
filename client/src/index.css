@@ -543,7 +543,7 @@ button:hover {
 .courses-wrapper {
 	display: flex;
 	flex-wrap: wrap;
-	padding-top: 200px;
+	padding-top: 125px;
 	justify-content: space-between;
 	align-items: center;
 	flex-direction: column;
@@ -571,7 +571,7 @@ button:hover {
 	align-items: center;
 	color: var(--lightColor);
 	text-decoration: none;
-	margin: 20px;
+	margin: 40px;
 }
 
 .courses-btn:hover {
