@@ -72,7 +72,6 @@ const resolvers = {
       }
     },
 
-
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
 
@@ -108,7 +107,7 @@ const resolvers = {
           { _id: context.user._id },
           { $addToSet: { savedCourses: { _id: courseId, title: courseTitle } } },
           { new: true }
-        )
+        );
         return updatedUser;
       }
     },
@@ -119,8 +118,19 @@ const resolvers = {
           { _id: context.user._id },
           { $pull: { savedCourses: { _id: courseId } } },
           { new: true }
-        )
+        );
         return updatedUser;
+      }
+    },
+
+    saveGrade: async (parent, { lessonId, lessonName, grade }, context) => {
+      if (context.user) {
+        const user = await User.findByIdAndUpdate(
+          { _id: context.user._id },
+          { $push: { grades: { lessonId, lessonName, grade } } },
+          { new: true }
+        );
+        return user;
       }
     }
   }

@@ -82,3 +82,16 @@ export const REMOVE_COURSE = gql`
             }
         }
 `;
+
+export const SAVE_GRADE = gql`
+    mutation saveGrade($lessonId: ID!, $lessonName: String!, $grade: Int!){
+        saveGrade(lessonId: $lessonId, lessonName:$lessonName, grade: $grade) {
+            grades {
+                _id
+                lessonId
+                lessonName
+                grade
+            }
+        }
+    }
+`;

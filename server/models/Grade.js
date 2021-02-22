@@ -6,10 +6,18 @@ const gradeSchema = new Schema({
         type: Schema.Types.ObjectId,
         required: true
     },
+    lessonName: {
+        type: String,
+        required: true
+    },
     grade: {
         type: Number,
         required: true
-    }
+    },
+    // createdAt: {
+    //     type: Date,
+    //     default: Date.now,
+    // }
 });
 
 module.exports = gradeSchema;

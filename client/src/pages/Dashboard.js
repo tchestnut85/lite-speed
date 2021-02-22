@@ -1,12 +1,12 @@
-import { Link } from 'react-router-dom';
-import { QUERY_ME } from '../utils/queries';
 import React, { useState } from 'react';
-import { capitalizeFirstLetter } from '../utils/helpers';
-import { useQuery, useMutation } from '@apollo/react-hooks';
-import { QUERY_LESSONS } from '../utils/queries';
-import { REMOVE_COURSE } from '../utils/mutations';
-import Auth from '../utils/auth';
+import { useMutation, useQuery } from '@apollo/react-hooks';
 
+import Auth from '../utils/auth';
+import { Link } from 'react-router-dom';
+import { QUERY_LESSONS } from '../utils/queries';
+import { QUERY_ME } from '../utils/queries';
+import { REMOVE_COURSE } from '../utils/mutations';
+import { capitalizeFirstLetter } from '../utils/helpers';
 
 function Dashboard() {
     const { loading, data } = useQuery(QUERY_ME);
@@ -37,9 +37,9 @@ function Dashboard() {
         try {
             await removeCourse({
                 variables: { courseId: courseId }
-            })
+            });
         } catch (err) {
-            console.error(err)
+            console.error(err);
         }
     };
 
@@ -71,7 +71,7 @@ function Dashboard() {
                             console.log(course);
                             return (
                                 <div>
-                                    <button onClick={() => { getLesson(course._id) }} className="dashboard-circles" key={course.title}>
+                                    <button onClick={() => { getLesson(course._id); }} className="dashboard-circles" key={course.title}>
                                         <p className='myCourses'>
                                             {course.title}
                                         </p>
@@ -79,12 +79,12 @@ function Dashboard() {
                                     <button
                                         key={course._id}
                                         id={course._id}
-                                        onClick={() => { handleRemoveCourse(course._id) }}
+                                        onClick={() => { handleRemoveCourse(course._id); }}
                                     >
                                         Remove this course
                                     </button>
                                 </div>
-                            )
+                            );
                         })}
                     </div>
                 </div>

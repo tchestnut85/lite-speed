@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const gradeSchema = require('./Grades');
+const gradeSchema = require('./Grade');
 const { Schema } = mongoose;
 const bcrypt = require('bcrypt');
 // const Lesson = require('./Lesson');
@@ -27,23 +27,8 @@ const userSchema = new Schema({
     required: true,
     minlength: 5
   },
-<<<<<<< HEAD
   grades: [gradeSchema]
 });
-=======
-  savedCourses: {
-    type: Schema.Types.Array,
-    ref: 'Courses',
-    required: false,
-    lessons: [{
-      type: Schema.Types.ObjectId,
-      ref: 'Lesson',
-      required: false
-    }]
-  }
-},
-);
->>>>>>> develop
 
 // set up pre-save middleware to create password
 userSchema.pre('save', async function (next) {
@@ -55,11 +40,6 @@ userSchema.pre('save', async function (next) {
   next();
 });
 
-<<<<<<< HEAD
-userSchema.pre('findOneAndUpdate', async function () {
-  this._update.password = await bcrypt.hash(this._update.password, 10);
-});
-=======
 // userSchema.pre('findOneAndUpdate', async function () {
 //   const saltRounds = 10;
 //   this._update.password = await bcrypt.hash(this._update.password, saltRounds, function (err) {
@@ -73,14 +53,12 @@ userSchema.pre('findOneAndUpdate', async function () {
 //     next()
 //   }
 // });
->>>>>>> develop
 
 // compare the incoming password with the hashed password
 userSchema.methods.isCorrectPassword = async function (password) {
   const isCorrect = await bcrypt.compare(password, this.password);
   return isCorrect;
 };
-
 
 const User = mongoose.model('User', userSchema);
 

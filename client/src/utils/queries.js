@@ -12,6 +12,12 @@ export const QUERY_ME = gql`
                 _id
                 title
             }
+            grades {
+                _id
+                lessonId
+                lessonName
+                grade
+            }
         }
     } 
 `;
