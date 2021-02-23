@@ -123,11 +123,11 @@ const resolvers = {
       }
     },
 
-    saveGrade: async (parent, { lessonId, lessonName, grade }, context) => {
+    saveGrade: async (parent, { lessonName, grade }, context) => {
       if (context.user) {
         const user = await User.findByIdAndUpdate(
           { _id: context.user._id },
-          { $push: { grades: { lessonId, lessonName, grade } } },
+          { $push: { grades: { lessonName, grade } } },
           { new: true }
         );
         return user;

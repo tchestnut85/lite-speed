@@ -14,7 +14,7 @@ function Dashboard() {
     console.log(lessonData);
 
     const userData = data?.me || {};
-    // console.log(userData);
+    console.log(userData);
     const [isSavedCourses, setSavedCourses] = useState(userData.savedCourses);
 
     const [removeCourse] = useMutation(REMOVE_COURSE);
@@ -60,6 +60,10 @@ function Dashboard() {
 
                 <Link to="/profile" className="dashboard-circles profile-circle">
                     <i className="fas fa-user-circle fa-6x profile-icon"></i>
+                </Link>
+
+                <Link to="/grades" className="dashboard-circles grades-circle">
+                    <i className="fas fa-file-alt fa-6x grades-icon"></i>
                 </Link>
 
             </section>

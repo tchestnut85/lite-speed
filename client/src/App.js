@@ -8,6 +8,7 @@ import Chatbot from './components/Chatbot';
 import Courses from './pages/Courses';
 import Dashboard from './pages/Dashboard';
 import Footer from './components/Footer';
+import Grades from './pages/Grades';
 import Header from './components/Header';
 import LandingPage from './pages/LandingPage';
 import Lesson from './pages/Lesson';
@@ -46,6 +47,7 @@ function App() {
                   <Route exact path='/courses' component={Courses} />
                   <Route exact path='/courses/:id' component={Lesson} />
                   <Route exact path="/about" component={About} />
+                  <Route exact path="/grades" component={Grades} />
                   <Route exact path="/" component={Dashboard} />
                   <Route exact path="/quiz/:quizName" component={LessonQuiz} />
                   <Route component={NotFound} />

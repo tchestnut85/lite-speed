@@ -2,10 +2,6 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const gradeSchema = new Schema({
-    lessonId: {
-        type: Schema.Types.ObjectId,
-        required: true
-    },
     lessonName: {
         type: String,
         required: true

@@ -27,6 +27,11 @@ const userSchema = new Schema({
     required: true,
     minlength: 5
   },
+  savedCourses: {
+    type: Schema.Types.Array,
+    ref: 'Courses',
+    required: false,
+  },
   grades: [gradeSchema]
 });
 

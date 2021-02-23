@@ -1,9 +1,9 @@
+// import { idbPromise } from '../utils/helpers';
+import { Link, useParams } from 'react-router-dom';
+
 import { QUERY_LESSON } from '../utils/queries';
 import React from 'react';
-// import { idbPromise } from '../utils/helpers';
-import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/react-hooks';
-
 
 function Lesson() {
     const { id: lessonId } = useParams();
@@ -54,10 +54,8 @@ function Lesson() {
                     {lesson.content}
                 </article>
                 <div className='flex-row mx-2 px-2 space-between'>
-                    <a href="/courses" className="back-course"><button>&#8592; Go back to course list </button></a>
-                    {/* <a href={`/quiz/${lesson._id}`} className="back-course"><button>Take the Quiz!</button></a> */}
-
-                    <a href={`/quiz/${(lesson.courses.title).toLowerCase()}`} className="back-course"><button>Take the Quiz!</button></a>
+                    <Link to="/courses" className="back-course"><button className='btn'>&#8592; Go back to course list </button></Link>
+                    <Link to={`/quiz/${(lesson.courses.title).toLowerCase()}`} className="back-course" ><button className='btn'>Take the Quiz!</button></Link>
                 </div>
             </div>
         </section>

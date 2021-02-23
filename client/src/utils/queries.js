@@ -14,7 +14,6 @@ export const QUERY_ME = gql`
             }
             grades {
                 _id
-                lessonId
                 lessonName
                 grade
             }

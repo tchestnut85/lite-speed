@@ -43,6 +43,10 @@ body {
 	justify-content: space-between;
 }
 
+.space-around {
+	justify-content: space-around;
+}
+
 .column {
 	flex-direction: column;
 }
@@ -337,9 +341,6 @@ button:hover {
 	border-radius: 5px;
 	background-color: var(--primaryColor);
 	color: white;
-}
-
-.btn {
 	transition: background-color 0.25s ease-in-out;
 }
 
@@ -412,6 +413,15 @@ button:hover {
 }
 
 .profile-circle:hover .profile-icon {
+	display: none;
+}
+
+.grades-circle:hover::after {
+	content: 'Grades';
+	font-size: 50px;
+}
+
+.grades-circle:hover .grades-icon {
 	display: none;
 }
 
