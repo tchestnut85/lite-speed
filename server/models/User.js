@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+const gradeSchema = require('./Grade');
 const { Schema } = mongoose;
 const bcrypt = require('bcrypt');
 // const Lesson = require('./Lesson');
@@ -31,14 +31,9 @@ const userSchema = new Schema({
     type: Schema.Types.Array,
     ref: 'Courses',
     required: false,
-    lessons: [{
-      type: Schema.Types.ObjectId,
-      ref: 'Lesson',
-      required: false
-    }]
-  }
-},
-);
+  },
+  grades: [gradeSchema]
+});
 
 // set up pre-save middleware to create password
 userSchema.pre('save', async function (next) {
@@ -69,7 +64,6 @@ userSchema.methods.isCorrectPassword = async function (password) {
   const isCorrect = await bcrypt.compare(password, this.password);
   return isCorrect;
 };
-
 
 const User = mongoose.model('User', userSchema);
 

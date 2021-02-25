@@ -43,6 +43,10 @@ body {
 	justify-content: space-between;
 }
 
+.space-around {
+	justify-content: space-around;
+}
+
 .column {
 	flex-direction: column;
 }
@@ -337,9 +341,6 @@ button:hover {
 	border-radius: 5px;
 	background-color: var(--primaryColor);
 	color: white;
-}
-
-.btn {
 	transition: background-color 0.25s ease-in-out;
 }
 
@@ -415,6 +416,15 @@ button:hover {
 	display: none;
 }
 
+.grades-circle:hover::after {
+	content: 'Grades';
+	font-size: 50px;
+}
+
+.grades-circle:hover .grades-icon {
+	display: none;
+}
+
 .dashboard-title {
 	text-align: center;
 	font-size: 45px;
@@ -437,6 +447,7 @@ button:hover {
 	flex-wrap: wrap;
 	justify-content: center;
 	padding-top: 100px;
+	text-align: center;
 }
 
 .myCourses {
@@ -558,6 +569,7 @@ button:hover {
 	flex-wrap: wrap;
 	justify-content: space-around;
 	align-items: center;
+	text-align: center;
 }
 
 .course-name {
@@ -629,7 +641,7 @@ button:hover {
 }
 
 .back-course button {
-	float: right;
+	/* float: right; */
 	margin-right: 45px;
 	text-decoration: none;
 	color: var(--lightColor);
@@ -703,6 +715,12 @@ button:hover {
 	height: 400px;
 }
 
+/* QUIZ STYLING */
+.react-quiz-container {
+	margin-top: 0 !important;
+	padding: 50px 25px 0 25px;
+}
+
 /* MEDIA QUERIES */
 @media screen and (max-width: 1024px) {
 	.login-container label,
@@ -773,5 +791,9 @@ button:hover {
 
 	.about-title button {
 		margin-left: 0;
+	}
+
+	.courses-btn {
+		margin: 30px;
 	}
 }

@@ -1,12 +1,12 @@
-import { Link } from 'react-router-dom';
-import { QUERY_ME } from '../utils/queries';
 import React, { useState } from 'react';
-import { capitalizeFirstLetter } from '../utils/helpers';
-import { useQuery, useMutation } from '@apollo/react-hooks';
-import { QUERY_LESSONS } from '../utils/queries';
-import { REMOVE_COURSE } from '../utils/mutations';
-import Auth from '../utils/auth';
+import { useMutation, useQuery } from '@apollo/react-hooks';
 
+import Auth from '../utils/auth';
+import { Link } from 'react-router-dom';
+import { QUERY_LESSONS } from '../utils/queries';
+import { QUERY_ME } from '../utils/queries';
+import { REMOVE_COURSE } from '../utils/mutations';
+import { capitalizeFirstLetter } from '../utils/helpers';
 
 function Dashboard() {
     const { loading, data } = useQuery(QUERY_ME);
@@ -14,7 +14,7 @@ function Dashboard() {
     console.log(lessonData);
 
     const userData = data?.me || {};
-    // console.log(userData);
+    console.log(userData);
     const [isSavedCourses, setSavedCourses] = useState(userData.savedCourses);
 
     const [removeCourse] = useMutation(REMOVE_COURSE);
@@ -37,9 +37,9 @@ function Dashboard() {
         try {
             await removeCourse({
                 variables: { courseId: courseId }
-            })
+            });
         } catch (err) {
-            console.error(err)
+            console.error(err);
         }
     };
 
@@ -62,6 +62,10 @@ function Dashboard() {
                     <i className="fas fa-user-circle fa-6x profile-icon"></i>
                 </Link>
 
+                {/* <Link to="/grades" className="dashboard-circles grades-circle">
+                    <i className="fas fa-file-alt fa-6x grades-icon"></i>
+                </Link> */}
+
             </section>
             {isSavedCourses && (
                 <div>
@@ -71,20 +75,21 @@ function Dashboard() {
                             console.log(course);
                             return (
                                 <div>
-                                    <button onClick={() => { getLesson(course._id) }} className="dashboard-circles" key={course.title}>
+                                    <button onClick={() => { getLesson(course._id); }} className="dashboard-circles" key={course.title}>
                                         <p className='myCourses'>
                                             {course.title}
                                         </p>
                                     </button>
                                     <button
+                                        className='btn'
                                         key={course._id}
                                         id={course._id}
-                                        onClick={() => { handleRemoveCourse(course._id) }}
+                                        onClick={() => { handleRemoveCourse(course._id); }}
                                     >
-                                        Remove this course
+                                        <i class="fas fa-arrow-up"></i> Remove this course
                                     </button>
                                 </div>
-                            )
+                            );
                         })}
                     </div>
                 </div>

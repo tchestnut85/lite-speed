@@ -16,6 +16,12 @@ const typeDefs = gql`
     price: Float
   }
 
+  type Grade {
+    _id: ID
+    lessonName: String
+    grade: Int
+  }
+
   type User {
     _id: ID
     firstName: String
@@ -23,6 +29,7 @@ const typeDefs = gql`
     email: String
     password: String
     savedCourses: [Courses]
+    grades: [Grade]
   }
 
   type Auth {
@@ -46,6 +53,7 @@ const typeDefs = gql`
     changePassword(password: String): User
     saveCourses(courseId: ID!, courseTitle: String!): User
     removeCourse(courseId: ID!): User
+    saveGrade(lessonName: String!, grade: Int!): User
   }
 `;
 

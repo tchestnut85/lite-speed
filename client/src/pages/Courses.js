@@ -1,10 +1,9 @@
 import { QUERY_ALL_COURSES, QUERY_LESSONS } from '../utils/queries';
+import { useMutation, useQuery } from '@apollo/react-hooks';
 
-import React from 'react';
-import { useQuery, useMutation } from '@apollo/react-hooks';
-import { SAVE_COURSES } from '../utils/mutations';
 import Auth from '../utils/auth';
-
+import React from 'react';
+import { SAVE_COURSES } from '../utils/mutations';
 
 function Courses() {
     const { loading: courseLoading, data } = useQuery(QUERY_ALL_COURSES);
@@ -33,7 +32,7 @@ function Courses() {
         try {
             await saveCourses({
                 variables: { courseId: courseId, courseTitle: courseTitle }
-            })
+            });
         } catch (err) {
             console.error(err);
         }
@@ -61,11 +60,12 @@ function Courses() {
                                     </h3>
                                 </button>
                                 <button
+                                    className='btn'
                                     key={i}
                                     id={course._id}
-                                    onClick={() => { handleSaveCourse(course._id, i, course.title) }}
+                                    onClick={() => { handleSaveCourse(course._id, i, course.title); }}
                                 >
-                                    Save this course
+                                    <i class="fas fa-arrow-up"></i>  Save this course
                                 </button>
                             </div>
                         </>
