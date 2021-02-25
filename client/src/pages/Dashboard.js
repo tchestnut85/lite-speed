@@ -76,7 +76,7 @@ function Dashboard() {
                             return (
                                 <div>
                                     <button onClick={() => { getLesson(course._id); }} className="dashboard-circles" key={course.title}>
-                                        <p className='myCourses'>
+                                        <p className='myCourses course-name'>
                                             {course.title}
                                         </p>
                                     </button>
@@ -86,7 +86,7 @@ function Dashboard() {
                                         id={course._id}
                                         onClick={() => { handleRemoveCourse(course._id); }}
                                     >
-                                        <i class="fas fa-arrow-up"></i> Remove this course
+                                        <i className="fas fa-arrow-up"></i> Remove this course
                                     </button>
                                 </div>
                             );

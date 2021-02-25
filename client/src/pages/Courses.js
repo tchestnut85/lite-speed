@@ -36,6 +36,7 @@ function Courses() {
         } catch (err) {
             console.error(err);
         }
+
         return data;
     };
 
@@ -65,7 +66,7 @@ function Courses() {
                                     id={course._id}
                                     onClick={() => { handleSaveCourse(course._id, i, course.title); }}
                                 >
-                                    <i class="fas fa-arrow-up"></i>  Save this course
+                                    <i className="fas fa-arrow-up"></i>  Save this course
                                 </button>
                             </div>
                         </>
