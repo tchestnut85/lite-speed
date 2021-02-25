@@ -62,9 +62,9 @@ function Dashboard() {
                     <i className="fas fa-user-circle fa-6x profile-icon"></i>
                 </Link>
 
-                <Link to="/grades" className="dashboard-circles grades-circle">
+                {/* <Link to="/grades" className="dashboard-circles grades-circle">
                     <i className="fas fa-file-alt fa-6x grades-icon"></i>
-                </Link>
+                </Link> */}
 
             </section>
             {isSavedCourses && (
@@ -81,11 +81,12 @@ function Dashboard() {
                                         </p>
                                     </button>
                                     <button
+                                        className='btn'
                                         key={course._id}
                                         id={course._id}
                                         onClick={() => { handleRemoveCourse(course._id); }}
                                     >
-                                        Remove this course
+                                        <i class="fas fa-arrow-up"></i> Remove this course
                                     </button>
                                 </div>
                             );

@@ -447,6 +447,7 @@ button:hover {
 	flex-wrap: wrap;
 	justify-content: center;
 	padding-top: 100px;
+	text-align: center;
 }
 
 .myCourses {
@@ -568,6 +569,7 @@ button:hover {
 	flex-wrap: wrap;
 	justify-content: space-around;
 	align-items: center;
+	text-align: center;
 }
 
 .course-name {
@@ -789,5 +791,9 @@ button:hover {
 
 	.about-title button {
 		margin-left: 0;
+	}
+
+	.courses-btn {
+		margin: 30px;
 	}
 }

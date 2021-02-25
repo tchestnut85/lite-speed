@@ -47,7 +47,7 @@ function App() {
                   <Route exact path='/courses' component={Courses} />
                   <Route exact path='/courses/:id' component={Lesson} />
                   <Route exact path="/about" component={About} />
-                  <Route exact path="/grades" component={Grades} />
+                  {/* <Route exact path="/grades" component={Grades} /> */}
                   <Route exact path="/" component={Dashboard} />
                   <Route exact path="/quiz/:quizName" component={LessonQuiz} />
                   <Route component={NotFound} />

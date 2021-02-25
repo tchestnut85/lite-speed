@@ -14,28 +14,19 @@ function Grades() {
         return <div className='page-title'>Loading grades...</div>;
     }
 
-    const isOdd = (i) => {
-        if (i % 2 !== 0) {
-            return true;
-        }
-        return false;
-    };
+    // Function to filter out odd indexed grades - need to implement later
+    // const isOdd = (i) => {
+    //     if (i % 2 !== 0) {
+    //         return true;
+    //     }
+    //     return false;
+    // };
 
     return (
         <section>
             <h2 className='page-title'>{capitalizeFirstLetter(userData.firstName)} {capitalizeFirstLetter(userData.lastName)}'s Grades</h2>
             <div className='flex-row column'>
                 <h3>Lesson</h3>
-                {/* {userData.grades.map((grade) => (
-                    <div className='flex-row space-around' key={grade._id}>
-                        <p>{capitalizeFirstLetter(grade.lessonName)}</p>
-                    </div>
-                ))} */}
-                {/* {userData.grades.filter((grade, i) => i % 2 !== 0(
-                    <div className='flex-row space-around' key={grade._id}>
-                        <p>{capitalizeFirstLetter(grade.lessonName)}</p>
-                    </div>
-                ))} */}
                 {userData.grades.forEach(function (grades, i) {
                     return (
                         <div className='flex-row space-around' key={grades._id}>
