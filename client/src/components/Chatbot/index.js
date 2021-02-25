@@ -15,25 +15,11 @@ function Chatbot() {
         {
             id: 'name',
             user: true,
-            trigger: 'help',
-        },
-        {
-            id: 'help',
-            message: 'Hi {previousValue}, do you need help with something?',
-            hideInput: true,
-            trigger: 'helpConfirm'
-        },
-        {
-            id: 'helpConfirm',
-            hideInput: true,
-            options: [
-                { value: true, label: 'Yes', trigger: 'helpOptions' },
-                { value: false, label: 'No', trigger: 'endMessage' }
-            ]
+            trigger: 'helpOptions',
         },
         {
             id: 'helpOptions',
-            message: 'What can I help you with?',
+            message: 'Hi {previousValue}, what can I help you with?',
             hideInput: true,
             trigger: 'chooseOption'
         },
@@ -52,10 +38,14 @@ function Chatbot() {
             id: 'courseSelect',
             hideInput: true,
             options: [
-                { value: 'Space', label: 'Space', trigger: (() => Auth.loggedIn() ? window.location.replace('/courses/601b53864c55360004d937ff') : window.location.replace('/signup')) },
-                { value: 'Science', label: 'Science', trigger: (() => Auth.loggedIn() ? window.location.replace('/courses/601b53864c55360004d93800') : window.location.replace('/signup')) },
-                { value: 'History', label: 'History', trigger: (() => Auth.loggedIn() ? window.location.replace('/courses/601b53864c55360004d93801') : window.location.replace('/signup')) },
-                { value: 'Mathematics', label: 'Mathematics', trigger: (() => Auth.loggedIn() ? window.location.replace('/courses/601b53864c55360004d93802') : window.location.replace('/signup')) },
+                { value: 'Space', label: 'Space', trigger: (() => Auth.loggedIn() ? window.location.replace('/courses/6036f9eb7ed9590004b67bf0') : window.location.replace('/signup')) },
+                { value: 'Science', label: 'Science', trigger: (() => Auth.loggedIn() ? window.location.replace('/courses/6036f9eb7ed9590004b67bf1') : window.location.replace('/signup')) },
+                { value: 'History', label: 'History', trigger: (() => Auth.loggedIn() ? window.location.replace('/courses/6036f9eb7ed9590004b67bf2') : window.location.replace('/signup')) },
+                { value: 'Mathematics', label: 'Mathematics', trigger: (() => Auth.loggedIn() ? window.location.replace('/courses/6036f9eb7ed9590004b67bf3') : window.location.replace('/signup')) },
+                { value: 'Web Development', label: 'Web Development', trigger: (() => Auth.loggedIn() ? window.location.replace('/courses/6036f9eb7ed9590004b67bf4') : window.location.replace('/signup')) },
+                { value: 'English', label: 'English', trigger: (() => Auth.loggedIn() ? window.location.replace('/courses/6036f9eb7ed9590004b67bf5') : window.location.replace('/signup')) },
+                { value: 'Art', label: 'Art', trigger: (() => Auth.loggedIn() ? window.location.replace('/courses/6036f9eb7ed9590004b67bf6') : window.location.replace('/signup')) },
+                { value: 'Geography', label: 'Geography', trigger: (() => Auth.loggedIn() ? window.location.replace('/courses/6036f9eb7ed9590004b67bf7') : window.location.replace('/signup')) },
                 { value: false, label: 'Nevermind', trigger: 'exit' }
             ]
         },

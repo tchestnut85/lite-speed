@@ -379,7 +379,7 @@ button:hover {
 	align-items: center;
 	color: var(--lightColor);
 	text-decoration: none;
-	margin: 0 45px 45px 25px;
+	margin: 35px 45px 45px 25px;
 }
 
 .dashboard-circles:hover {
