@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Courses, Lesson } = require('../models');
+const { User, Courses, Lesson, ChatRoom, } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -50,6 +50,10 @@ const resolvers = {
       }
 
       throw new AuthenticationError('Not logged in');
+    },
+
+    chatRooms: async () => {
+      return await ChatRoom.find();
     }
   },
 
@@ -122,6 +126,11 @@ const resolvers = {
         )
         return updatedUser;
       }
+    },
+
+    createChatRoom: async (parent, { roomName, user }) => {
+      const newChatRoom = await ChatRoom.create({ roomName, user });
+      return newChatRoom;
     }
   }
 };

@@ -30,6 +30,19 @@ const typeDefs = gql`
     user: User
   }
 
+  type ChatRoom {
+    _id: ID!
+    roomName: String!
+    users: [User]
+    messages: [Message]
+  }
+
+  type Message {
+    _id: ID!
+    user: User
+    content: String!
+  }
+
   type Query {
     courses: [Courses]
     lessons(courses: ID, title: String): [Lesson]
@@ -37,6 +50,8 @@ const typeDefs = gql`
     users: [User]
     user: User
     me: User
+    messages: [Message]
+    chatRooms: [ChatRoom]
   }
 
   type Mutation {
@@ -46,6 +61,7 @@ const typeDefs = gql`
     changePassword(password: String): User
     saveCourses(courseId: ID!, courseTitle: String!): User
     removeCourse(courseId: ID!): User
+    createChatRoom(roomName: String!, user: String!): ChatRoom
   }
 `;
 
