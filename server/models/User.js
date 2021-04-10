@@ -2,9 +2,6 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 const bcrypt = require('bcrypt');
-// const Lesson = require('./Lesson');
-
-// const Courses = require('./Courses');
 
 const userSchema = new Schema({
   firstName: {
@@ -36,6 +33,11 @@ const userSchema = new Schema({
       ref: 'Lesson',
       required: false
     }]
+  },
+  chatRooms: {
+    type: Schema.Types.Array,
+    ref: 'ChatRoom',
+    required: false
   }
 },
 );
