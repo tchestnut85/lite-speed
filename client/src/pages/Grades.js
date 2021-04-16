@@ -4,49 +4,42 @@ import { capitalizeFirstLetter } from '../utils/helpers';
 import { useQuery } from '@apollo/react-hooks';
 
 function Grades() {
+	const { loading, data } = useQuery(QUERY_ME);
+	const userData = data?.me || {};
+	const userGrades = userData.grades;
 
-    const { loading, data } = useQuery(QUERY_ME);
-    const userData = data?.me || {};
+	if (loading) {
+		return <div className='page-title'>Loading grades...</div>;
+	}
 
-    console.log(userData.grades);
+	// Function to filter out odd indexed grades that do not get the correct score saved by the quiz package
+	const correctGrades = userGrades.filter((grade, i) => i % 2 !== 0);
 
-    if (loading) {
-        return <div className='page-title'>Loading grades...</div>;
-    }
+	return (
+		<section>
+			<h2 className='page-title'>
+				{capitalizeFirstLetter(userData.firstName)} {capitalizeFirstLetter(userData.lastName)}'s
+				Grades
+			</h2>
+			<div className='flex-row column'>
+				<h3>Lesson</h3>
+				{correctGrades.map((grades, i) => (
+					<div className='flex-row space-around' key={grades._id}>
+						<p>{capitalizeFirstLetter(grades.lessonName)}</p>
+					</div>
+				))}
+			</div>
 
-    // Function to filter out odd indexed grades - need to implement later
-    // const isOdd = (i) => {
-    //     if (i % 2 !== 0) {
-    //         return true;
-    //     }
-    //     return false;
-    // };
-
-    return (
-        <section>
-            <h2 className='page-title'>{capitalizeFirstLetter(userData.firstName)} {capitalizeFirstLetter(userData.lastName)}'s Grades</h2>
-            <div className='flex-row column'>
-                <h3>Lesson</h3>
-                {userData.grades.forEach(function (grades, i) {
-                    return (
-                        <div className='flex-row space-around' key={grades._id}>
-                            <p>{capitalizeFirstLetter(grades.lessonName)}</p>
-                        </div>
-                    );
-                })}
-            </div>
-
-            <div className='flex-row column'>
-                <h3>Grade</h3>
-                {userData.grades.map((grade) => (
-                    // console.log(grade);
-                    < div className='flex-row space-around' key={grade._id} >
-                        <span>{grade.grade}</span>
-                    </div>
-                ))}
-            </div>
-        </section >
-    );
+			<div className='flex-row column'>
+				<h3>Grade</h3>
+				{correctGrades.map(grade => (
+					<div className='flex-row space-around' key={grade._id}>
+						<span>{grade.grade}</span>
+					</div>
+				))}
+			</div>
+		</section>
+	);
 }
 
 export default Grades;
