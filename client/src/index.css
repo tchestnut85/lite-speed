@@ -325,6 +325,7 @@ button {
 	text-decoration: none;
 	padding: 0.25rem 1rem;
 	border-radius: 0.5rem;
+	border: none;
 	outline: none;
 	cursor: pointer;
 	margin: 0 1px;
@@ -339,6 +340,7 @@ button:hover {
 .btn {
 	padding: 15px 25px;
 	border-radius: 5px;
+	border: none;
 	background-color: var(--primaryColor);
 	color: white;
 	transition: background-color 0.25s ease-in-out;
@@ -717,8 +719,11 @@ button:hover {
 
 /* QUIZ STYLING */
 .react-quiz-container {
-	margin-top: 0 !important;
-	padding: 50px 25px 0 25px;
+	margin: 0 100px 50px 100px !important;
+	width: auto !important;
+	padding: 50px 250px 0 250px;
+	text-align: center;
+	align-items: center;
 }
 
 /* MEDIA QUERIES */
@@ -777,7 +782,7 @@ button:hover {
 	.lesson-content {
 		overflow-wrap: normal;
 	}
-	
+
 	.about-img {
 		width: 100px;
 		height: 150px;

@@ -51,7 +51,7 @@ function LessonQuiz() {
 			await saveGrade({
 				variables: { lessonName: quizName, grade: score },
 			});
-			window.location.replace('/grades');
+			// window.location.replace('/grades');
 		} catch (err) {
 			console.error(err);
 		}
@@ -60,9 +60,12 @@ function LessonQuiz() {
 	return (
 		<section className='py-2'>
 			<Quiz shuffle={true} quiz={displayQuiz()} onComplete={onCompleteAction} />
-			<div className='flex-row mx-2 px-2 py-2 space-between'>
+			<div className='flex-row space-around mx-2 px-2'>
 				<Link to='/courses' className='back-course '>
 					<button className='btn'>&#8592; Go back to course list </button>
+				</Link>
+				<Link to='/grades' className='back-course'>
+					<button className='btn'>View All Grades</button>
 				</Link>
 			</div>
 		</section>
