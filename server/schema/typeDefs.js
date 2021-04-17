@@ -35,6 +35,7 @@ const typeDefs = gql`
     roomName: String!
     users: [User]
     messages: [Message]
+    lastMessage: Message
   }
 
   type Message {
@@ -61,7 +62,7 @@ const typeDefs = gql`
     changePassword(password: String): User
     saveCourses(courseId: ID!, courseTitle: String!): User
     removeCourse(courseId: ID!): User
-    createChatRoom(roomName: String!, user: String!): ChatRoom
+    createChatRoom(roomName: String!, userIds: [ID!]!): ChatRoom 
   }
 `;
 
