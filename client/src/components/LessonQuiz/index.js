@@ -17,7 +17,6 @@ function LessonQuiz() {
 	const [saveGrade] = useMutation(SAVE_GRADE);
 
 	const { quizName } = useParams();
-	console.log(quizName);
 
 	const displayQuiz = () => {
 		switch (quizName) {
@@ -44,8 +43,6 @@ function LessonQuiz() {
 
 	const onCompleteAction = async results => {
 		const score = Math.round((results.numberOfCorrectAnswers / results.numberOfQuestions) * 100);
-		console.log(results);
-		console.log(score);
 
 		try {
 			await saveGrade({

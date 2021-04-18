@@ -740,6 +740,32 @@ button:hover {
 	max-width: 1000px;
 }
 
+/* GRADE PAGE STYLING */
+
+.grade-wrapper {
+	display: flex;
+	justify-content: center;
+}
+
+.grade-details {
+	margin: 15px 15px 0 15px;
+}
+
+.grade-details h3 {
+	font-size: 35px;
+	text-decoration: underline;
+}
+
+.grade-details span,
+p {
+	font-size: 25px;
+	margin: 5px 0 10px 0;
+}
+
+.grade-wrapper p {
+	font-weight: 600;
+}
+
 /* MEDIA QUERIES */
 @media screen and (max-width: 1024px) {
 	.login-container label,
