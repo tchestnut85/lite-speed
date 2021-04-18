@@ -19,6 +19,14 @@ function Grades() {
 		correctGrades.reduce((total, grade) => total + grade.grade, 0) / correctGrades.length
 	);
 
+	if (correctGrades.length === 0) {
+		return (
+			<h2 className='page-title'>
+				{capitalizeFirstLetter(userData.firstName)}, you haven't completed any quizes yet!
+			</h2>
+		);
+	}
+
 	return (
 		<section>
 			<h2 className='page-title'>
