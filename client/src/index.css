@@ -719,11 +719,25 @@ button:hover {
 
 /* QUIZ STYLING */
 .react-quiz-container {
-	margin: 0 100px 50px 100px !important;
+	margin: 0 auto !important;
 	width: auto !important;
-	padding: 50px 250px 0 250px;
+	padding: 25px;
 	text-align: center;
-	align-items: center;
+}
+
+.answerBtn {
+	margin: auto;
+	max-width: 500px;
+	min-width: 100px;
+}
+
+.nextQuestionBtn {
+	margin: auto;
+}
+
+.result-answer-wrapper {
+	margin: auto;
+	max-width: 1000px;
 }
 
 /* MEDIA QUERIES */
