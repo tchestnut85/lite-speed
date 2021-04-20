@@ -4,49 +4,73 @@ import { capitalizeFirstLetter } from '../utils/helpers';
 import { useQuery } from '@apollo/react-hooks';
 
 function Grades() {
+	const { loading, data } = useQuery(QUERY_ME);
+	const userData = data?.me || {};
+	const userGrades = userData.grades;
 
-    const { loading, data } = useQuery(QUERY_ME);
-    const userData = data?.me || {};
+	if (loading) {
+		return <div className='page-title'>Loading grades...</div>;
+	}
 
-    console.log(userData.grades);
+	// Function to filter out odd indexed grades that do not get the correct score saved by the quiz package
+	const correctGrades = userGrades.filter((grade, i) => i % 2 !== 0);
 
-    if (loading) {
-        return <div className='page-title'>Loading grades...</div>;
-    }
+	const gradeAverage = Math.round(
+		correctGrades.reduce((total, grade) => total + grade.grade, 0) / correctGrades.length
+	);
 
-    // Function to filter out odd indexed grades - need to implement later
-    // const isOdd = (i) => {
-    //     if (i % 2 !== 0) {
-    //         return true;
-    //     }
-    //     return false;
-    // };
+	if (correctGrades.length === 0) {
+		return (
+			<h2 className='page-title'>
+				{capitalizeFirstLetter(userData.firstName)}, you haven't completed any quizes yet!
+			</h2>
+		);
+	}
 
-    return (
-        <section>
-            <h2 className='page-title'>{capitalizeFirstLetter(userData.firstName)} {capitalizeFirstLetter(userData.lastName)}'s Grades</h2>
-            <div className='flex-row column'>
-                <h3>Lesson</h3>
-                {userData.grades.forEach(function (grades, i) {
-                    return (
-                        <div className='flex-row space-around' key={grades._id}>
-                            <p>{capitalizeFirstLetter(grades.lessonName)}</p>
-                        </div>
-                    );
-                })}
-            </div>
+	return (
+		<section>
+			<h2 className='page-title'>
+				{capitalizeFirstLetter(userData.firstName)} {capitalizeFirstLetter(userData.lastName)}'s
+				Grades
+			</h2>
 
-            <div className='flex-row column'>
-                <h3>Grade</h3>
-                {userData.grades.map((grade) => (
-                    // console.log(grade);
-                    < div className='flex-row space-around' key={grade._id} >
-                        <span>{grade.grade}</span>
-                    </div>
-                ))}
-            </div>
-        </section >
-    );
+			<div className='grade-wrapper'>
+				<div className='grade-details'>
+					<h3>Lesson</h3>
+					<ul>
+						{correctGrades.map((grades, i) => (
+							<li className='flex-row space-around' key={grades._id}>
+								<p>{capitalizeFirstLetter(grades.lessonName)}</p>
+							</li>
+						))}
+					</ul>
+				</div>
+
+				<div className='grade-details'>
+					<h3>Grade</h3>
+					<ul>
+						{correctGrades.map(grade => (
+							<li className='flex-row space-around' key={grade._id}>
+								<span
+									style={{ fontWeight: 'bold', color: grade.grade >= 60 ? 'green' : 'red' }}
+								>
+									{grade.grade}
+								</span>
+							</li>
+						))}
+					</ul>
+				</div>
+			</div>
+			<div className='grade-wrapper'>
+				<p>
+					{capitalizeFirstLetter(userData.firstName)}'s Total Average:{' '}
+					<span style={{ fontWeight: 'bold', color: gradeAverage >= 60 ? 'green' : 'red' }}>
+						{gradeAverage}%
+					</span>
+				</p>
+			</div>
+		</section>
+	);
 }
 
 export default Grades;

@@ -325,6 +325,7 @@ button {
 	text-decoration: none;
 	padding: 0.25rem 1rem;
 	border-radius: 0.5rem;
+	border: none;
 	outline: none;
 	cursor: pointer;
 	margin: 0 1px;
@@ -339,6 +340,7 @@ button:hover {
 .btn {
 	padding: 15px 25px;
 	border-radius: 5px;
+	border: none;
 	background-color: var(--primaryColor);
 	color: white;
 	transition: background-color 0.25s ease-in-out;
@@ -717,8 +719,51 @@ button:hover {
 
 /* QUIZ STYLING */
 .react-quiz-container {
-	margin-top: 0 !important;
-	padding: 50px 25px 0 25px;
+	margin: 0 auto !important;
+	width: auto !important;
+	padding: 25px;
+	text-align: center;
+}
+
+.answerBtn {
+	margin: auto;
+	max-width: 500px;
+	min-width: 100px;
+}
+
+.nextQuestionBtn {
+	margin: auto;
+}
+
+.result-answer-wrapper {
+	margin: auto;
+	max-width: 1000px;
+}
+
+/* GRADE PAGE STYLING */
+
+.grade-wrapper {
+	display: flex;
+	justify-content: center;
+}
+
+.grade-details {
+	margin: 15px 15px 0 15px;
+}
+
+.grade-details h3 {
+	font-size: 35px;
+	text-decoration: underline;
+}
+
+.grade-details span,
+p {
+	font-size: 25px;
+	margin: 5px 0 10px 0;
+}
+
+.grade-wrapper p {
+	font-weight: 600;
 }
 
 /* MEDIA QUERIES */
@@ -777,7 +822,7 @@ button:hover {
 	.lesson-content {
 		overflow-wrap: normal;
 	}
-	
+
 	.about-img {
 		width: 100px;
 		height: 150px;
